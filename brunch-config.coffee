@@ -60,7 +60,7 @@ exports.config =
       renameGzipFilesToOriginalFiles: true
 
     uglify:
-      mangle: false
+      mangle: true #是否压缩变量名
       compress:
         global_defs:
           DEBUG: false
@@ -69,5 +69,21 @@ exports.config =
       keepSpecialComments: 0
       removeEmpty: true
 
+#    html2js: # for future 用于压缩angularjs的模板html到一个js文件中 需要在files中进行配置压缩文件路径
+#      options: # other attr like 'target'(js or coffee)
+#        base:'app/views' # 模板路径前缀
+#        useStrict: true
+#        indentString: '    ' # 缩进为4个空格
+#        quoteChar: '\'' # 使用单引号
+#        htmlmin: # html 压缩方式
+#          collapseBooleanAttributes: true
+#          collapseWhitespace: true
+#          removeAttributeQuotes: true
+#          removeComments: true
+#          removeEmptyAttributes: true
+#          removeRedundantAttributes: true
+#          removeScriptTypeAttributes: true
+#          removeStyleLinkTypeAttributes: true
+
 # Enable or disable minifying of result js / css files.
-# minify: true
+  optimize:false # there is a bug in uglify-js-brunch but it is fixed in later version that not published yet
