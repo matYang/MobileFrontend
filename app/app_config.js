@@ -4,6 +4,16 @@ app.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locatio
 //    $interpolateProvider.endSymbol('%}');
 
     $stateProvider
+        .state('login', {
+            url: '/login',
+            templateUrl: 'views/login.html',
+            controller: 'loginCtrl'
+        })
+        .state('register', {
+            url: '/register',
+            templateUrl: 'views/register.html',
+            controller: 'registerCtrl'
+        })
         .state('course-list', {
             url: '/course',
             templateUrl: 'views/course.list.html',

@@ -12,7 +12,7 @@ appServices.factory('restAPI',
             }
         };
         var resource_maker = function (recourseName) {
-            var prefix = '/api/' + app.version;
+            var prefix = '/a-api/' + api_config.version;
             var url = app.test_mode ? api_config.resources[recourseName][0] : prefix + api_config.resources[recourseName][1];
             var methods = {};
             if (app.test_mode) {
