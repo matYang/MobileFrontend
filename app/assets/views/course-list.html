@@ -1,0 +1,57 @@
+<ion-view id="course-list" title="{{ pageName }}">
+    <div class="bar bar-header">
+        <button class="button button-clear">btn left</button>
+        <div class="h1 title">{{ title }}</div>
+        <button class="button button-clear button-positive">btn right</button>
+    </div>
+    <ion-content class="has-header has-footer" has-bouncing="true" overflow-scroll="false">
+        <div class="list">
+            <a class="item item-thumbnail" ng-repeat="c in courses" ng-href="#/course/{{ c.id }}">
+                <img ng-src="{{ classImg }}" alt="pic"/>
+                <h2>{{c.courseName}}</h2>
+                <p>{{c.classSize}}人班  ￥{{c.price}}</p>
+                <p>{{c.startDate| date:'M月d日'}}开课  {{c.onDate}}</p>
+                <p>{{c.district}}</p>
+            </a>
+
+
+            <pre>current choosed filters:
+                <p>{{ filter_choosed | json}}</p>
+            </pre>
+            <div ng-if="courses!=''" class="page">
+            <div ng-click="prePage()" ng-if="page.index >= page.count"
+            class="ion-ios7-arrow-left icon-left button button-clear button-dark">上一页
+            </div>
+            <div ng-click="nexPage()" ng-if="page.index + page.count < page.total"
+            class="ion-ios7-arrow-right icon-right button button-clear button-dark">下一页
+            </div>
+            </div>
+        </div>
+    </ion-content>
+
+    <div class="tabs tabs-icon-top tabs-striped">
+        <a class="tab-item" ng-click="openItemFilter()">
+            <i class="icon ion-home"></i>
+            培训类目
+        </a>
+        <a class="tab-item" ng-click="openAddrFilter()">
+            <i class="icon ion-star"></i>
+            上课地点
+        </a>
+        <a class="tab-item" ng-click="openTimeFilter()">
+            <i class="icon ion-gear-a"></i>
+            开课时间
+        </a>
+        <a class="tab-item"  ng-click="pop=!pop" style="overflow: visible">
+            <i class="icon ion-gear-a"></i>
+            爱推荐
+            <ul class="filter-submenu hide" ng-class="{'hide':!pop}">
+                <li class="btn">爱推荐</li>
+                <li class="btn">时间asc</li>
+                <li class="btn">时间desc</li>
+                <li class="btn">价格asc</li>
+                <li class="btn">价格desc</li>
+            </ul>
+        </a>
+    </div>
+</ion-view>

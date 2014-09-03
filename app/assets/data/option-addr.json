@@ -1,0 +1,20 @@
+[//上课地点
+    {
+        "label": "南京市",
+        "value": "nanjing",
+        "sub": [
+            {"label": "玄武区", "value": "11"},
+            {"label": "雨花区", "value": "12"},
+            {"label": "秦淮区", "value": "13"}
+        ]
+    },
+    {
+        "label": "苏州",
+        "value": "suzhou",
+        "sub": [
+            {"label": "1区", "value": "21"},
+            {"label": "2区", "value": "22"},
+            {"label": "3区", "value": "23"}
+        ]
+    }
+]

@@ -1,0 +1,36 @@
+/*start list items*/
+.item-thumbnail {
+    height: 135px;
+    margin: 5px;
+    padding-left: 135px;
+    min-height: 100px;
+    box-shadow: 0 0 4px 0 #333;}
+
+.item-thumbnail > img:first-child,
+.item-thumbnail .item-image,
+.item-thumbnail .item-content > img:first-child,
+.item-thumbnail .item-content .item-image {
+    position: absolute;;
+    top: 0;
+    left: 0;
+    width: 120px;
+    height: 100%;
+    max-width: 120px;
+    max-height: 100%;}
+/*end list items*/
+
+/*start filter tabs 对默认的tabs样式进行覆盖*/
+#course-list .tabs{
+    color: #eeeeee;
+    background-color: #2F3541;}
+
+#course-list .tab-item + .tab-item:before {
+    border-left: 1px solid #1F232A;
+    display: block;
+    float: left;
+    width: 1px;
+    box-shadow: 0 0 2px 0 #1F232A;
+    height: 40px;
+    margin: 5px auto;
+    content: " "; }
+/*end filter tabs*/

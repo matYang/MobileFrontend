@@ -1,0 +1,29 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "classImg": "",
+            "courseName": "雅思精品培训",
+            "classSize": "10",
+            "price": "500",
+            "startDate": "2014-07-01",
+            "onDate": "平日上午",
+            "district": "雨花区",
+            "isDiscount": "0"
+        },
+        {
+            "id": 1,
+            "classImg": "",
+            "courseName": "英语六级培训",
+            "classSize": "20",
+            "price": "200",
+            "startDate": "2014-07-02",
+            "onDate": "周末下午",
+            "district": "玄武区",
+            "isDiscount": "0"
+        }
+    ],
+    "index": 1,
+    "total": 2,
+    "size": 10
+}

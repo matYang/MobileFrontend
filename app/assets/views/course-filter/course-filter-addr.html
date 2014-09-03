@@ -1,0 +1,20 @@
+<div class="modal slide-in-up">
+    <div class="bar bar-header">
+        <button class="button button-icon icon ion-navicon" ng-click="modal.hide()">close</button>
+        <div class="h1 title">
+            上课地点
+        </div>
+
+    </div>
+    <ion-content class="has-header">
+        <ion-tabs class="filter tabs-left">
+            <ion-tab title="{{d.label}}" ng-repeat="d in options.address">
+                <ion-radio ng-model="filter_tmp.address" ng-value="item.value"
+                           ng-repeat="item in d.sub" name="address" ng-click="confirm_filter()">
+                    {{ item.label}}
+                </ion-radio>
+            </ion-tab>
+        </ion-tabs>
+    </ion-content>
+
+</div>

@@ -1,0 +1,44 @@
+html,body{
+    font-family: 'Microsoft Yahei','SimSun';
+    background-color: #eeeeee;
+}
+/*set default btn text align center*/
+.btn{
+    text-align: center;
+    position: relative;
+}
+
+/**
+ * Lists
+ * --------------------------------------------------
+ */
+.list {
+    position: relative;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 0;
+    margin-bottom: 20px;}
+
+/*Radion Button Inputs*/
+/*the radio items*/
+.item-radio {
+    border:none;
+    padding: 0; }
+.item-radio:hover {
+    cursor: pointer; }
+
+.item-radio input {
+    /* hide any radio bu tton inputs elements (the ugly circles) */
+    position: absolute;
+    left: -9999px; }
+.item-radio input:checked ~ .item-content {
+    /*默认的单选按钮选中状态*/
+    color: #41A478;
+    background: #ffffff; }
+.item-radio-btn .item-radio input:checked ~ .item-content {
+    /*按钮型的不加icon的单选按钮选中状态*/
+    color: #ffffff;
+    background: #41A478; }
+.item-radio input:checked ~ .radio-icon {
+    /* show the checkmark icon when its checked */
+    visibility: visible; }

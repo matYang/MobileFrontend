@@ -1,0 +1,32 @@
+.card{
+    width: 100%;
+    margin: 10px 10px;
+    padding: 10px;
+    border:1px solid red;
+    background-color: #ffffff;
+}
+.card.main{
+    position: relative;
+    border-color: #118D56;}
+    .card.main h1{
+        font-size: 18px;
+        color:#118D56;}
+    .card.main p{
+        margin-bottom: 2px;
+        color:#333;}
+    .card.main img{
+        position: absolute;
+        top:10px;right:10px;
+        width: 90px;height: 90px;}
+
+.card.table td:first-child{
+    width: 100px;
+}
+.card.table td{
+    color:#118D56;
+    padding: 8px;
+    border:1px solid #dddddd;}
+    .card.table td.has-btn{
+        text-align: center;}
+        .card.table .button{
+            width: 80%;}

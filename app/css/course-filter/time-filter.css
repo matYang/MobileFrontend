@@ -1,0 +1,15 @@
+/*3rd time filter*/
+/*the modal*/
+.modal-filter-time {
+    background-color: transparent;}
+    .modal-filter-time ion-content {
+    top: 200px;
+    background-color: #ffffff;}
+
+/*control radio-item width*/
+.item-cols4{
+    overflow: hidden;}
+    .item-cols4 .item-radio{
+        text-align: center;
+        width: 25%;
+        float: left;}

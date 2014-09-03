@@ -1,0 +1,36 @@
+/*1st & 2cd item and address filter*/
+.tabs-left{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;}
+    .tabs-left .tabs{
+        position: relative;
+        background-color: #B7DDCC;
+        display: block;
+        height: 100%;
+        width: 20%;}
+        .tabs-left .tab-item{
+            text-align: left;
+            padding-left: 10px;
+            color:#333333;
+            border-left: 3px solid transparent;
+            height: auto;}
+        /*style tabs when its active*/
+        .tabs-left .tab-item.tab-item-active{
+            color:#118D56;
+            background-color: #ffffff;
+            border-left: 3px solid #118D56;}
+    .tabs-left .pane{
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 80%;}
+        /*init all border width to 0*/
+        .tabs-left .item-radio{
+            border-width: 0px;}
+        /*items should split with 1px border*/
+        .tabs-left .item-radio+.item-radio{
+            border-top-width: 1px;}

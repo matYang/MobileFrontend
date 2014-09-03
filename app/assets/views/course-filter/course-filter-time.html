@@ -1,0 +1,26 @@
+<div class="modal modal-filter-time slide-in-up">
+    <ion-content class="padding">
+        <label>开始时间</label>
+
+        <div class="item-radios item-cols4 item-radio-btn">
+            <ion-radio ng-model="filter_tmp.start_time" ng-value="item.value"
+                       ng-repeat="item in options.start_time" name="start-time">
+                {{ item.label}}
+            </ion-radio>
+        </div>
+        <label>上课时间</label>
+
+        <div class="item-radios item-cols4 item-radio-btn">
+            <ion-radio ng-model="filter_tmp.on_time" ng-value="item.value"
+                       ng-repeat="item in options.on_time" name="on-time">
+                {{ item.label}}
+            </ion-radio>
+        </div>
+        <hr/>
+        <div class="buttons text-center">
+            <button class="button button-outline" ng-click="modal.hide()">Close</button>
+            <button class="button button-outline button-dark" ng-click="confirm_filter()">确定</button>
+        </div>
+    </ion-content>
+
+</div>
