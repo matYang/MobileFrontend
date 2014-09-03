@@ -1,10 +1,5 @@
 /*1st & 2cd item and address filter 培训类目和上课地点的过滤*/
 .tabs-left{
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -moz-flex;
-    display: -ms-flexbox;
     display: flex;
     width: 100%;}
     .tabs-left .tabs{
@@ -34,3 +29,10 @@
         /*items should split with 1px border*/
         .tabs-left .item-radio+.item-radio{
             border-top-width: 1px;}
+/*二级选项列表中的内容*/
+.item-radio .item-content {
+    position: relative;
+    z-index: 2;
+    padding: 10px;
+    border: none;
+    background-color: white; }

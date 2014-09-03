@@ -6,12 +6,11 @@
     </div>
     <ion-content class="has-header has-footer" has-bouncing="true" overflow-scroll="false">
         <div class="list">
-            <a class="item" ng-repeat="c in courses" ng-href="#/course/{{ c.id }}">
+            <a class="item item-thumbnail" ng-repeat="c in courses" ng-href="#/course/{{ c.id }}">
                 <img ng-src="{{ c.logoUrl }}" alt="pic"/>
                 <span class="title">{{c.instName}}</span>
                 <h2 class="text-primary">{{c.courseName}}</h2>
                 <p>
-                    班级大小:{{c.classSize}}
                     ￥<strong class="text-error text-larger">{{c.price|| '定制' }}</strong>
                     &nbsp;<s ng-if="c.originalPrice">原价:{{c.originalPrice}}</s>
                     &nbsp;<span ng-if="c.cashback" class="badge bg-primary">返</span>
