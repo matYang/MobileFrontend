@@ -4,12 +4,12 @@ app.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locatio
 //    $interpolateProvider.endSymbol('%}');
 
     $stateProvider
-        .state('courseList', {
+        .state('course-list', {
             url: '/course',
             templateUrl: 'views/course.list.html',
             controller: 'courseListCtrl'
         })
-        .state('courseDetail', {
+        .state('course-detail', {
             url: '/course/:id',
             templateUrl: 'views/course.detail.html',
             controller: 'courseDetailCtrl'

@@ -1,0 +1,55 @@
+/*start list items*/
+.item{
+    height: 135px;
+    margin: 8px;
+    padding-left: 145px;
+    min-height: 100px;
+    box-shadow: 0 0 4px 0 #333;}
+a.item {
+    color: inherit;
+    text-decoration: none; }
+    a.item:hover, a.item:focus {
+        text-decoration: none; }
+
+.item img,.item .title{
+    position: absolute;
+    /*padding: 10px;*/
+    top: 0;
+    left: 0;
+    width: 135px;
+    height: 100%;
+    max-width: 135px;
+    max-height: 100%;}
+.item .title{
+    top: auto;left: 0; bottom: 0;
+    text-align: center;
+    color: white;
+    height: 22px;
+    line-height: 22px;
+    font-size: 14px;
+    background: rgba(0,0,0,.5);;
+}
+.item h2{margin-bottom: 10px}
+.item p{margin-bottom: 5px;font-size: 14px;color: #333;}
+.item p,.item-thumbnail h2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/*end list items*/
+
+/*start filter tabs 对默认的tabs样式进行覆盖*/
+#course-list .tabs{
+    color: #eeeeee;
+    background-color: #2F3541;}
+
+#course-list .tab-item + .tab-item:before {
+    border-left: 1px solid #1F232A;
+    display: block;
+    float: left;
+    width: 1px;
+    box-shadow: 0 0 2px 0 #1F232A;
+    height: 40px;
+    margin: 5px auto;
+    content: " "; }
+/*end filter tabs*/

@@ -6,12 +6,25 @@
     </div>
     <ion-content class="has-header has-footer" has-bouncing="true" overflow-scroll="false">
         <div class="list">
-            <a class="item item-thumbnail" ng-repeat="c in courses" ng-href="#/course/{{ c.id }}">
-                <img ng-src="{{ classImg }}" alt="pic"/>
-                <h2>{{c.courseName}}</h2>
-                <p>{{c.classSize}}人班  ￥{{c.price}}</p>
-                <p>{{c.startDate| date:'M月d日'}}开课  {{c.onDate}}</p>
-                <p>{{c.district}}</p>
+            <a class="item" ng-repeat="c in courses" ng-href="#/course/{{ c.id }}">
+                <img ng-src="{{ c.logoUrl }}" alt="pic"/>
+                <span class="title">{{c.instName}}</span>
+                <h2 class="text-primary">{{c.courseName}}</h2>
+                <p>
+                    班级大小:{{c.classSize}}
+                    ￥<strong class="text-error text-larger">{{c.price|| '定制' }}</strong>
+                    &nbsp;<s ng-if="c.originalPrice">原价:{{c.originalPrice}}</s>
+                    &nbsp;<span ng-if="c.cashback" class="badge bg-primary">返</span>
+                    &nbsp;<span ng-if="c.commission" class="badge bg-error">立减</span>
+                </p>
+                <p>上课日期:
+                    <span ng-if="c.startUponArrival">
+                    {{c.startDate| date:'yyyy-M.d'}}<span ng-if="c.finishDate">到{{c.finishDate| date:'yyyy-M.d'}}</span>
+                    </span>
+                    <span ng-if="!c.startUponArrival">{{c.regPhone}}</span>
+
+                </p>
+                <p>上课地址:{{c.address}}</p>
             </a>
 
 

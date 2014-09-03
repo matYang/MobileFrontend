@@ -42,3 +42,106 @@ html,body{
 .item-radio input:checked ~ .radio-icon {
     /* show the checkmark icon when its checked */
     visibility: visible; }
+
+/*通用组件*/
+/*badge 与label相对应 只是没有后面的说明*/
+.badge{
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px;
+    font-size: 12px;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 2px;
+    background-color: #FF5500;
+}
+/*返 立减 common label 带后续的隐藏标签说明框*/
+.label{
+    display:inline-block;
+    position:relative;
+    border: 1px solid;border-radius: 2px;
+    font-size:12px;
+    font-family: SimSun, serif;
+    line-height: 18px;
+    padding-right: 2px;
+    padding-left: 0;/*该行为了去除.cashback遗留样式的多余padding*/
+}
+.label:before{
+    display: inline-block;
+    position: relative;
+    margin-right: 2px;padding: 0 2px;
+    color: white;
+}
+/*label的独立style*/
+/*返*/
+.label.cashback{
+    border-color: #128d56;
+    color:#128d56;
+}
+.label.cashback:before{
+    content:'返';
+    width: 1em;
+    background: #128d56;
+}
+/*将返*/
+.label.cashbacked{
+    border-color: #128d56;
+    color:#128d56;
+}
+.label.cashbacked:before{
+    content:'可返';
+    width: 2em;
+    background: #128d56;
+}
+
+/*立减*/
+.label.save,.label.saved{
+    border-color: #ff5500;
+    color:#ff5500;
+}
+.label.save:before,.label.saved:before{
+    content:'立减';
+    width: 2em;
+    background: #ff5500;
+}
+/*已减*/
+.label.saved:before{
+    content:'已减';
+}
+/*tools*/
+/*通用工具类*/
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.pull-left { float: left; }
+.pull-right { float: right; }
+
+.padding-sm { padding: 10px 15px; }
+.padding-md { padding: 15px 20px; }
+.padding-lg { padding: 20px 30px; }
+.padding-x{padding-left: 10px;padding-right: 10px}
+.padding-bottom{padding-bottom: 5px}
+
+.margin-x { margin: 0  5px; }
+.margin-y { margin: 10px 0 20px; }
+.margin-y-sm { margin: 5px 0; }
+
+.margin-top { margin-top: 8px; }
+.margin-bottom { margin-bottom: 12px; }
+
+
+.inline-block{ display: inline-block; }
+/*字体 背景 边框颜色*/
+.border-primary{ border: 1px solid #128d56; }
+
+.bg-primary{ background-color: #128d56; }
+.bg-warning{ background-color: #f7a501; }
+.bg-error{ background-color: #FF5500; }
+
+.text-primary{color: #128d56; }
+.text-warning{color: #f7a501; }
+.text-error{color: #FF5500; }
+
+.text-larger{font-size: 1.2em}
