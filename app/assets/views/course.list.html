@@ -1,8 +1,9 @@
 <ion-view id="course-list" title="{{ pageName }}">
     <div class="bar bar-header">
-        <button class="button button-clear">btn left</button>
+        <button nav-clear class="button button-clear" ui-sref="register">注册</button>
+        <button click-refresh  class="button button-clear">刷新</button>
         <div class="h1 title">{{ title }}</div>
-        <button class="button button-clear button-positive">btn right</button>
+        <button nav-clear class="button button-clear button-positive" ui-sref="login">登录</button>
     </div>
     <ion-content class="has-header has-footer" has-bouncing="true" overflow-scroll="false">
         <div class="list">

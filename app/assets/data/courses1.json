@@ -1,11 +1,35 @@
 {
     "id": 1,
-    "classImg": "",
+    "logoUrl": "http://logobucket.oss-cn-hangzhou.aliyuncs.com/14/logop14i1t1408524055926-43ea9a901efa9c7637da90276e8281a7.png",
+    "instName":"江苏朗阁外语",
+    "wholeName":"江苏朗阁外语全称...",
+
     "courseName": "雅思精品培训",
-    "classSize": "10",
-    "price": "500",
-    "startDate": "2014-07-01",
-    "onDate": "平日上午",
-    "district": "雨花区",
-    "isDiscount": "0"
+    "address": "这里是上课地点",
+    "regAddress": "这里是报名地点",
+    "categoryValue": "000001",
+    "categoryName": "雅思",
+    "classSize": "20人",
+
+    "price": "688",
+
+    "originalPrice": "788",
+    "cashback": "40",
+    "commission": "80",
+    "marking": "这是优惠信息",
+
+    "startUponArrival":0,
+    "regPhone":"随到随学,电话咨询",
+    "startDate": 1414441212123,
+    "finishDate": 1424441212123,
+
+    "startTIme1": 900,
+    "finishTIme1": 1100,
+    "startTime2": 1300,
+    "finishTime2": 1500,
+
+    "bookingType": 2,
+    "classType": 2,
+    "schooltimeWeek": 3,
+    "schooltimeDay": 4
 }

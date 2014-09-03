@@ -1,16 +1,19 @@
 'use strict';
 
 /* Filters */
-appDirectives.directive('tabs', function() {
+appDirectives.directive('clickRefresh', ['$window', function ($window) {
     return {
-        restrict: 'EA',
-        transclude: true,
+
+        restrict: 'A',
         replace: true,
         scope: {},
 //        controller: 'TabsetController',
 //        templateUrl: 'template/tabs/tabset.html',
-        link: function(scope, element, attrs) {
-            scope.type = angular.isDefined(attrs.type) ? scope.$parent.$eval(attrs.type) : 'tabs';
+        link: function (scope, element, attrs) {
+            element.on('click', function () {
+                console.log($window)
+                $window.location.reload();
+            })
         }
     };
-});
+}]);

@@ -118,20 +118,6 @@ html,body{
 .pull-left { float: left; }
 .pull-right { float: right; }
 
-.padding-sm { padding: 10px 15px; }
-.padding-md { padding: 15px 20px; }
-.padding-lg { padding: 20px 30px; }
-.padding-x{padding-left: 10px;padding-right: 10px}
-.padding-bottom{padding-bottom: 5px}
-
-.margin-x { margin: 0  5px; }
-.margin-y { margin: 10px 0 20px; }
-.margin-y-sm { margin: 5px 0; }
-
-.margin-top { margin-top: 8px; }
-.margin-bottom { margin-bottom: 12px; }
-
-
 .inline-block{ display: inline-block; }
 /*字体 背景 边框颜色*/
 .border-primary{ border: 1px solid #128d56; }

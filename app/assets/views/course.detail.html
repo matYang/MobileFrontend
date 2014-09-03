@@ -1,18 +1,15 @@
 <ion-view title="{{ pageName }}" id="detail">
     {{ title }}
     <div class="bar bar-header">
-        <a nav-clear ui-sref="course-list" class="button button-icon icon ion-navicon">Back</a>
+        <!--nav-clear to clear animation-->
+        <a nav-clear ui-sref="course-list" class="button">返回</a>
 
         <div class="h1 title">{{ title }}</div>
     </div>
     <ion-content class="has-header" has-bouncing="true" overflow-scroll="false">
         <div class="card main">
-            <h1>雅思660</h1>
-            <p>1</p>
-            <p>2</p>
-            <p>3</p>
-            <p>4</p>
-            <img src="xxx.jpg" alt="机构"/>
+            <h1>{{course.courseName}}</h1>
+            <img ng-src="{{course.logoUrl}}"/>
         </div>
         <table class="card table">
             <tbody>
@@ -37,7 +34,7 @@
             <tbody>
             <tr>
                 <td>机构</td>
-                <td>xxx</td>
+                <td>{{course.instName}}</td>
             </tr>
             <tr>
                 <td>地址</td>
