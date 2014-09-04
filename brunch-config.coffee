@@ -36,36 +36,36 @@ exports.config =
         css: on
         assets: on
 
-    imageoptimizer:
-      path: 'images'
-      smushit: no
+#    imageoptimizer:
+#      path: 'images'
+#      smushit: no
+#
+#      options:
+#        indentation:
+#          value: 4
+#          level: "warn"
+#
+#        max_line_length:
+#          level: "ignore"
 
-      options:
-        indentation:
-          value: 4
-          level: "warn"
-
-        max_line_length:
-          level: "ignore"
-
-    jshint:
-      pattern: /^app\/.*\.js$/
-      options:
-        bitwise: true
-        curly: true
-      globals:
-        jQuery: true
-      warnOnly: true
-
-    gzip:
-      paths:
-        javascript: 'js'
-        stylesheet: 'css'
-      removeOriginalFiles: false
-      renameGzipFilesToOriginalFiles: true
+#    jshint:
+#      pattern: /^app\/.*\.js$/
+#      options:
+#        bitwise: true
+#        curly: true
+#      globals:
+#        jQuery: true
+#      warnOnly: true
+#
+#    gzip:
+#      paths:
+#        javascript: 'js'
+#        stylesheet: 'css'
+#      removeOriginalFiles: false
+#      renameGzipFilesToOriginalFiles: true
 
     uglify:
-      mangle: true #是否压缩变量名
+      mangle: false #是否压缩变量名
       compress:
         global_defs:
           DEBUG: false
