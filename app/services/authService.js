@@ -44,8 +44,14 @@ appServices.factory('Auth',
                     }
                     xhr.setRequestHeader('content-type', 'application/json');
                     xhr.send();
+                    var user;
 
-                    var user = JSON.parse(xhr.responseText);
+                    try{
+                        user = JSON.parse(xhr.responseText);
+                    }catch(e){
+                        $log.log('checking user:parse error--no session');
+                    }
+
                     if (user && user.id >= 0) {
                         $rootScope.global.user = user;
                         $rootScope.global.isLogin = true;

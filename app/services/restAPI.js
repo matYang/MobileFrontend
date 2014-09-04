@@ -13,8 +13,9 @@
  'update': PUT
  * */
 appServices.factory('restAPI',
-    ['$resource','app', function ($resource,app) {
+    ['$resource', 'app', function ($resource, app) {
         var api_config = {
+            api_name: '/api',
             version: '/v2',
             resources: {
                 //[0] is the fake api,[1] is the real api
@@ -24,7 +25,7 @@ appServices.factory('restAPI',
                 'courses': ['/data/courses:ID.json', '/course/:ID']
             }
         };
-        var prefix = '/m-api/' + api_config.version;
+        var prefix = api_config.api_name + api_config.version;
         //用于生成资源
         var resource_maker = function (recourseName) {
             var url = app.test_mode ? api_config.resources[recourseName][0] : prefix + api_config.resources[recourseName][1];
