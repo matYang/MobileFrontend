@@ -24,8 +24,9 @@ appServices.factory('restAPI',
                 'courses': ['/data/courses:ID.json', '/course/:ID']
             }
         };
+        var prefix = '/m-api/' + api_config.version;
+        //用于生成资源
         var resource_maker = function (recourseName) {
-            var prefix = '/m-api/' + api_config.version;
             var url = app.test_mode ? api_config.resources[recourseName][0] : prefix + api_config.resources[recourseName][1];
             var methods = {};
             if (app.test_mode) {
@@ -48,10 +49,16 @@ appServices.factory('restAPI',
             }
             return $resource(url, {}, methods)
         };
+        //用于生成资源的地址
+        var makeResourceUrl = function (resourceName) {
+            return prefix + '/' + resourceName;
+        };
 
         return {
             'user': resource_maker('user'),
-            'courses': resource_maker('courses')
+            'courses': resource_maker('courses'),
+
+            'makeResourceUrl': makeResourceUrl//资源的地址
         };
     }]
 );
