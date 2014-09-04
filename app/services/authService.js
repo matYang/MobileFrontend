@@ -50,7 +50,6 @@ appServices.factory('Auth',
                         $rootScope.global.user = user;
                         $rootScope.global.isLogin = true;
                         $log.log('checking user:session found');
-                        self.initPartner(); //进行partner信息的初始化
                     } else {
                         $log.log('checking user:session not found');
                     }

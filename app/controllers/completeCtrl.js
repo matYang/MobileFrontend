@@ -1,7 +1,7 @@
 /**
  * Created by jz on 2014/9/3.
  */
-app.controller('registerCtrl', ['$scope', 'app', function ($scope, app) {
+app.controller('completeCtrl', ['$scope', 'app', function ($scope, app) {
     var restAPI = app.restAPI.user;
     //提交完善的信息 学校信息
     $scope.submitComplete = function (schoolId) {

@@ -1,9 +1,15 @@
 'use strict';
 app.run(
-    ['app', '$rootScope', 'restAPI', '$log', '$state', function (app, $rootScope, restAPI, $log, $state) {
+    ['app', '$rootScope', 'restAPI', '$log', 'Auth', '$state', function (app, $rootScope, restAPI, $log, Auth, $state) {
         if (app.test_mode) {
             $log.info('RUN IN TEST MODE');
         }
+        //$rootScope has some global functions and params
+        $rootScope.$state = $state;
+        $rootScope.global = {
+            user: null,
+            isLogin: false,
+        };
         //global loading
         $rootScope.loading = {
             show: false
@@ -17,6 +23,7 @@ app.run(
             order_type: ''//排序方式
         };
 
+        Auth.checkUser();
 
         app.restAPI = restAPI;
         app.$log = $log;

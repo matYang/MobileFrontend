@@ -5,7 +5,8 @@ app.controller('registerCtrl', ['$scope', 'app', function ($scope, app) {
 
     //提交注册
     $scope.submitRegister  = function(){
-        console.log('registering')
+        console.log('registering');
+        app.$state.go('complete')
     }
 
 }]);
