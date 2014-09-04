@@ -17,6 +17,7 @@ exports.config =
           'app/enum.js'
           'app/app_run.js'
           'vendor/js/ionic.bundle.js'
+          'vendor/js/ionic.bundle.min.js'
         ]
 
     stylesheets:

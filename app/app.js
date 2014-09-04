@@ -4,7 +4,6 @@
 
 var app = angular.module('app', [
     'ngResource',
-    'ngCookies',
     'ionic',
 
     'appServices',
