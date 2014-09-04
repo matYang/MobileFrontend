@@ -32,10 +32,10 @@
                 <p>{{ filter_choosed | json}}</p>
             </pre>
             <div ng-if="courses!=''" class="page">
-            <div ng-click="prePage()" ng-if="page.index >= page.count"
+            <div ng-click="prePage()" ng-if="page.start >= page.count"
             class="ion-ios7-arrow-left icon-left button button-clear button-dark">上一页
             </div>
-            <div ng-click="nexPage()" ng-if="page.index + page.count < page.total"
+            <div ng-click="nexPage()" ng-if="page.start + page.count < page.total"
             class="ion-ios7-arrow-right icon-right button button-clear button-dark">下一页
             </div>
             </div>

@@ -12,7 +12,7 @@ appControllers.controller('courseListCtrl',
         $scope.doRefresh = function () {
             Courses.get(angular.extend({},$rootScope.filter_choosed,$rootScope.page), function (data) {
                 $rootScope.courses = data.data;
-                $rootScope.page.index = data.index;
+                $rootScope.page.start = data.start;
                 $rootScope.page.count = data.count;
                 $rootScope.page.total = data.total;
             }, function () {
