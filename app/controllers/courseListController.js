@@ -5,7 +5,7 @@ appControllers.controller('courseListCtrl',
         var Courses = app.restAPI.courses;
         // 课程id  班级图片 课程名 班级人数 价格 开课时间 上课市时间 地区 其它优惠信息
         //todo that should be cached
-        $scope..page = app.pageService.courses;
+        $scope.page = app.pageService.courses;
 //        courseService.getFilterCourses().success(function(data){
 //            console.log(data)
 //        })
