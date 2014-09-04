@@ -1,6 +1,5 @@
 <ion-view id="course-list" title="">
     <div class="bar bar-header">
-        <button nav-clear class="button button-clear" ui-sref="register">注册</button>
         <button click-refresh  class="button button-clear">刷新</button>
         <div class="h1 title">爱上课</div>
         <button nav-clear class="button button-clear button-positive" ui-sref="login">登录</button>
@@ -26,10 +25,6 @@
                 </p>
                 <p>上课地址:{{c.address}}</p>
             </a>
-
-            <pre>current choosed filters:
-                <p>{{ filter_choosed | json}}</p>
-            </pre>
             <div ng-if="courses!=''" class="page">
             <div ng-click="prePage()" ng-if="page.start >= page.count"
             class="ion-ios7-arrow-left icon-left button button-clear button-dark">上一页
@@ -44,7 +39,7 @@
     <div class="tabs tabs-icon-top tabs-striped">
         <a class="tab-item" ng-click="openItemFilter()">
             <i class="icon ion-home"></i>
-            培训类目
+            课程类目
         </a>
         <a class="tab-item" ng-click="openAddrFilter()">
             <i class="icon ion-star"></i>

@@ -120,23 +120,6 @@ appControllers.controller('courseListCtrl',
                     $scope.filter_tmp = angular.copy($scope.filter);//should init when open
                     $scope.pop = false;
                     $scope.filterTimeModal.show();
-                    $scope.modal.chooseSchoolTime = function (value) {
-
-                    };
-                    $scope.modal.chooseStartTime = function (value) {
-                        var start,finish;
-                        switch (value) {
-                            //todo get start and finish time here
-                            case 0:
-                                break;
-                            case 1:
-                                break;
-                            case 2:
-                                break;
-                        }
-                        $scope.startDateStart = start;
-                        $scope.startDateEnd = finish;
-                    }
                 };
             });
 

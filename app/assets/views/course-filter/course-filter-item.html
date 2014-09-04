@@ -2,11 +2,18 @@
     <div class="bar bar-header">
         <button class="button button-icon icon ion-navicon" ng-click="modal.hide()">关闭</button>
         <div class="h1 title">
-            培训类目选择
+            课程类目
         </div>
     </div>
     <ion-content class="padding has-header">
-        培训类目filter
+        <ion-tabs class="filter tabs-left">
+            <ion-tab title="{{d.label}}" ng-repeat="d in options.category">
+                <ion-radio ng-model="filter_tmp.address" ng-value="item.value"
+                           ng-repeat="item in d.sub" name="address" ng-click="confirm_filter()">
+                    {{ item.label}}
+                </ion-radio>
+            </ion-tab>
+        </ion-tabs>
 
 
     </ion-content>
