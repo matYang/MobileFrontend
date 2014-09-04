@@ -23,7 +23,7 @@ app.run(
             order_type: ''//排序方式
         };
 
-        Auth.checkUser();
+//        Auth.checkUser();
 
         app.restAPI = restAPI;
         app.$log = $log;
