@@ -1,12 +1,28 @@
 /*4th popup filter 爱推荐*/
 /*sub menu*/
-.filter-submenu{
+.filter-submenu {
     position: absolute;
     width: 25%;
     border: 1px solid gray;
-    bottom: 50px;
-}
-.filter-submenu:after{
-    content:'';
+    bottom: 58px;
+    background: #2F3541;
 
+}
+
+.filter-submenu:after {
+    content: ' ';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    margin-left: -10px;
+    border: 10px solid;
+    border-color: transparent;
+    border-top-color: #2F3541;
+}
+
+.filter-submenu .btn {
+    padding: 10px;
+}
+.filter-submenu .btn:hover{
+    background: #666;
 }

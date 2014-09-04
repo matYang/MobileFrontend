@@ -7,6 +7,7 @@
     </div>
     <ion-content class="has-header has-footer" has-bouncing="true" overflow-scroll="false">
         <div class="list">
+            <div ng-show="loading" class="padding text-center">加载中...</div>
             <a class="item item-thumbnail" ng-repeat="c in courses" ng-href="#/courses/{{ c.id }}">
                 <img ng-src="{{ c.logoUrl }}" alt="pic"/>
                 <span class="title">{{c.instName}}</span>
@@ -22,7 +23,6 @@
                     {{c.startDate| date:'yyyy-M.d'}}<span ng-if="c.finishDate">到{{c.finishDate| date:'yyyy-M.d'}}</span>
                     </span>
                     <span ng-if="!c.startUponArrival">{{c.regPhone}}</span>
-
                 </p>
                 <p>上课地址:{{c.address}}</p>
             </a>
