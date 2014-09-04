@@ -14,7 +14,7 @@ appControllers.controller('courseListCtrl',
         var doRefresh = $scope.doRefresh = function () {
             $scope.loading = true;
             app.$scroll.resize();
-            app.$scroll.scrollTop(true);
+            app.$scroll.scrollTop(false);
             var filter = angular.copy($scope.filter);
             //格式化filter条件的值 开课日期startDate 上课时间schoolTime
             if(filter.hasOwnProperty('startDate')){
