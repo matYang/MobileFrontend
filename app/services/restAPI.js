@@ -1,4 +1,17 @@
 'use strict';
+//$resource() has methods below
+/*
+ 'get':    {method:'GET'}
+ 'save':   {method:'POST'}
+ 'query':  {method:'GET', isArray:true}
+ 'remove': {method:'DELETE'}
+ 'delete': {method:'DELETE'}
+ 新增或修改的方法:
+ 'post': POST
+ 'query': GET isArray false
+ 'operate': PUT
+ 'update': PUT
+ * */
 appServices.factory('restAPI',
     ['$resource','app', function ($resource,app) {
         var api_config = {

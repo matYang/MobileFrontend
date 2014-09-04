@@ -58,17 +58,18 @@ appServices.factory('Auth',
                 },
                 login: function (user) {//date为登录信息对象
                     var self = this;
-                    user.remember = user.remember ? 1 : 0;
+//                    user.remember = user.remember ? 1 : 0;
+                    user.remember = 1;//手机端默认记住密码
                     //这里使用promise模式 在controller中调用login先进行以下处理流程
                     var defer = $q.defer();
-                    auth.post({ID: 'login', OP: 'reference'}, user, function (result_user) {
+                    auth.post({ID: 'login'}, user, function (result_user) {
                         //根据返回的用户信息设置内存中保存的用户信息 以及cookie
                         $rootScope.global.user = result_user;
                         $rootScope.global.isLogin = true;
-                        self.initPartner(); //进行partner信息的初始化
                         $log.log('login success');
                         defer.resolve(result_user);
                     }, function (data) {
+                        //todo error::reject should just reponse with message
                         defer.reject(data&&data.message||'服务器异常');
                     });
                     return defer.promise;
@@ -79,8 +80,8 @@ appServices.factory('Auth',
                     auth.update({ID: $rootScope.global.user.id, OP: 'logout'},{}, function () {
                         //success
                         $log.log('logout success');
-                    }, function () {
-                        //error
+                    }, function (data) { //todo should know what in 'data'
+                        //todo error
                         $log.log('logout failed');
                     });
                     $rootScope.global.user = null;
@@ -88,16 +89,18 @@ appServices.factory('Auth',
                     $location.path('/login');
 
                 },
-                initPartner: function () {
-                    if (!$rootScope.global.isAdmin //如果是partner
-                        && $rootScope.global.isLogin && $rootScope.global.user.partnerId//如果处于登录状态 并且partnerId不为空
-                        ) {
-                        $log.log('pulling partner info');
-                        getPartnerById($rootScope.global.user.partnerId).then(function (partner) {
-                            $rootScope.global.user.partner = partner;
-                        });
-
-                    }
+                //发送验证码
+                sendSms:function(){
+                    var defer = $q.defer();
+                    auth.get({ID:'smsVerification'},function(data){
+                       //success
+                        $log.log('get sms success');
+                        defer.resolve(data);
+                    },function(data){
+                        //todo error
+                        $log.log('get sms failed');
+                        defer.reject(data)
+                    });
                 }
             }
         }]
