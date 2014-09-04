@@ -1,25 +1,33 @@
 'use strict';
 appControllers.controller('courseListCtrl',
-    ['$scope', '$rootScope', '$ionicModal', 'app', 'OPTIONS', function ($scope, $rootScope, $ionicModal, app, OPTIONS) {
+    ['$scope', '$rootScope', '$ionicModal', 'app', function ($scope, $rootScope, $ionicModal, app) {
         var Courses = app.restAPI.courses;
         var pageView = app.pageService.courses;
+        $scope.options = app.options;
 
         $scope.page = pageView.page;
         $scope.filter = pageView.filter;
         //save tmp choosed filter options until confirmed
         $scope.filter_tmp = angular.copy($rootScope.filter);
-        //不更改引用的情况下清空筛选条件
-        var clearFilter = function () {
-            angular.each($scope.filter, function (v, k) {
-                $scope[k] = undefined;
-            })
-        };
-
 
         //刷新
         var doRefresh = $scope.doRefresh = function () {
             $scope.loading = true;
-            Courses.get(angular.extend({}, $rootScope.filter, $scope.page)).$promise
+            var filter = angular.copy($scope.filter);
+            //格式化filter条件的值 开课日期startDate 上课时间schoolTime
+            if(filter.hasOwnProperty('startDate')){
+                //todo 格式化 开课日期startDate 当月 下月 下下月
+
+            }
+            if(filter.hasOwnProperty('schoolTime')){
+                var value = filter['schoolTime'].split('_');
+                filter.schoolTimeWeek = value[0] == '' ? undefined : value[0];
+                filter.schoolTimeDay = value[1] == '' ? undefined : value[1];
+                delete filter['schoolTime']
+            }
+
+
+            Courses.get(angular.extend({}, filter, $scope.page)).$promise
                 .then(function (data) {
                     $scope.courses = data.data;
                     $scope.page.start = data.start;
@@ -31,9 +39,11 @@ appControllers.controller('courseListCtrl',
                     $scope.loading = false;
                 });
         };
-        //搜索 清空删选条件
+        //搜索 清空分页
         var doSearch = function () {
-            clearFilter();
+            $scope.page.start = app.default_page.start;
+            $scope.page.count = app.default_page.count;
+            $scope.page.total = app.default_page.total;
             doRefresh();
         };
         $scope.prePage = function () {
@@ -54,24 +64,24 @@ appControllers.controller('courseListCtrl',
         //filter part
         //this part can also isolate from this file
         // but will use 'broadcast' and 'on' to notify this controller which one user chooses
-        $scope.options = {//init filter options
-            address: OPTIONS.address,
-            start_time: OPTIONS.start_time,
-            on_time: OPTIONS.on_time
-        };
+//        $scope.options = {//init filter options
+//            address: OPTIONS.address,
+//            startTime: OPTIONS.start_time,
+//            schoolTime: OPTIONS.on_time
+//        };
 
-        /*todo 拉取选项列表*/
-        var init_options = function () {
-            //init options of item category and address
-            //todo it better to use promise chain
-            if (!$scope.options.items) {
-                //todo get the item options from backend
-            }
-            if (!$scope.options.address) {
-                //todo get the address options from backend
-            }
-        };
-        init_options();
+        /*todo 拉取选项列表 培训类目getCategory以及上课地点getLocation */
+//        var init_options = function () {
+//            //init options of item category and address
+//            //todo it better to use promise chain
+//            if (!$scope.options) {
+//                //todo get the item options from backend
+//            }
+//            if (!$scope.options) {
+//                //todo get the address options from backend
+//            }
+//        };
+//        init_options();
 
 
         //1st 培训类目筛选弹出框
@@ -107,9 +117,26 @@ appControllers.controller('courseListCtrl',
                 $scope.filterTimeModal = modal;
                 $scope.openTimeFilter = function () {
                     $scope.modal = $scope.filterTimeModal;
-                    $scope.filter_tmp = angular.copy($scope.filter);
+                    $scope.filter_tmp = angular.copy($scope.filter);//should init when open
                     $scope.pop = false;
                     $scope.filterTimeModal.show();
+                    $scope.modal.chooseSchoolTime = function (value) {
+
+                    };
+                    $scope.modal.chooseStartTime = function (value) {
+                        var start,finish;
+                        switch (value) {
+                            //todo get start and finish time here
+                            case 0:
+                                break;
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                        }
+                        $scope.startDateStart = start;
+                        $scope.startDateEnd = finish;
+                    }
                 };
             });
 

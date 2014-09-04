@@ -1,41 +1,20 @@
 'use strict';
-//time filter modal options
-app.value('OPTIONS', {
-        address: [//上课地点
-            {
-                label: '南京市',
-                value: 'nanjing',
-                sub: [
-                    {label: '玄武区', value: '11'},
-                    {label: '雨花区', value: '12'},
-                    {label: '秦淮区', value: '13'}
-                ]
-            },
-            {
-                label: '苏州',
-                value: 'suzhou',
-                sub: [
-                    {label: '1区', value: '21'},
-                    {label: '2区', value: '22'},
-                    {label: '3区', value: '23'}
-                ]
-            }
-
+app.value('options', {
+        schoolTime: [
+            {label: '不限', value: null},
+            {label: '白天', value: '_3'},
+            {label: '晚上', value: '_4'},
+            {label: '平时白天', value: '1_3'},
+            {label: '平时白天', value: '1_4'},
+            {label: '周末白天', value: '2_3'},
+            {label: '周末白天', value: '2_4'}
         ],
-        start_time: [//开课时间
-            {label: '不限', value: undefined},
-            {label: '当月', value: 'this month'},
-            {label: '下月', value: 'next month'},
-            {label: '下下月', value: 'nnext month'}
-        ],
-        on_time: [//上课时间
-            {label: '不限', value: undefined},
-            {label: '平日上午', value: '0'},
-            {label: '平日下午', value: '1'},
-            {label: '平日晚上', value: '2'},
-            {label: '周末上午', value: '3'},
-            {label: '周末下午', value: '4'},
-            {label: '周末晚上', value: '5'}
+        startDate: [
+            {label: '不限', value: null},
+            {label: '当月', value: 0},
+            {label: '下月', value: 1},
+            {label: '下下月', value: 2}
         ]
+
     }
 );
