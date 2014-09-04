@@ -1,6 +1,6 @@
 'use strict';
 app.run(
-    ['app', '$rootScope', 'restAPI', '$log', 'Auth', '$state', function (app, $rootScope, restAPI, $log, Auth, $state) {
+    ['app', '$rootScope', 'restAPI', '$log', 'Auth', '$state', 'pageService', function (app, $rootScope, restAPI, $log, Auth, $state, pageService) {
         if (app.test_mode) {
             $log.info('RUN IN TEST MODE');
         }
@@ -15,12 +15,12 @@ app.run(
             show: false
         };
         $rootScope.filter_choosed = {
-            item: '',//培训类目
-            address: '',//上课地点
-            start_time: '',//开课时间
-            on_time: '',//上课时间
-            order_field: '',//排序字段
-            order_type: ''//排序方式
+            item: undefined,//培训类目
+            address: undefined,//上课地点
+            start_time: undefined,//开课时间
+            on_time: undefined,//上课时间
+            order_field: undefined,//排序字段
+            order_type: undefined//排序方式
         };
 
 //        Auth.checkUser();
@@ -29,5 +29,6 @@ app.run(
         app.$log = $log;
         app.$rootScope = $rootScope;
         app.$state = $state;
+        app.pageService = pageService;
     }]
 );

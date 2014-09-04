@@ -6,6 +6,7 @@ var app = angular.module('app', [
     'ngResource',
     'ionic',
 
+    'appRoutes',
     'appServices',
     'appControllers',
     'appDirectives',
