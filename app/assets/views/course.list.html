@@ -25,12 +25,12 @@
                 </p>
                 <p>上课地址:{{c.address}}</p>
             </a>
-            <div ng-if="courses!=''" class="page">
+            <div ng-if="courses!=''" class="page text-center">
             <div ng-click="prePage()" ng-if="page.start >= page.count"
-            class="ion-ios7-arrow-left icon-left button button-clear button-dark">上一页
+            class="ion-ios7-arrow-left icon-left button button-outline button-dark">上一页
             </div>
             <div ng-click="nexPage()" ng-if="page.start + page.count < page.total"
-            class="ion-ios7-arrow-right icon-right button button-clear button-dark">下一页
+            class="ion-ios7-arrow-right icon-right button button-outline button-dark">下一页
             </div>
             </div>
         </div>

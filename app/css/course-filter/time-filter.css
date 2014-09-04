@@ -7,9 +7,20 @@
     /*background-color: #ffffff;}*/
 
 /*control radio-item width*/
-.item-cols4{
+.modal-filter-time .item-cols4{
     overflow: hidden;}
-    .item-cols4 .item-radio{
+    .modal-filter-time .item-cols4 .item-radio{
         text-align: center;
         width: 25%;
         float: left;}
+
+.modal-filter-time label{
+    display: block;
+    padding: 10px 0;
+    font-size: 18px;
+    color:#333;
+}
+.modal-filter-time .item-radio{
+    font-size: 14px;
+    padding: 5px 0;
+}

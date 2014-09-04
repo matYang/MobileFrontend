@@ -67,7 +67,7 @@ appServices.factory('Auth',
                     user.remember = 1;//手机端默认记住密码
                     //这里使用promise模式 在controller中调用login先进行以下处理流程
                     var defer = $q.defer();
-                    auth.post({ID: 'login'}, user, function (result_user) {
+                    auth.post({ID: 'login',OP:'phone'}, user, function (result_user) {
                         //根据返回的用户信息设置内存中保存的用户信息 以及cookie
                         $rootScope.global.user = result_user;
                         $rootScope.global.isLogin = true;
