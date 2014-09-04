@@ -41,4 +41,4 @@ appRoutes.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $l
 
     $urlRouterProvider.otherwise("/register");
 //        $locationProvider.html5Mode(true).hashPrefix('!');//remove '#' but all href should be adjusted
-})
+});
