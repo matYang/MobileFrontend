@@ -1,16 +1,23 @@
 <ion-view id="registerPage" title="">
     <div class="bar bar-header">
-        <button nav-clear class="button button-clear" ui-sref="courseList">返回首页</button>
+        <button nav-clear class="button button-clear" ui-sref="courseList">首页</button>
         <button click-refresh  class="button button-clear">刷新</button>
         <div class="h1 title">绑定学校，更多专项折扣</div>
     </div>
     <ion-content class="has-header" has-bouncing="false" overflow-scroll="false">
         <div class="list">
             <div class="padding"></div>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">选择学校</span>
-                <input type="text" placeholder="">
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    选择学校
+                </div>
+                <select>
+                    <option>学校1</option>
+                    <option selected>学校2</option>
+                    <option>学校3</option>
+                </select>
             </label>
+
             <div class="padding">
                 <button class="button button-block button-positive" ng-click="submitComplete()">立刻绑定</button>
             </div>
