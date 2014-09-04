@@ -4,23 +4,33 @@ app.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locatio
 //    $interpolateProvider.endSymbol('%}');
 
     $stateProvider
+        //用户登录
         .state('login', {
             url: '/login',
             templateUrl: 'views/login.html',
             controller: 'loginCtrl'
         })
+        //用户注册
         .state('register', {
             url: '/register',
             templateUrl: 'views/register.html',
             controller: 'registerCtrl'
         })
+        //用户完善信息
+        .state('complete', {
+            url: '/complete',
+            templateUrl: 'views/complete.html',
+            controller: 'completeCtrl'
+        })
+        //课程列表
         .state('course-list', {
-            url: '/course',
+            url: '/courses',
             templateUrl: 'views/course.list.html',
             controller: 'courseListCtrl'
         })
+        //课程详情
         .state('course-detail', {
-            url: '/course/:id',
+            url: '/courses/:id',
             templateUrl: 'views/course.detail.html',
             controller: 'courseDetailCtrl'
         });
