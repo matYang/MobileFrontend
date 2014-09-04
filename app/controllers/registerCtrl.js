@@ -3,4 +3,6 @@
  */
 app.controller('registerCtrl', ['app', function (app) {
     $scope.title = "注册"
+
+
 }]);
