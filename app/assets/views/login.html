@@ -1,10 +1,22 @@
 <ion-view id="course-list" title="">
     <div class="bar bar-header">
-        <button nav-clear class="button button-clear" ui-sref="register">首页</button>
+        <button nav-clear class="button button-clear" ui-sref="courseList">首页</button>
         <div class="h1 title">会员登录</div>
-        <button nav-clear class="button button-clear button-positive" ui-sref="login">注册</button>
+        <button nav-clear class="button button-clear button-positive" ui-sref="register">注册</button>
     </div>
     <ion-content class="has-header has-footer" has-bouncing="false" overflow-scroll="false">
-
+        <div class="list">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">手机号/用户名</span>
+                <input type="text" ng-model="u.accountIdentifier" placeholder="">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">密码</span>
+                <input type="text" ng-model="u.password" placeholder="6到20位">
+            </label>
+            <div class="padding">
+                <button class="button button-block button-positive" ng-click="submitLogin(u)">登&nbsp;&nbsp;录</button>
+            </div>
+        </div>
     </ion-content>
 </ion-view>

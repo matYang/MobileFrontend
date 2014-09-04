@@ -1,8 +1,8 @@
 'use strict';
 appControllers.controller('courseListCtrl',
-    ['$scope', '$rootScope', '$ionicModal', 'restAPI', 'OPTIONS', function ($scope, $rootScope, $ionicModal, restAPI, OPTIONS) {
+    ['$scope', '$rootScope', '$ionicModal', 'app', 'OPTIONS', function ($scope, $rootScope, $ionicModal, app, OPTIONS) {
         $scope.title = 'course list page';
-        var Courses = restAPI.courses;
+        var Courses = app.restAPI.courses;
         // 课程id  班级图片 课程名 班级人数 价格 开课时间 上课市时间 地区 其它优惠信息
         //todo that should be cached
         $rootScope.page = {

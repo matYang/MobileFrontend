@@ -1,6 +1,6 @@
 'use strict';
 app.run(
-    ['app', '$rootScope', 'restAPI','$log', function (app, $rootScope, restAPI,$log) {
+    ['app', '$rootScope', 'restAPI', '$log', '$state', function (app, $rootScope, restAPI, $log, $state) {
         if (app.test_mode) {
             $log.info('RUN IN TEST MODE');
         }
@@ -21,5 +21,6 @@ app.run(
         app.restAPI = restAPI;
         app.$log = $log;
         app.$rootScope = $rootScope;
+        app.$state = $state;
     }]
 );

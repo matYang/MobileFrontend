@@ -20,7 +20,7 @@ appServices.factory('restAPI',
                 //[0] is the fake api,[1] is the real api
                 //RO--role ID--id OP--operate
                 // Example request api: /api/v2/login /api/v2/login
-                'auth': ['/data/user.json?:ID:OP', '/user/:ID/:OP'],
+                'user': ['/data/user.json?:ID:OP', '/user/:ID/:OP'],
                 'courses': ['/data/courses:ID.json', '/course/:ID']
             }
         };
@@ -50,7 +50,7 @@ appServices.factory('restAPI',
         };
 
         return {
-            'auth': resource_maker('auth'),
+            'user': resource_maker('user'),
             'courses': resource_maker('courses')
         };
     }]

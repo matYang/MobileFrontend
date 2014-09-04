@@ -23,20 +23,20 @@ app.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locatio
             controller: 'completeCtrl'
         })
         //课程列表
-        .state('course-list', {
+        .state('courseList', {
             url: '/courses',
             templateUrl: 'views/course.list.html',
             controller: 'courseListCtrl'
         })
         //课程详情
-        .state('course-detail', {
+        .state('courseDetail', {
             url: '/courses/:id',
             templateUrl: 'views/course.detail.html',
             controller: 'courseDetailCtrl'
         });
 
 
-    $urlRouterProvider.otherwise("/course");
+    $urlRouterProvider.otherwise("/courses");
 //        $locationProvider.html5Mode(true).hashPrefix('!');//remove '#' but all href should be adjusted
 }).constant('app', { //constant 'app' assemble things like restAPI and configs
     version: 'v2',

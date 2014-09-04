@@ -1,8 +1,8 @@
 'use strict';
 appServices.factory('Auth',
-    ['$rootScope', 'getPartnerById', 'restAPI', '$q', '$location', '$log', 'app',
-        function ($rootScope, getPartnerById, restAPI, $q, $location, $log, app) {
-            var auth = restAPI.auth;
+    ['$rootScope', 'restAPI', '$q', '$location', '$log', 'app',
+        function ($rootScope, restAPI, $q, $location, $log, app) {
+            var auth = restAPI.user;
             return {
                 checkUser: function () {
                     var self = this;
@@ -70,14 +70,14 @@ appServices.factory('Auth',
                         defer.resolve(result_user);
                     }, function (data) {
                         //todo error::reject should just reponse with message
-                        defer.reject(data&&data.message||'服务器异常');
+                        defer.reject(data && data.message || '服务器异常');
                     });
                     return defer.promise;
                 },
                 logout: function () {
                     var self = this;
                     //发送用户注销请求
-                    auth.update({ID: $rootScope.global.user.id, OP: 'logout'},{}, function () {
+                    auth.update({ID: $rootScope.global.user.id, OP: 'logout'}, {}, function () {
                         //success
                         $log.log('logout success');
                     }, function (data) { //todo should know what in 'data'
@@ -90,13 +90,13 @@ appServices.factory('Auth',
 
                 },
                 //发送验证码
-                sendSms:function(){
+                sendSms: function () {
                     var defer = $q.defer();
-                    auth.get({ID:'smsVerification'},function(data){
-                       //success
+                    auth.get({ID: 'smsVerification'}, function (data) {
+                        //success
                         $log.log('get sms success');
                         defer.resolve(data);
-                    },function(data){
+                    }, function (data) {
                         //todo error
                         $log.log('get sms failed');
                         defer.reject(data)
