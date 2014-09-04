@@ -8,7 +8,7 @@ app.run(
         $rootScope.$state = $state;
         $rootScope.global = {
             user: null,
-            isLogin: false,
+            isLogin: false
         };
         //global loading
         $rootScope.loading = {

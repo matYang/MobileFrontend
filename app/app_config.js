@@ -36,7 +36,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locatio
         });
 
 
-    $urlRouterProvider.otherwise("/courses");
+    $urlRouterProvider.otherwise("/register");
 //        $locationProvider.html5Mode(true).hashPrefix('!');//remove '#' but all href should be adjusted
 }).constant('app', { //constant 'app' assemble things like restAPI and configs
     version: 'v2',
