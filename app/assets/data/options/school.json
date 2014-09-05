@@ -1,0 +1,58 @@
+{"errorCode": 0, "start": 0, "count": 0, "total": 0, "data": [
+    {
+        "errorCode": 0,
+        "name": "南京大学",
+        "children": [],
+        "id": 21,
+        "enabled": 1,
+        "locationId": 2
+    },
+    {
+        "errorCode": 0,
+        "name": "南京工程学院",
+        "children": [],
+        "id": 29,
+        "enabled": 1,
+        "locationId": 2
+    },
+    {
+        "errorCode": 0,
+        "name": "南京师范大学",
+        "children": [],
+        "id": 32,
+        "enabled": 1,
+        "locationId": 2
+    },
+    {
+        "errorCode": 0,
+        "name": "南京理工大学",
+        "children": [],
+        "id": 43,
+        "enabled": 1,
+        "locationId": 2
+    },
+    {
+        "errorCode": 0,
+        "name": "南京航空航天大学",
+        "children": [],
+        "id": 47,
+        "enabled": 1,
+        "locationId": 2
+    },
+    {
+        "errorCode": 0,
+        "name": "南京财经大学",
+        "children": [],
+        "id": 51,
+        "enabled": 1,
+        "locationId": 2
+    },
+    {
+        "errorCode": 0,
+        "name": "南京邮电大学",
+        "children": [],
+        "id": 52,
+        "enabled": 1,
+        "locationId": 2
+    }
+]}

@@ -1,20 +1,196 @@
-[//上课地点
+{"errorCode": 0, "start": 0, "count": 0, "total": 0, "data": [
     {
-        "label": "南京市",
-        "value": "nanjing",
-        "sub": [
-            {"label": "玄武区", "value": "11"},
-            {"label": "雨花区", "value": "12"},
-            {"label": "秦淮区", "value": "13"}
-        ]
-    },
-    {
-        "label": "苏州",
-        "value": "suzhou",
-        "sub": [
-            {"label": "1区", "value": "21"},
-            {"label": "2区", "value": "22"},
-            {"label": "3区", "value": "23"}
-        ]
+        "errorCode": 0,
+        "name": "江苏",
+        "value": "00",
+        "children": [
+            {
+                "errorCode": 0,
+                "name": "南京",
+                "value": "0000",
+                "children": [
+                    {
+                        "errorCode": 0,
+                        "name": "玄武",
+                        "value": "000000",
+                        "children": [],
+                        "id": 3,
+                        "enabled": 0
+                    },
+                    {
+                        "errorCode": 0,
+                        "name": "秦淮",
+                        "value": "000001",
+                        "children": [],
+                        "id": 4,
+                        "enabled": 0
+                    },
+                    {
+                        "errorCode": 0,
+                        "name": "建邺",
+                        "value": "000002",
+                        "children": [],
+                        "id": 5,
+                        "enabled": 0
+                    },
+                    {
+                        "errorCode": 0,
+                        "name": "鼓楼",
+                        "value": "000003",
+                        "children": [],
+                        "id": 6,
+                        "enabled": 0
+                    },
+                    {
+                        "errorCode": 0,
+                        "name": "浦口",
+                        "value": "000004",
+                        "children": [],
+                        "id": 7,
+                        "enabled": 0
+                    },
+                    {
+                        "errorCode": 0,
+                        "name": "栖霞",
+                        "value": "000005",
+                        "children": [],
+                        "id": 8,
+                        "enabled": 0
+                    },
+                    {
+                        "errorCode": 0,
+                        "name": "雨花",
+                        "value": "000006",
+                        "children": [],
+                        "id": 9,
+                        "enabled": 0
+                    },
+                    {
+                        "errorCode": 0,
+                        "name": "江宁",
+                        "value": "000007",
+                        "children": [],
+                        "id": 10,
+                        "enabled": 0
+                    },
+                    {
+                        "errorCode": 0,
+                        "name": "待定",
+                        "value": "000008",
+                        "children": [],
+                        "id": 36,
+                        "enabled": 0
+                    },
+                    {
+                        "errorCode": 0,
+                        "name": "在线课程",
+                        "value": "000009",
+                        "children": [],
+                        "id": 37,
+                        "enabled": 0
+                    }
+                ],
+                "id": 2,
+                "enabled": 0
+            },
+            {
+                "errorCode": 0,
+                "name": "南通",
+                "value": "0001",
+                "children": [],
+                "id": 24,
+                "enabled": 0
+            },
+            {
+                "errorCode": 0,
+                "name": "宿迁",
+                "value": "0002",
+                "children": [],
+                "id": 25,
+                "enabled": 0
+            },
+            {
+                "errorCode": 0,
+                "name": "常州",
+                "value": "0003",
+                "children": [],
+                "id": 26,
+                "enabled": 0
+            },
+            {
+                "errorCode": 0,
+                "name": "徐州",
+                "value": "0004",
+                "children": [],
+                "id": 27,
+                "enabled": 0
+            },
+            {
+                "errorCode": 0,
+                "name": "扬州",
+                "value": "0005",
+                "children": [],
+                "id": 28,
+                "enabled": 0
+            },
+            {
+                "errorCode": 0,
+                "name": "无锡",
+                "value": "0006",
+                "children": [],
+                "id": 29,
+                "enabled": 0
+            },
+            {
+                "errorCode": 0,
+                "name": "泰州",
+                "value": "0007",
+                "children": [],
+                "id": 30,
+                "enabled": 0
+            },
+            {
+                "errorCode": 0,
+                "name": "淮安",
+                "value": "0008",
+                "children": [],
+                "id": 31,
+                "enabled": 0
+            },
+            {
+                "errorCode": 0,
+                "name": "盐城",
+                "value": "0009",
+                "children": [],
+                "id": 32,
+                "enabled": 0
+            },
+            {
+                "errorCode": 0,
+                "name": "苏州",
+                "value": "0010",
+                "children": [],
+                "id": 33,
+                "enabled": 0
+            },
+            {
+                "errorCode": 0,
+                "name": "连云港",
+                "value": "0011",
+                "children": [],
+                "id": 34,
+                "enabled": 0
+            },
+            {
+                "errorCode": 0,
+                "name": "镇江",
+                "value": "0012",
+                "children": [],
+                "id": 35,
+                "enabled": 0
+            }
+        ],
+        "id": 1,
+        "enabled": 0
     }
-]
+]}

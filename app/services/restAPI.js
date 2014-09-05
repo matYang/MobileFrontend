@@ -22,7 +22,10 @@ appServices.factory('restAPI',
                 //RO--role ID--id OP--operate
                 // Example request api: /api/v2/login /api/v2/login
                 'user': ['/data/user.json?:ID:OP', '/user/:ID/:OP'],
-                'courses': ['/data/courses:ID.json', '/course/:ID']
+                'courses': ['/data/courses:ID.json', '/course/:ID'],
+                'category': ['/data/options/category.json', '/general/category'],
+                'location': ['/data/options/location.json', '/general/location'],
+                'school': ['/data/options/school.json', '/general/school'],
             }
         };
         var prefix = api_config.api_name + api_config.version;
@@ -58,8 +61,20 @@ appServices.factory('restAPI',
         return {
             'user': resource_maker('user'),
             'courses': resource_maker('courses'),
-
             'makeResourceUrl': makeResourceUrl//资源的地址
         };
     }]
-);
+)
+    .factory('getSchool', ['$resource', 'app',
+        function ($resource, app) {
+
+        }
+    ]).factory('getCategory', ['$resource', 'app',
+        function ($resource, app) {
+
+        }
+    ]).factory('getSchool', ['$resource', 'app',
+        function ($resource, app) {
+
+        }
+    ]);

@@ -85,7 +85,6 @@ input:focus{
 .pull-left { float: left; }
 .pull-right { float: right; }
 
-.inline-block{ display: inline-block; }
 /*字体 背景 边框颜色*/
 .border-primary{ border: 1px solid #128d56; }
 

@@ -24,7 +24,7 @@ app.run(
                 order_type: undefined//排序方式
             };
 
-//        Auth.checkUser();
+            Auth.checkUser();
 
             app.restAPI = restAPI;
             app.$log = $log;
@@ -37,4 +37,3 @@ app.run(
         }
     ]
 )
-;
