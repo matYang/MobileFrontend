@@ -6,28 +6,6 @@ appServices.factory('Auth',
             return {
                 checkUser: function () {
                     var self = this;
-//                    var defer = $q.defer();
-                    //检测用户的状态（从内存中的用户信息以及调用findSession的） user的初始值为null
-//                    if (!$rootScope.global.user) {
-//                        auth.get({OP: 'findSession'}, function (user) {
-//                            if (user && user.id >= 0) {
-//                                $rootScope.global.user = user;
-//                                $rootScope.global.isLogin = true;
-//                                $log.log('checking user:session found');
-//                            }
-//                            $log.log('checking user:session not found');
-//                            setTimeout(function(){
-//                                defer.resolve(true);
-//                            },1000);
-//
-//                        });
-//                    } else {
-//                        //已登录
-//                        defer.resolve(true);
-//                        $log.log('checking user:logined');
-//                    }
-//                    return defer.promise;
-
                     //sync method to check user
                     var xhr;
                     if (window.XMLHttpRequest) {
@@ -46,9 +24,9 @@ appServices.factory('Auth',
                     xhr.send();
                     var user;
 
-                    try{
+                    try {
                         user = JSON.parse(xhr.responseText);
-                    }catch(e){
+                    } catch (e) {
                         $log.log('checking user:parse error--no session');
                     }
 
@@ -67,7 +45,7 @@ appServices.factory('Auth',
                     user.remember = 1;//手机端默认记住密码
                     //这里使用promise模式 在controller中调用login先进行以下处理流程
                     var defer = $q.defer();
-                    auth.post({ID: 'login',OP:'phone'}, user, function (result_user) {
+                    auth.post({ID: 'login', OP: 'phone'}, user, function (result_user) {
                         //根据返回的用户信息设置内存中保存的用户信息 以及cookie
                         $rootScope.global.user = result_user;
                         $rootScope.global.isLogin = true;
@@ -75,7 +53,7 @@ appServices.factory('Auth',
                         defer.resolve(result_user);
                     }, function (data) {
                         //todo error::reject should just reponse with message
-                        defer.reject(data && data.message || '服务器异常');
+                        defer.reject(data && data.message || app.errorMessage);
                     });
                     return defer.promise;
                 },
@@ -84,14 +62,13 @@ appServices.factory('Auth',
                     //这里使用promise模式 在controller中调用login先进行以下处理流程
                     var defer = $q.defer();
                     auth.post({ID: 'register'}, user, function (result_user) {
+                        $log.log('register success');
                         //根据返回的用户信息设置内存中保存的用户信息 以及cookie
                         $rootScope.global.user = result_user;
                         $rootScope.global.isLogin = true;
-                        $log.log('register and then login success');
                         defer.resolve(result_user);
-                    }, function (data) {
-                        //todo error::reject should just reponse with message
-                        defer.reject(data && data.message || '服务器异常');
+                    }, function (response) {
+                        defer.reject(response.data || app.errorMessage)
                     });
                     return defer.promise;
                 },
@@ -99,11 +76,9 @@ appServices.factory('Auth',
                     var self = this;
                     //发送用户注销请求
                     auth.update({ID: $rootScope.global.user.id, OP: 'logout'}, {}, function () {
-                        //success
                         $log.log('logout success');
-                    }, function (data) { //todo should know what in 'data'
-                        //todo error
-                        $log.log('logout failed');
+                    }, function (response) {
+                        defer.reject(response.data || app.errorMessage)
                     });
                     $rootScope.global.user = null;
                     $rootScope.global.isLogin = false;
@@ -113,14 +88,11 @@ appServices.factory('Auth',
                 //发送验证码
                 sendSms: function (phone) {
                     var defer = $q.defer();
-                    auth.get({ID: 'smsVerification',phone:phone}, function (data) {
-                        //success
+                    auth.get({ID: 'smsVerification', phone: phone}, function (data) {
                         $log.log('get sms success');
                         defer.resolve(data);
-                    }, function (data) {
-                        //todo error
-                        $log.log('get sms failed');
-                        defer.reject(data)
+                    }, function (response) {
+                        defer.reject(response.data || app.errorMessage)
                     });
                     return defer.promise;
                 }

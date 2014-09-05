@@ -7,5 +7,6 @@ app.constant('app', { //constant 'app' assemble things like restAPI and configs
         start: 0,    // 起始记录
         count: 10,   //每页记录数
         total: 0    //记录总数
-    }
+    },
+    errorMessage:'服务器异常'
 });
