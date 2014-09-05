@@ -7,18 +7,12 @@
         <div class="list">
             <div class="padding-"></div>
             <label class="item item-input item-select">
-                <div class="input-label">
-                    选择学校
-                </div>
-                <select ng-options="">
-                    <option>学校1</option>
-                    <option selected>学校2</option>
-                    <option>学校3</option>
-                </select>
+                <div class="input-label">选择学校</div>
+                <select ng-model="schoolId" ng-options="s.id as s.name for s in school"></select>
             </label>
 
             <div class="padding">
-                <button class="button button-block button-positive" ng-click="submitComplete()">立刻绑定</button>
+                <button class="button button-block button-positive" ng-click="submitComplete(schoolId)">立刻绑定</button>
             </div>
             <div class="padding text-center">一起参与课程免单的抽奖活动吧~</div>
         </div>
