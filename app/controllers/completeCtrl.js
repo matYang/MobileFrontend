@@ -3,6 +3,11 @@
  */
 app.controller('completeCtrl', ['$scope', 'app', function ($scope, app) {
     var restAPI = app.restAPI.user;
+
+    app.getSchool().then(function (data) {
+        $scope.school = data.data;
+    });
+
     //提交完善的信息 学校信息
     $scope.submitComplete = function (schoolId) {
         var id = app.$rootScope.global.user && app.$rootScope.global.user.id;
@@ -16,7 +21,5 @@ app.controller('completeCtrl', ['$scope', 'app', function ($scope, app) {
         restAPI.update({ID: 'info'}, {id: id, schooleId: schoolId}, function () {
 
         })
-
     }
-
 }]);

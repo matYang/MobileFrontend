@@ -79,6 +79,22 @@ appServices.factory('Auth',
                     });
                     return defer.promise;
                 },
+                register: function (user) {//date为登录信息对象
+                    var self = this;
+                    //这里使用promise模式 在controller中调用login先进行以下处理流程
+                    var defer = $q.defer();
+                    auth.post({ID: 'register'}, user, function (result_user) {
+                        //根据返回的用户信息设置内存中保存的用户信息 以及cookie
+                        $rootScope.global.user = result_user;
+                        $rootScope.global.isLogin = true;
+                        $log.log('register and then login success');
+                        defer.resolve(result_user);
+                    }, function (data) {
+                        //todo error::reject should just reponse with message
+                        defer.reject(data && data.message || '服务器异常');
+                    });
+                    return defer.promise;
+                },
                 logout: function () {
                     var self = this;
                     //发送用户注销请求

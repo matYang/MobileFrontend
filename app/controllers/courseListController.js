@@ -70,30 +70,6 @@ appControllers.controller('courseListCtrl',
         };
         $scope.doRefresh();
 
-
-        //filter part
-        //this part can also isolate from this file
-        // but will use 'broadcast' and 'on' to notify this controller which one user chooses
-//        $scope.options = {//init filter options
-//            address: OPTIONS.address,
-//            startTime: OPTIONS.start_time,
-//            schoolTime: OPTIONS.on_time
-//        };
-
-        /*todo 拉取选项列表 培训类目getCategory以及上课地点getLocation */
-//        var init_options = function () {
-//            //init options of item category and address
-//            //todo it better to use promise chain
-//            if (!$scope.options) {
-//                //todo get the item options from backend
-//            }
-//            if (!$scope.options) {
-//                //todo get the address options from backend
-//            }
-//        };
-//        init_options();
-
-
         //1st 培训类目筛选弹出框
         $ionicModal.fromTemplateUrl('views/course-filter/course-filter-item.html',
             //to be a child scope of current scope
