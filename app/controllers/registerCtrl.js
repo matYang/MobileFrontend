@@ -43,8 +43,8 @@ app.controller('registerCtrl', ['$scope', 'app', 'Auth', function ($scope, app, 
                     console.log('can retry')
                 }
             }, 1000);
-        }, function () {
-            //error
+        }, function (data) {
+            app.alert(data.message&&'发送失败，请稍后再试');
             $scope.status = 3;
         });
 
