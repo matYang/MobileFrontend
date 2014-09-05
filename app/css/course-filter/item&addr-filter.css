@@ -20,6 +20,7 @@
             background-color: #ffffff;
             border-left: 3px solid #118D56;}
     .tabs-left .pane{
+        box-sizing: border-box;
         padding-left: 10px;
         padding-right: 10px;
         width: 80%;}
