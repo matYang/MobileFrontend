@@ -1,7 +1,8 @@
 'use strict';
 app.run(
     ['app', '$rootScope', 'restAPI', '$log', 'Auth', '$state', 'pageService', 'enums', 'options', '$ionicScrollDelegate',
-        function (app, $rootScope, restAPI, $log, Auth, $state, pageService, enums, options, $ionicScrollDelegate) {
+        'getLocation', 'getCategory', 'getSchool',
+        function (app, $rootScope, restAPI, $log, Auth, $state, pageService, enums, options, $ionicScrollDelegate, getLocation, getCategory, getSchool) {
             if (app.test_mode) {
                 $log.info('RUN IN TEST MODE');
             }
@@ -34,6 +35,10 @@ app.run(
             app.enums = enums;
             app.options = options;
             app.$scroll = $ionicScrollDelegate;
+
+            app.getLocation = getLocation;
+            app.getCategory = getCategory;
+            app.getSchool = getSchool;
         }
     ]
-)
+);

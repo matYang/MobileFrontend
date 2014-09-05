@@ -7,10 +7,10 @@
     </div>
     <ion-content class="has-header">
         <ion-tabs class="filter tabs-left">
-            <ion-tab title="{{d.label}}" ng-repeat="d in options.address">
-                <ion-radio ng-model="filter_tmp.address" ng-value="item.value"
-                           ng-repeat="item in d.sub" name="address" ng-click="confirm_filter()">
-                    {{ item.label}}
+            <ion-tab title="南京">
+                <ion-radio ng-model="filter_tmp.locationValue" ng-value="a.value"
+                           ng-repeat="a in location" name="locationValue" ng-click="confirm_filter()">
+                    {{ a.name}}
                 </ion-radio>
             </ion-tab>
         </ion-tabs>

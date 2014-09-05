@@ -10,6 +10,14 @@ appControllers.controller('courseListCtrl',
         //save tmp choosed filter options until confirmed
         $scope.filter_tmp = angular.copy($rootScope.filter);
 
+        //get options for filter modal
+        app.getCategory().then(function (data) {
+            $scope.category = data.data;
+        });
+        app.getLocation().then(function (data) {
+            $scope.location = data.data[0]&&data.data[0].children[0]&&data.data[0].children[0].children;
+        });
+
         //刷新
         var doRefresh = $scope.doRefresh = function () {
             $scope.loading = true;

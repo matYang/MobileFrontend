@@ -61,6 +61,10 @@ appServices.factory('restAPI',
         return {
             'user': resource_maker('user'),
             'courses': resource_maker('courses'),
+            'category': resource_maker('category'),
+            'location': resource_maker('location'),
+            'school': resource_maker('school'),
+
             'makeResourceUrl': makeResourceUrl//资源的地址
         };
     }]
