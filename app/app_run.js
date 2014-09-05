@@ -1,8 +1,8 @@
 'use strict';
 app.run(
     ['app', '$rootScope', 'restAPI', '$log', 'Auth', '$state', 'pageService', 'enums', 'options', '$ionicScrollDelegate',
-        'getLocation', 'getCategory', 'getSchool',
-        function (app, $rootScope, restAPI, $log, Auth, $state, pageService, enums, options, $ionicScrollDelegate, getLocation, getCategory, getSchool) {
+        'getLocation', 'getCategory', 'getSchool', '$timeout', '$interval',
+        function (app, $rootScope, restAPI, $log, Auth, $state, pageService, enums, options, $ionicScrollDelegate, getLocation, getCategory, getSchool, $timeout, $interval) {
             if (app.test_mode) {
                 $log.info('RUN IN TEST MODE');
             }
@@ -27,14 +27,19 @@ app.run(
 
             Auth.checkUser();
 
-            app.restAPI = restAPI;
+
             app.$log = $log;
+            app.$timeout = $timeout;
+            app.$interval = $interval;
             app.$rootScope = $rootScope;
             app.$state = $state;
+            app.$scroll = $ionicScrollDelegate;
+
+
             app.pageService = pageService;
             app.enums = enums;
             app.options = options;
-            app.$scroll = $ionicScrollDelegate;
+            app.restAPI = restAPI;
 
             app.getLocation = getLocation;
             app.getCategory = getCategory;
