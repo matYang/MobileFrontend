@@ -53,7 +53,7 @@ appServices.factory('Auth',
                         defer.resolve(result_user);
                     }, function (data) {
                         //todo error::reject should just reponse with message
-                        defer.reject(data && data.message || app.errorMessage);
+                        defer.reject(data.message);
                     });
                     return defer.promise;
                 },
@@ -68,7 +68,7 @@ appServices.factory('Auth',
                         $rootScope.global.isLogin = true;
                         defer.resolve(result_user);
                     }, function (response) {
-                        defer.reject(response.data || app.errorMessage)
+                        defer.reject(response.data)
                     });
                     return defer.promise;
                 },
@@ -78,7 +78,7 @@ appServices.factory('Auth',
                     auth.update({ID: $rootScope.global.user.id, OP: 'logout'}, {}, function () {
                         $log.log('logout success');
                     }, function (response) {
-                        defer.reject(response.data || app.errorMessage)
+                        defer.reject(response.data)
                     });
                     $rootScope.global.user = null;
                     $rootScope.global.isLogin = false;
@@ -92,7 +92,7 @@ appServices.factory('Auth',
                         $log.log('get sms success');
                         defer.resolve(data);
                     }, function (response) {
-                        defer.reject(response.data || app.errorMessage)
+                        defer.reject(response.data)
                     });
                     return defer.promise;
                 }
