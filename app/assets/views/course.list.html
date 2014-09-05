@@ -2,7 +2,8 @@
     <div class="bar bar-header">
         <button click-refresh  class="button button-clear">刷新</button>
         <div class="h1 title">爱上课</div>
-        <button nav-clear class="button button-clear button-positive" ui-sref="login">登录</button>
+        <button ng-if="!global.isLogin" nav-clear class="button button-clear button-positive" ui-sref="login">登录</button>
+        <button ng-if="global.isLogin" class="button button-clear button-positive">您好，爱会员</button>
     </div>
     <ion-content class="has-header has-footer" has-bouncing="true" overflow-scroll="false">
         <div class="list">
@@ -25,7 +26,6 @@
                 </p>
                 <p>上课地址:{{c.address}}</p>
             </a>
-            {{filter}}
             <div ng-if="courses!=''" class="page text-center">
             <div ng-click="prePage()" ng-if="page.start >= page.count"
             class="ion-ios7-arrow-left icon-left button button-outline button-dark">上一页
