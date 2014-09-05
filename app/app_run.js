@@ -1,8 +1,9 @@
 'use strict';
 app.run(
     ['app', '$rootScope', 'restAPI', '$log', 'Auth', '$state', 'pageService', 'enums', 'options', '$ionicScrollDelegate',
-        'getLocation', 'getCategory', 'getSchool', '$timeout', '$interval',
-        function (app, $rootScope, restAPI, $log, Auth, $state, pageService, enums, options, $ionicScrollDelegate, getLocation, getCategory, getSchool, $timeout, $interval) {
+        'getLocation', 'getCategory', 'getSchool', '$timeout', '$interval','$ionicPopup',
+        function (app, $rootScope, restAPI, $log, Auth, $state, pageService, enums, options,
+                  $ionicScrollDelegate, getLocation, getCategory, getSchool, $timeout, $interval,$ionicPopup) {
             if (app.test_mode) {
                 $log.info('RUN IN TEST MODE');
             }
@@ -44,6 +45,19 @@ app.run(
             app.getLocation = getLocation;
             app.getCategory = getCategory;
             app.getSchool = getSchool;
+
+            app.alert = function(title,message){
+                if(message == undefined){
+                    message = title;
+                    title = '';
+                }
+                return $ionicPopup.alert({
+                    title: title,
+                    template: message,
+                    okText:'好的',
+                    okType: ''
+                });
+            }
         }
     ]
 );

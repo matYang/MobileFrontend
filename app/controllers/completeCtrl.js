@@ -12,23 +12,24 @@ app.controller('completeCtrl', ['$scope', 'app', function ($scope, app) {
     $scope.submitComplete = function (schoolId) {
         if (!schoolId) {
             //todo 提醒用户未选择学校
-            alert('未选择学校');
+            app.alert('未选择学校');
             return
         }
         var id = app.$rootScope.global.user && app.$rootScope.global.user.id;
-        if (!id) {
-            //todo 提醒用户未进行登录 点击确定后进入登录页面
-            alert('尚未登录');
-//            return
+        if (!(id&&id>0)) {
+            var alertPopup = app.alert('您尚未登录');
+            alertPopup.then(function (res) {
+                app.$state.go('login')
+            });
+            return
         }
-
-        console.log('completing');
-        restAPI.update({ID: 'info'}, {id: id, schooleId: schoolId}, function () {
-            alert('success');
-            app.$state.go('courseList');
-        },function(){
-            //todo error message
-            alert('error')
+        restAPI.update({ID: 'info',OP:id}, {schooleId: schoolId}, function () {
+            var alertPopup = app.alert('绑定成功');
+            alertPopup.then(function (res) {
+                app.$state.go('courseList')
+            });
+        },function(data){
+            app.alert(data.message&&'绑定失败');
         })
     }
 }]);

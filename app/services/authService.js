@@ -111,9 +111,9 @@ appServices.factory('Auth',
 
                 },
                 //发送验证码
-                sendSms: function () {
+                sendSms: function (phone) {
                     var defer = $q.defer();
-                    auth.get({ID: 'smsVerification'}, function (data) {
+                    auth.get({ID: 'smsVerification'},{phone:phone}, function (data) {
                         //success
                         $log.log('get sms success');
                         defer.resolve(data);
@@ -122,6 +122,7 @@ appServices.factory('Auth',
                         $log.log('get sms failed');
                         defer.reject(data)
                     });
+                    return defer.promise;
                 }
             }
         }]

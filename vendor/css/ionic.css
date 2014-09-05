@@ -1215,8 +1215,10 @@ q:before, q:after, blockquote:before, blockquote:after {
       overflow: auto; }
 
 .popup-head {
-  padding: 15px 0px;
-  border-bottom: 1px solid #eee;
+  /*padding: 15px 0px;*/
+    /*Jet*/
+  padding: 10px 0px;
+  /*border-bottom: 1px solid #eee;*/
   text-align: center; }
 
 .popup-title {
@@ -1231,6 +1233,8 @@ q:before, q:after, blockquote:before, blockquote:after {
   font-size: 11px; }
 
 .popup-body {
+    /*Jet*/
+    text-align: center;
   padding: 10px; }
 
 .popup-buttons.row {

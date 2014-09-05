@@ -2,6 +2,8 @@
  * Created by jz on 2014/9/3.
  */
 app.controller('registerCtrl', ['$scope', 'app', 'Auth', function ($scope, app, Auth) {
+    //初始化user
+    $scope.u = {};
     //发送短信按钮的状态
     //todo 发送验证码
     //发送状态
@@ -14,53 +16,80 @@ app.controller('registerCtrl', ['$scope', 'app', 'Auth', function ($scope, app, 
     // 正在发送 发送成功(倒计时)  发送失败
     // 重新发送
     $scope.status = 0;
-    $scope.sendSms = function (e) {
+    $scope.sendSms = function (phone) {
+        //todo 验证手机号
+        if (!phone) {
+            // An alert dialog
+            app.alert('请输入手机号');
+            return
+        }
+        if (phone.length != 11 || isNaN(parseInt(phone, 10))) {
+            app.alert('手机号格式不正确');
+            return
+        }
+
         //仅1状态下不可点击
-        if($scope.status == 1)return;
-        console.log('send sms');
-        //success
-        $scope.status = 1;
-        $scope.count = 5;
-        var countdownPromise = app.$interval(function(){
-            console.log($scope.count -- );
-            if($scope.count <= 0 ){
-                app.$interval.cancel(countdownPromise);
-                $scope.status = 2;
-                console.log('can retry')
-            }
-        },1000);
-        //error
-//        $scope.status = 3;
+        if ($scope.status == 1)return;
+        console.log('start send sms');
+        Auth.sendSms(phone).then(function () {
+            //success
+            $scope.status = 1;
+            $scope.count = 120;
+            var countdownPromise = app.$interval(function () {
+                console.log($scope.count--);
+                if ($scope.count <= 0) {
+                    app.$interval.cancel(countdownPromise);
+                    $scope.status = 2;
+                    console.log('can retry')
+                }
+            }, 1000);
+        }, function () {
+            //error
+            $scope.status = 3;
+        });
 
 
-        //    $info.html("验证码已经发送至您的手机");
-//    var count_down = function (k) {
-//        if (k > 0) {
-//            setTimeout(function () {
-//                $button.val('重新发送(' + k + '秒)');
-//                count_down(k - 1);
-//            }, 1000)
-//        } else {
-//            $button.val('重新发送');
-//        }
-//    };
-//    count_down(120);
-//    $button.prop("disabled", true).css("background", "#999");
-//    setTimeout(function () {
-//        $button.prop("disabled", false).css("background", "");
-//    }, 120000);
     };
 
     //提交注册
     $scope.submitRegister = function (u) {
-        //todo validate the all values
+        //validate the all values
+        if (!u.phone) {
+            app.alert('请输入手机号');
+            return
+        }
+        if (u.phone.length != 11 || isNaN(parseInt(u.phone, 10))) {
+            alert('手机号格式不正确');
+            return
+        }
+        if (!u.password) {
+            app.alert('请输入密码');
+            return
+        }
+        if (u.password.length< 6 || u.password.length>20) {
+            app.alert('密码长度不正确');
+            return
+        }
+        //todo 提示输入邀请码 或者在页面加入说明
+//        if (!u.appliedInvitationCode) {
+//            app.alert('请输入邀请码');
+//            return
+//        }
+        if (!u.authCode) {
+            app.alert('请输入验证码');
+            return
+        }
 
         Auth.register(u).then(function () {
             console.log('registering');
-            app.$state.go('complete')
+            var alertPopup = app.alert('恭喜！注册成功');
+            alertPopup.then(function (res) {
+                console.log('register success');
+                app.$state.go('complete')
+            });
         }, function () {
             console.log('register error');
-            //todo error register error
+            app.alert(data.message&&'注册遇到问题，请稍后再试');
         });
     };
 
