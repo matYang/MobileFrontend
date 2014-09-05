@@ -16,20 +16,20 @@ app.controller('completeCtrl', ['$scope', 'app', function ($scope, app) {
             return
         }
         var id = app.$rootScope.global.user && app.$rootScope.global.user.id;
-        if (!(id&&id>0)) {
+        if (!(id && id > 0)) {
             var alertPopup = app.alert('您尚未登录');
             alertPopup.then(function (res) {
                 app.$state.go('login')
             });
             return
         }
-        restAPI.update({ID: 'info',OP:id}, {schooleId: schoolId}, function () {
+        restAPI.update({ID: 'info', OP: id}, {id: id, schooleId: schoolId}, function () {
             var alertPopup = app.alert('绑定成功');
             alertPopup.then(function (res) {
                 app.$state.go('courseList')
             });
-        },function(data){
-            app.alert(data.message&&'绑定失败');
+        }, function (data) {
+            app.alert(data.message && '绑定失败，请稍后再试');
         })
     }
 }]);
