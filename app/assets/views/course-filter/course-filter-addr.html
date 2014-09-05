@@ -8,6 +8,9 @@
     <ion-content class="has-header">
         <ion-tabs class="filter tabs-left">
             <ion-tab title="南京">
+                <ion-radio ng-model="filter_tmp.locationValue" ng-value="undefined" name="locationValue" ng-click="confirm_filter()">
+                   不限
+                </ion-radio>
                 <ion-radio ng-model="filter_tmp.locationValue" ng-value="a.value"
                            ng-repeat="a in location" name="locationValue" ng-click="confirm_filter()">
                     {{ a.name}}

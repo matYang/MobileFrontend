@@ -5,14 +5,18 @@
             课程类目
         </div>
     </div>
+
     <ion-content class="has-header">
         <ion-tabs class="filter tabs-left">
-            <ion-tab title="{{d.label}}" ng-repeat="d in options.category">
-                <ion-radio ng-model="filter_tmp.address" ng-value="item.value"
-                           ng-repeat="item in d.sub" name="address" ng-click="confirm_filter()">
-                    {{ item.label}}
-                </ion-radio>
-            </ion-tab>
+            <span ng-repeat="a in category">
+                <ion-tab title="{{b.name}}" ng-repeat="b in a.children">
+                    <ion-radio ng-repeat="c in b.children" ng-value="c.value"
+                               ng-model="filter_tmp.categoryValue"name="category" ng-click="confirm_filter()">
+                        {{ c.name}}
+                    </ion-radio>
+                </ion-tab>
+            </span>
+
         </ion-tabs>
 
 
