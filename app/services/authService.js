@@ -51,9 +51,8 @@ appServices.factory('Auth',
                         $rootScope.global.isLogin = true;
                         $log.log('login success');
                         defer.resolve(result_user);
-                    }, function (data) {
-                        //todo error::reject should just reponse with message
-                        defer.reject(data.message);
+                    }, function (response) {
+                        defer.reject(response.data);
                     });
                     return defer.promise;
                 },
