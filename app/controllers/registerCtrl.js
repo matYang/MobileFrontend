@@ -44,7 +44,7 @@ app.controller('registerCtrl', ['$scope', 'app', 'Auth', function ($scope, app, 
                 }
             }, 1000);
         }, function (data) {
-            app.alert(data.message&&'发送失败，请稍后再试');
+            app.alert(data.message || '发送失败，请稍后再试');
             $scope.status = 3;
         });
 
@@ -66,7 +66,7 @@ app.controller('registerCtrl', ['$scope', 'app', 'Auth', function ($scope, app, 
             app.alert('请输入密码');
             return
         }
-        if (u.password.length< 6 || u.password.length>20) {
+        if (u.password.length < 6 || u.password.length > 20) {
             app.alert('密码长度不正确');
             return
         }
@@ -89,7 +89,7 @@ app.controller('registerCtrl', ['$scope', 'app', 'Auth', function ($scope, app, 
             });
         }, function (data) {
             console.log('register error');
-            app.alert(data.message&&'注册遇到问题，请稍后再试');
+            app.alert(data.message && '注册遇到问题，请稍后再试');
         });
     };
 
