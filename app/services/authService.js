@@ -73,7 +73,7 @@ appServices.factory('Auth',
                     return defer.promise;
                 },
                 logout: function () {
-                    var self = this;
+                    var defer = $q.defer();
                     //发送用户注销请求
                     auth.update({ID: $rootScope.global.user.id, OP: 'logout'}, {}, function () {
                         $log.log('logout success');
