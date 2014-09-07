@@ -27,6 +27,10 @@ app.run(
             };
 
             Auth.checkUser();
+            //init
+            if($rootScope.global.isLogin){
+                $state.go('courseList');
+            }
 
 
             app.$log = $log;
