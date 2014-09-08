@@ -2,30 +2,37 @@
 .item-thumbnail {
     height: 125px;
     margin: 8px;
-    padding-left: 135px;
+    /*左缩进*/
+    padding-left: 125px;
     min-height: 100px;
     box-shadow: 0 0 4px 0 #333;}
+/*logo以及机构名title start*/
 .item-thumbnail img,.item-thumbnail .title{
     position: absolute;
-    /*padding: 10px;*/
-    top: 0;
     left: 0;
-    width: 125px;
     height: 100%;
     max-width: 125px;
-    max-height: 100%;}
+    max-height: 100%;
+    text-align: center;}
+.item-thumbnail img{
+    top: 0;
+    width: 125px;
+    padding: 10px;
+}
 .item-thumbnail .title{
-    top: auto;left: 0; bottom: 0;
-    text-align: center;
+    bottom: 10px;left: 10px;
+    width: 105px;
     color: white;
     height: 22px;
     line-height: 22px;
     font-size: 14px;
     background: rgba(0,0,0,.5);;
 }
+/*end*/
 .item-thumbnail h2{margin-bottom: 10px}
 .item-thumbnail p{margin-bottom: 5px;font-size: 14px;color: #333;}
-.item-thumbnail p,.item-thumbnail h2 {
+/*文字超出隐藏*/
+.item-thumbnail p,.item-thumbnail h2,.item-thumbnail .title {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -55,11 +62,12 @@
     display: block;
     margin: 0 auto;
     height: 30px;
+    background-size: 20px 20px;
 }
-/*.icon.nav-course{ background: url("../images/nav-course.png") center no-repeat;}*/
-/*.icon.nav-addr{ background: url("../images/nav-addr.png") center no-repeat;}*/
-/*.icon.nav-time{ background: url("../images/nav-time.png") center no-repeat;}*/
-/*.icon.nav-isk{ background: url("../images/nav-isk.png") center no-repeat;}*/
+.icon.nav-course{ background: url("../images/nav-course.png") center no-repeat;}
+.icon.nav-addr{ background: url("../images/nav-addr.png") center no-repeat;}
+.icon.nav-time{ background: url("../images/nav-time.png") center no-repeat;}
+.icon.nav-isk{ background: url("../images/nav-isk.png") center no-repeat;}
 
 #course-list .nav-item{
     -webkit-box-flex: 1;
