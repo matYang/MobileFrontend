@@ -1,14 +1,19 @@
 /*1st & 2cd item and address filter 培训类目和上课地点的过滤*/
 .tabs-left{
-    display: flex;
     width: 100%;}
-    .tabs-left .tabs{
+
+    .tabs-left .tabs,.tabs-left .pane{
+        float: left;
+        height: auto;
+        min-height: 100%;
         position: relative;
+    }
+    .tabs-left .tabs{
         background-color: #B7DDCC;
         display: block;
-        height: 100%;
         width: 20%;}
         .tabs-left .tab-item{
+            display: block;
             text-align: left;
             padding-left: 10px;
             color:#333333;
@@ -20,20 +25,23 @@
             background-color: #ffffff;
             border-left: 3px solid #118D56;}
     .tabs-left .pane{
-        box-sizing: border-box;
         padding-left: 10px;
         padding-right: 10px;
         width: 80%;}
         /*init all border width to 0*/
         .tabs-left .item-radio{
-            border-width: 0px;}
+            padding: 5px;
+            border-width: 0;}
         /*items should split with 1px border*/
         .tabs-left .item-radio+.item-radio{
-            border-top-width: 1px;}
+            border-top: 1px solid #ACD6C4;}
 /*二级选项列表中的内容*/
-.item-radio .item-content {
+.tabs-left .item-radio .item-content {
     position: relative;
     z-index: 2;
     padding: 10px;
-    border: none;
     background-color: white; }
+/*二级选项列表item选中状态*/
+.tabs-left .item-radio input:checked ~ .item-content {
+    background: url("../images/item-choosed.png") right no-repeat;
+}

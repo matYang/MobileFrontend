@@ -5,7 +5,7 @@
         <button ng-if="!global.isLogin" nav-clear class="button button-clear button-positive" ui-sref="login">登录</button>
         <button ng-if="global.isLogin" class="button button-clear button-positive">您好，爱会员</button>
     </div>
-    <ion-content class="has-header has-footer" has-bouncing="true" overflow-scroll="false">
+    <ion-content class="has-header has-footer" has-bouncing="false" overflow-scroll="false">
         <div class="list">
             <div ng-show="loading" class="padding text-center">加载中...</div>
             <a class="item item-thumbnail" ng-repeat="c in courses" ng-href="#/courses/{{ c.id }}">
@@ -29,31 +29,31 @@
             <div ng-if="courses.length == 0" class="padding text-center">>>暂无符合条件的课程<<</div>
             <div ng-if="courses.length != 0" class="page text-center">
             <div ng-click="prePage()" ng-if="page.start >= page.count"
-            class="ion-ios7-arrow-left icon-left button button-outline button-dark">上一页
+            class="button button-outline button-dark">上一页
             </div>
                 &nbsp;&nbsp;&nbsp;
             <div ng-click="nextPage()" ng-if="page.start + page.count < page.total"
-            class="ion-ios7-arrow-right icon-right button button-outline button-dark">下一页
+            class="button button-outline button-dark">下一页
             </div>
             </div>
         </div>
     </ion-content>
 
-    <div class="tabs tabs-icon-top tabs-striped">
-        <a class="tab-item" ng-click="openItemFilter()">
-            <i class="icon ion-home"></i>
+    <div class="nav tabs">
+        <a class="nav-item" ng-click="openItemFilter()">
+            <i class="icon nav-course"></i>
             课程类目
         </a>
-        <a class="tab-item" ng-click="openAddrFilter()">
-            <i class="icon ion-star"></i>
+        <a class="nav-item" ng-click="openAddrFilter()">
+            <i class="icon nav-addr"></i>
             上课地点
         </a>
-        <a class="tab-item" ng-click="openTimeFilter()">
-            <i class="icon ion-gear-a"></i>
+        <a class="nav-item" ng-click="openTimeFilter()">
+            <i class="icon nav-time"></i>
             开课时间
         </a>
-        <a class="tab-item"  ng-click="pop=!pop" style="overflow: visible">
-            <i class="icon ion-gear-a"></i>
+        <a class="nav-item"  ng-click="pop=!pop" style="overflow: visible">
+            <i class="icon nav-isk"></i>
             爱推荐
             <ul class="filter-submenu hide" ng-class="{'hide':!pop}">
                 <li class="btn">爱推荐</li>

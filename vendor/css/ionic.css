@@ -898,26 +898,26 @@ q:before, q:after, blockquote:before, blockquote:after {
  * --------------------------------------------------
  * A navigation bar with any number of tab items supported.
  */
-.tabs {
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  border-color: #b2b2b2;
-  background-color: #f8f8f8;
-  background-image: linear-gradient(0deg, #b2b2b2, #b2b2b2 50%, transparent 50%);
-  color: #444;
-  line-height: 49px; }
-  .tabs .tab-item .badge {
-    background-color: #444;
-    color: #f8f8f8; }
-  @media (min--moz-device-pixel-ratio: 1.5), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-    .tabs {
-      padding-top: 2px;
-      border-top: none !important;
-      border-bottom: none !important;
-      background-position: top;
-      background-size: 100% 1px;
-      background-repeat: no-repeat; } }
+/*.tabs {*/
+  /*-webkit-transform: translate3d(0, 0, 0);*/
+  /*-moz-transform: translate3d(0, 0, 0);*/
+  /*transform: translate3d(0, 0, 0);*/
+  /*border-color: #b2b2b2;*/
+  /*background-color: #f8f8f8;*/
+  /*background-image: linear-gradient(0deg, #b2b2b2, #b2b2b2 50%, transparent 50%);*/
+  /*color: #444;*/
+  /*line-height: 49px; }*/
+  /*.tabs .tab-item .badge {*/
+    /*background-color: #444;*/
+    /*color: #f8f8f8; }*/
+  /*@media (min--moz-device-pixel-ratio: 1.5), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {*/
+    /*.tabs {*/
+      /*padding-top: 2px;*/
+      /*border-top: none !important;*/
+      /*border-bottom: none !important;*/
+      /*background-position: top;*/
+      /*background-size: 100% 1px;*/
+      /*background-repeat: no-repeat; } }*/
 
 /* Allow parent element of tabs to define color, or just the tab itself */
 /*.tabs-light > .tabs, .tabs.tabs-light {*/
@@ -960,103 +960,103 @@ q:before, q:after, blockquote:before, blockquote:after {
   padding-bottom: 2px;
   background-position: bottom; }
 
-.tab-item {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  -moz-box-flex: 1;
-  -moz-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  display: block;
-  overflow: hidden;
-  max-width: 150px;
-  color: inherit;
-  text-align: center;
-  text-decoration: none;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-weight: 400;
-  font-size: 14px;
+/*.tab-item {*/
+  /*-webkit-box-flex: 1;*/
+  /*-webkit-flex: 1;*/
+  /*-moz-box-flex: 1;*/
+  /*-moz-flex: 1;*/
+  /*-ms-flex: 1;*/
+  /*flex: 1;*/
+  /*display: block;*/
+  /*overflow: hidden;*/
+  /*max-width: 150px;*/
+  /*color: inherit;*/
+  /*text-align: center;*/
+  /*text-decoration: none;*/
+  /*text-overflow: ellipsis;*/
+  /*white-space: nowrap;*/
+  /*font-weight: 400;*/
+  /*font-size: 14px;*/
   /*font-family: "Helvetica Neue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;*/
-  /*opacity: 0.7;*/ }
-  .tab-item:hover {
-    cursor: pointer; }
+  /*opacity: 0.7;*//* }*/
+  /*.tab-item:hover {*/
+    /*cursor: pointer; }*/
 
 .tabs-item-hide > .tabs, .tabs.tabs-item-hide {
   display: none; }
 
-.tabs-icon-top > .tabs .tab-item, .tabs-icon-top.tabs .tab-item, .tabs-icon-bottom > .tabs .tab-item, .tabs-icon-bottom.tabs .tab-item {
-  font-size: 12px;
-  line-height: 14px; }
+/*.tabs-icon-top > .tabs .tab-item, .tabs-icon-top.tabs .tab-item, .tabs-icon-bottom > .tabs .tab-item, .tabs-icon-bottom.tabs .tab-item {*/
+  /*font-size: 12px;*/
+  /*line-height: 14px; }*/
 
-.tab-item .icon {
-  display: block;
-  margin: 0 auto;
-  height: 32px;
-  font-size: 32px; }
+/*.tab-item .icon {*/
+  /*display: block;*/
+  /*margin: 0 auto;*/
+  /*height: 32px;*/
+  /*font-size: 32px; }*/
 
-.tabs-icon-left.tabs .tab-item, .tabs-icon-left > .tabs .tab-item, .tabs-icon-right.tabs .tab-item, .tabs-icon-right > .tabs .tab-item {
-  font-size: 12px; }
-  .tabs-icon-left.tabs .tab-item .icon, .tabs-icon-left > .tabs .tab-item .icon, .tabs-icon-right.tabs .tab-item .icon, .tabs-icon-right > .tabs .tab-item .icon {
-    display: inline-block;
-    vertical-align: top; }
-    .tabs-icon-left.tabs .tab-item .icon:before, .tabs-icon-left > .tabs .tab-item .icon:before, .tabs-icon-right.tabs .tab-item .icon:before, .tabs-icon-right > .tabs .tab-item .icon:before {
-      font-size: 24px;
-      line-height: 49px; }
+/*.tabs-icon-left.tabs .tab-item, .tabs-icon-left > .tabs .tab-item, .tabs-icon-right.tabs .tab-item, .tabs-icon-right > .tabs .tab-item {*/
+  /*font-size: 12px; }*/
+  /*.tabs-icon-left.tabs .tab-item .icon, .tabs-icon-left > .tabs .tab-item .icon, .tabs-icon-right.tabs .tab-item .icon, .tabs-icon-right > .tabs .tab-item .icon {*/
+    /*display: inline-block;*/
+    /*vertical-align: top; }*/
+    /*.tabs-icon-left.tabs .tab-item .icon:before, .tabs-icon-left > .tabs .tab-item .icon:before, .tabs-icon-right.tabs .tab-item .icon:before, .tabs-icon-right > .tabs .tab-item .icon:before {*/
+      /*font-size: 24px;*/
+      /*line-height: 49px; }*/
 
-.tabs-icon-left > .tabs .tab-item .icon, .tabs-icon-left.tabs .tab-item .icon {
-  padding-right: 3px; }
+/*.tabs-icon-left > .tabs .tab-item .icon, .tabs-icon-left.tabs .tab-item .icon {*/
+  /*padding-right: 3px; }*/
 
-.tabs-icon-right > .tabs .tab-item .icon, .tabs-icon-right.tabs .tab-item .icon {
-  padding-left: 3px; }
+/*.tabs-icon-right > .tabs .tab-item .icon, .tabs-icon-right.tabs .tab-item .icon {*/
+  /*padding-left: 3px; }*/
 
-.tabs-icon-only > .tabs .icon, .tabs-icon-only.tabs .icon {
-  line-height: inherit; }
+/*.tabs-icon-only > .tabs .icon, .tabs-icon-only.tabs .icon {*/
+  /*line-height: inherit; }*/
 
-.tab-item.has-badge {
-  position: relative; }
+/*.tab-item.has-badge {*/
+  /*position: relative; }*/
 
-.tab-item .badge {
-  position: absolute;
-  top: 4%;
-  right: 33%;
-  right: calc(50% - 26px);
-  padding: 1px 6px;
-  height: auto;
-  font-size: 12px;
-  line-height: 16px; }
+/*.tab-item .badge {*/
+  /*position: absolute;*/
+  /*top: 4%;*/
+  /*right: 33%;*/
+  /*right: calc(50% - 26px);*/
+  /*padding: 1px 6px;*/
+  /*height: auto;*/
+  /*font-size: 12px;*/
+  /*line-height: 16px; }*/
 
 /* Navigational tab */
 /* Active state for tab */
-.tab-item.tab-item-active, .tab-item.active, .tab-item.activated {
-  opacity: 1; }
-  .tab-item.tab-item-active.tab-item-light, .tab-item.active.tab-item-light, .tab-item.activated.tab-item-light {
-    color: #fff; }
-  .tab-item.tab-item-active.tab-item-stable, .tab-item.active.tab-item-stable, .tab-item.activated.tab-item-stable {
-    color: #f8f8f8; }
-  .tab-item.tab-item-active.tab-item-calm, .tab-item.active.tab-item-calm, .tab-item.activated.tab-item-calm {
-    color: #43cee6; }
+/*.tab-item.tab-item-active, .tab-item.active, .tab-item.activated {*/
+  /*opacity: 1; }*/
+  /*.tab-item.tab-item-active.tab-item-light, .tab-item.active.tab-item-light, .tab-item.activated.tab-item-light {*/
+    /*color: #fff; }*/
+  /*.tab-item.tab-item-active.tab-item-stable, .tab-item.active.tab-item-stable, .tab-item.activated.tab-item-stable {*/
+    /*color: #f8f8f8; }*/
+  /*.tab-item.tab-item-active.tab-item-calm, .tab-item.active.tab-item-calm, .tab-item.activated.tab-item-calm {*/
+    /*color: #43cee6; }*/
 
-.item.tabs {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 0; }
-  .item.tabs .icon:before {
-    position: relative; }
+/*.item.tabs {*/
+  /*display: -webkit-box;*/
+  /*display: -webkit-flex;*/
+  /*display: -moz-box;*/
+  /*display: -moz-flex;*/
+  /*display: -ms-flexbox;*/
+  /*display: flex;*/`
+  /*padding: 0; }*/
+  /*.item.tabs .icon:before {*/
+    /*position: relative; }*/
 
-.tab-item.disabled, .tab-item[disabled] {
-  opacity: 0.4;
-  cursor: default;
-  pointer-events: none; }
+/*.tab-item.disabled, .tab-item[disabled] {*/
+  /*opacity: 0.4;*/
+  /*cursor: default;*/
+  /*pointer-events: none; }*/
 
 /** Platform styles **/
 
-.tab-item.tab-item-android {
-  border-top: 2px solid inherit; }
+/*.tab-item.tab-item-android {*/
+  /*border-top: 2px solid inherit; }*/
 
 /**
  * Menus

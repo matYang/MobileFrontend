@@ -32,12 +32,56 @@
 }
 /*end list items*/
 
-/*start filter tabs 对默认的tabs样式进行覆盖*/
-#course-list .tabs{
+/*start filter tabs*/
+#course-list .nav{
     color: #eeeeee;
-    background-color: #2F3541;}
+    background-color: #2F3541;
+    line-height: 14px;
 
-#course-list .tab-item + .tab-item:before {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    position: absolute;
+    bottom: 0;
+    z-index: 5;
+    width: 100%;
+    height: 49px;
+}
+#course-list .nav .icon{
+    display: block;
+    margin: 0 auto;
+    height: 30px;
+}
+/*.icon.nav-course{ background: url("../images/nav-course.png") center no-repeat;}*/
+/*.icon.nav-addr{ background: url("../images/nav-addr.png") center no-repeat;}*/
+/*.icon.nav-time{ background: url("../images/nav-time.png") center no-repeat;}*/
+/*.icon.nav-isk{ background: url("../images/nav-isk.png") center no-repeat;}*/
+
+#course-list .nav-item{
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -moz-box-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: block;
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 400;
+    font-size: 12px;
+}
+#course-list .nav-item:hover{
+    cursor: pointer;
+}
+
+#course-list .nav-item + .nav-item:before {
     border-left: 1px solid #1F232A;
     display: block;
     float: left;
