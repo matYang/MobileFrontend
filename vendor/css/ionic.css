@@ -821,9 +821,10 @@ q:before, q:after, blockquote:before, blockquote:after {
     display: inherit; }
   .bar .title + .button:last-child, .bar > .button + .button:last-child, .bar > .button.pull-right, .bar .buttons.pull-right, .bar .title + .buttons {
     position: absolute;
-    top: 5px;
+    /*top: 5px;*/
     right: 5px;
-    bottom: 5px; }
+    /*bottom: 5px; */
+  }
 
 /*.bar-light .button {*/
   /*border-color: #ddd;*/
