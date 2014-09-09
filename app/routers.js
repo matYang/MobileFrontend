@@ -25,18 +25,18 @@ appRoutes.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $l
             templateUrl: 'views/complete.html',
             controller: 'completeCtrl'
         })
-//        //课程列表
-//        .state('courseList', {
-//            url: '/courses',
-//            templateUrl: 'views/course.list.html',
-//            controller: 'courseListCtrl'
-//        })
-//        //课程详情
-//        .state('courseDetail', {
-//            url: '/courses/:id',
-//            templateUrl: 'views/course.detail.html',
-//            controller: 'courseDetailCtrl'
-//        });
+        //课程列表
+        .state('courseList', {
+            url: '/courses',
+            templateUrl: 'views/course.list.html',
+            controller: 'courseListCtrl'
+        })
+        //课程详情
+        .state('courseDetail', {
+            url: '/courses/:id',
+            templateUrl: 'views/course.detail.html',
+            controller: 'courseDetailCtrl'
+        });
 
 
     $urlRouterProvider.otherwise("/register");

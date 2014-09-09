@@ -11,7 +11,6 @@ app.controller('completeCtrl', ['$scope', 'app', function ($scope, app) {
     //提交完善的信息 学校信息
     $scope.submitComplete = function (schoolId) {
         if (!schoolId) {
-            //todo 提醒用户未选择学校
             app.alert('未选择学校');
             return
         }
@@ -27,9 +26,8 @@ app.controller('completeCtrl', ['$scope', 'app', function ($scope, app) {
         restAPI.update({ID: id}, {id: id, schoolId: schoolId}, function () {
             var alertPopup = app.alert('绑定成功');
             alertPopup.then(function (res) {
-                app.$window.location.href = 'http://www.ishangke.cn';
-                //todo temp
-//                app.$state.go('courseList')
+//                app.$window.location.href = 'http://www.ishangke.cn';
+                app.$state.go('courseList')
             });
         }, function (data) {
             app.alert(data.message && '绑定失败，请稍后再试');
