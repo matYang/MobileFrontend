@@ -1,29 +1,37 @@
+#detail ion-content{
+    padding: 0 10px;
+}
+
 .card{
     width: 100%;
-    margin: 10px 10px;
+    margin: 10px 0;
     padding: 10px;
-    border:1px solid red;
+    border:1px solid transparent;
     background-color: #ffffff;
 }
+/*第一个card*/
 .card.main{
     position: relative;
-    border-color: #118D56;}
+    border-color: #128D56;
+    min-height: 110px;}
     .card.main h1{
         font-size: 18px;
-        color:#118D56;}
+        margin-bottom: 10px;
+        color:#128D56;}
     .card.main p{
-        margin-bottom: 2px;
-        color:#333;}
+        margin-bottom: 3px;}
     .card.main img{
         position: absolute;
         top:10px;right:10px;
         width: 90px;height: 90px;}
-
+/*后面的table card*/
 .card.table td:first-child{
+    text-align: center;
     width: 100px;
+    padding: 8px 2px;
 }
 .card.table td{
-    color:#118D56;
+    color:#128D56;
     padding: 8px;
     border:1px solid #dddddd;}
     .card.table td.has-btn{

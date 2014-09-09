@@ -80,6 +80,11 @@ input:focus{
 }
 /*tools*/
 /*通用工具类*/
+/*这是一个空白快*/
+.blank{
+    height: 20px;
+    display: block;
+}
 .text-center { text-align: center; }
 .text-right { text-align: right; }
 .pull-left { float: left; }
@@ -95,17 +100,15 @@ input:focus{
 .text-primary{color: #128d56; }
 .text-warning{color: #f7a501; }
 .text-error{color: #FF5500; }
+.text-light{color: #aaaaaa; }
 
 .text-larger{font-size: 1.2em}
-
-
 
 /*set default btn text align center*/
 .btn{
     text-align: center;
     position: relative;
 }
-
 /*以下为override ionic.css中的样式*/
 /**
  * Lists

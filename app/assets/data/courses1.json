@@ -1,32 +1,94 @@
-{"errorCode": 0, "id": 4150, "courseName": "人力资源二级通关保障班", "courseTemplateId": 107, "categoryId": 293, "locationId": 4, "circleId": 0, "partnerId": 9, "price": 1880.0, "originalPrice": 1880.0, "cashback": 68.0, "commission": 113.0, "status": 2, "lastModifyTime": 1409823628000, "createTime": 1409823628000, "enabled": 0, "teachingMethod": "面授", "teachingMaterialFee": "免费", "marking": "爱会员完成在线支付可立减113元", "goal": "<p>系统讲解企业人力资源规划、招聘与配置、培训与开发、绩效管理、薪酬福利管理、劳动关系管理等六部分以及相关的基础知识，以及理论知识，最终通过考试。</p>", "outline": "", "qualityAssurance": "88课时", "teachingMaterialIntro": "《企业人力资源管理师三级》、《企业人力资源管理师基础知识》、《职业标准》", "highScoreReward": "", "prerequest": "<p>《企业人力资源管理师三级》&nbsp;&nbsp;《企业人力资源管理师基础知识》&nbsp;&nbsp;《职业标准》</p>", "suitableStudent": "<p>对人力资源感兴趣或者有意向从事人力资源方面工作的学员</p>\n\n<p>&nbsp;</p>", "courseIntro": "", "finishTime1": 1600, "startTime1": 900, "startUponArrival": 1, "bookingType": 2, "cashbackDate": -1, "noRefundDate": -1, "startDate": 1416412800000, "popularity": 2000, "courseHourNum": 88, "classSize": "30人", "classType": 2, "schooltimeDay": 3, "schooltimeWeek": 2, "rating": 0.0, "bookingTotal": 0, "teacherList": [
-    {
-        "errorCode": 0,
-        "id": 10,
-        "partnerId": 9,
-        "imgUrl": "http://teacherimgbucket.oss-cn-hangzhou.aliyuncs.com/9/teacherp9i1t1408416789277-509091bc0269d66453fb374fc907d10c.png",
-        "name": "赖华强",
-        "intro": "南京百创教育中心人力资源课程常年特聘讲师。南京理工大学经济管理系--人力资源管理专业教师；常州上元教育集团武进分校--国家企业人力资源管理师三级培训课程；南京正本教育培训机构--国家企业人力资源管理师二级、三级培训课程；南京海德职业培训学校--国家企业人力资源管理师二级、三级培训课程；韩国LG化学信息电子材料有限公司--人力资源管理特聘专家；南京医药股份有限公司--人力资源管理。有非常丰富的外企、民企、国企人力资源管理与教学经验，长于工伤认定、伤残鉴定、赔付计算及纠纷处理全案、招聘与面试技巧技能提升、绩效管理体系方案设计、六险一金完美解读、宽带薪酬体系方案设计、劳动关系风险最后防线等;长期从事人力资源2、3级课程培训，学员通过率高，口碑好。",
-        "lastModifyTime": 1409898255000,
-        "createTime": 1408265048000,
-        "enabled": 0
-    }
-], "classPhotoList": [
-    {
-        "errorCode": 0,
-        "id": 50,
-        "partnerId": 9,
-        "imgUrl": "http://classroomimgbucket.oss-cn-hangzhou.aliyuncs.com/1/classPhotop1i1t1408610421656-38e2476dc1c3e60bd9119891d8dbb405.png",
-        "lastModifyTime": 1408610602000,
-        "createTime": 1408610602000,
-        "enabled": 0
-    },
-    {
-        "errorCode": 0,
-        "id": 51,
-        "partnerId": 9,
-        "imgUrl": "http://classroomimgbucket.oss-cn-hangzhou.aliyuncs.com/1/classPhotop1i1t1408610422444-81b0a15fbdf936f4b20202832a60375c.png",
-        "lastModifyTime": 1408610602000,
-        "createTime": 1408610602000,
-        "enabled": 0
-    }
-], "logoUrl": "http://logobucket.oss-cn-hangzhou.aliyuncs.com/9/logop9i1t1408523832732-4e9947c1b45d3264818659ce3298a9fd.png", "wholeName": "南京百创教育培训中心", "instName": "南京百创教育", "partnerIntro": "南京百创教育培训中心是一所以财会类、语言类、导游类和人力资源管理系列等课程培训为主，集网校运营、教育产品开发、高新技术研发、高端人才就业服务于一体的高端职业培训学校。拥有四大教育基地：胜太路校区（总部）、新街口校区、金箔路校区、铜山校区、仙林校区、溧水校区、禄口校区以及扬州、苏州、无锡、昆山、溧水、上海、北京、天津等分校。总部及教学基地建筑面积约3000平米，各种教室60余间，各科全职兼职教师近200名。我校多次荣获政府部门及相关行业协会先进表彰，是长三角地区较有影响力的高端职业教育机构", "partnerQualification": 1, "partnerDistinction": "《中国人力资源研究会南京市唯一合作伙伴》《用友财务软件南京市唯一授权合作单位》《吉林大学、中国地质大学、四川农业大学、南京理工大学等著名“211”高等学府的合作单位》", "partnerRating": 0.0, "addressId": 17, "address": "南京市秦淮区中山南路89号江苏文化大厦22楼(中央商场对面)", "addressLat": 0.0, "addressLng": 0.0, "regAddressId": 17, "regAddress": "南京市秦淮区中山南路89号江苏文化大厦22楼(中央商场对面)", "regAddressLat": 0.0, "regAddressLng": 0.0, "categoryValue": "020405", "categoryName": "人力资源师", "categoryRank": 0, "locationValue": "000001", "locationName": "秦淮"}
+{
+    "errorCode": 0,
+    "id": 4150,
+    "courseName": "人力资源二级通关保障班",
+    "courseTemplateId": 107,
+    "categoryId": 293,
+    "locationId": 4, "circleId": 0,
+    "partnerId": 9,
+    "price": 1880.0,
+    "originalPrice": 1880.0,
+    "cashback": 68.0,
+    "commission": 113.0,
+    "status": 2,
+    "lastModifyTime": 1409823628000,
+    "createTime": 1409823628000, "enabled": 0,
+    "teachingMethod": "面授",
+    "teachingMaterialFee": "免费",
+    "marking": "爱会员完成在线支付可立减113元",
+    "goal": "<p>系统讲解企业人力资源规划、招聘与配置、培训与开发、绩效管理、薪酬福利管理、劳动关系管理等六部分以及相关的基础知识，以及理论知识，最终通过考试。</p>",
+    "outline": "大纲",
+    "qualityAssurance": "88课时",
+    "teachingMaterialIntro": "《企业人力资源管理师三级》、《企业人力资源管理师基础知识》、《职业标准》",
+    "highScoreReward": "",
+    "prerequest": "<p>《企业人力资源管理师三级》&nbsp;&nbsp;《企业人力资源管理师基础知识》&nbsp;&nbsp;《职业标准》</p>",
+    "suitableStudent": "<p>对人力资源感兴趣或者有意向从事人力资源方面工作的学员</p>",
+    "courseIntro": "课程介绍",
+    "finishTime1": 1600,
+    "startTime1": 900,
+    "startUponArrival": 1,
+    "bookingType": 2, "cashbackDate": -1,
+    "noRefundDate": -1,
+    "startDate": 1416412800000,
+    "popularity": 2000,
+    "courseHourNum": 88,
+    "classSize": "30人",
+    "classType": 2,
+    "schooltimeDay": 3,
+    "schooltimeWeek": 2,
+    "rating": 0.0,
+    "bookingTotal": 0,
+    "teacherList": [
+        {
+            "errorCode": 0,
+            "id": 10,
+            "partnerId": 9,
+            "imgUrl": "http://teacherimgbucket.oss-cn-hangzhou.aliyuncs.com/9/teacherp9i1t1408416789277-509091bc0269d66453fb374fc907d10c.png",
+            "name": "赖华强",
+            "intro": "南京百创教育中心人力资源课程常年特聘讲师。南京理工大学经济管理系--人力资源管理专业教师；常州上元教育集团武进分校--国家企业人力资源管理师三级培训课程；南京正本教育培训机构--国家企业人力资源管理师二级、三级培训课程；南京海德职业培训学校--国家企业人力资源管理师二级、三级培训课程；韩国LG化学信息电子材料有限公司--人力资源管理特聘专家；南京医药股份有限公司--人力资源管理。有非常丰富的外企、民企、国企人力资源管理与教学经验，长于工伤认定、伤残鉴定、赔付计算及纠纷处理全案、招聘与面试技巧技能提升、绩效管理体系方案设计、六险一金完美解读、宽带薪酬体系方案设计、劳动关系风险最后防线等;长期从事人力资源2、3级课程培训，学员通过率高，口碑好。",
+            "lastModifyTime": 1409898255000,
+            "createTime": 1408265048000,
+            "enabled": 0
+        }
+    ],
+    "classPhotoList": [
+        {
+            "errorCode": 0,
+            "id": 50,
+            "partnerId": 9,
+            "imgUrl": "http://classroomimgbucket.oss-cn-hangzhou.aliyuncs.com/1/classPhotop1i1t1408610421656-38e2476dc1c3e60bd9119891d8dbb405.png",
+            "lastModifyTime": 1408610602000,
+            "createTime": 1408610602000,
+            "enabled": 0
+        },
+        {
+            "errorCode": 0,
+            "id": 51,
+            "partnerId": 9,
+            "imgUrl": "http://classroomimgbucket.oss-cn-hangzhou.aliyuncs.com/1/classPhotop1i1t1408610422444-81b0a15fbdf936f4b20202832a60375c.png",
+            "lastModifyTime": 1408610602000,
+            "createTime": 1408610602000,
+            "enabled": 0
+        }
+    ],
+    "logoUrl": "http://logobucket.oss-cn-hangzhou.aliyuncs.com/9/logop9i1t1408523832732-4e9947c1b45d3264818659ce3298a9fd.png",
+    "wholeName": "南京百创教育培训中心",
+    "instName": "南京百创教育",
+    "partnerIntro": "南京百创教育培训中心是一所以财会类、语言类、导游类和人力资源管理系列等课程培训为主，集网校运营、教育产品开发、高新技术研发、高端人才就业服务于一体的高端职业培训学校。拥有四大教育基地：胜太路校区（总部）、新街口校区、金箔路校区、铜山校区、仙林校区、溧水校区、禄口校区以及扬州、苏州、无锡、昆山、溧水、上海、北京、天津等分校。总部及教学基地建筑面积约3000平米，各种教室60余间，各科全职兼职教师近200名。我校多次荣获政府部门及相关行业协会先进表彰，是长三角地区较有影响力的高端职业教育机构", "partnerQualification": 1,
+    "partnerDistinction": "《中国人力资源研究会南京市唯一合作伙伴》《用友财务软件南京市唯一授权合作单位》《吉林大学、中国地质大学、四川农业大学、南京理工大学等著名“211”高等学府的合作单位》",
+    "partnerRating": 0.0,
+    "addressId": 17,
+    "address": "南京市秦淮区中山南路89号江苏文化大厦22楼(中央商场对面)",
+    "addressLat": 0.0,
+    "addressLng": 0.0,
+    "regAddressId": 17,
+    "regAddress": "南京市秦淮区中山南路89号江苏文化大厦22楼(中央商场对面)",
+    "regAddressLat": 0.0,
+    "regAddressLng": 0.0,
+    "categoryValue": "020405",
+    "categoryName": "人力资源师",
+    "categoryRank": 0,
+    "locationValue": "000001",
+    "locationName": "秦淮",
+    "quiz":"阶段评测内容"
+}
