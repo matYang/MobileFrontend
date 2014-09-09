@@ -89,7 +89,7 @@ app.controller('registerCtrl', ['$scope', 'app', 'Auth', function ($scope, app, 
             });
         }, function (data) {
             console.log('register error');
-            app.alert(data.message && '注册遇到问题，请稍后再试');
+            app.alert(data.message || '注册遇到问题，请稍后再试');
         });
     };
 
