@@ -1,10 +1,10 @@
 'use strict';
 app.run(
     ['app', '$rootScope', 'restAPI', '$log', 'Auth', '$state', 'pageService', 'enums', 'options', '$ionicScrollDelegate',
-        'getLocation', 'getCategory', 'getSchool', '$timeout', '$interval','$ionicPopup','$window',
+        'getLocation', 'getCategory', 'getSchool', '$timeout', '$interval','$ionicPopup','$window','$location',
         function (app, $rootScope, restAPI, $log, Auth, $state, pageService, enums, options,
                   $ionicScrollDelegate, getLocation, getCategory, getSchool, $timeout, $interval,
-                  $ionicPopup, $window) {
+                  $ionicPopup, $window,$location) {
             if (app.test_mode) {
                 $log.info('RUN IN TEST MODE');
             }
@@ -27,17 +27,12 @@ app.run(
                 order_type: undefined//排序方式
             };
 
-            Auth.checkUser();
-            //init
-            if($rootScope.global.isLogin){
-                $state.go('courseList');
-            }
-
             app.$log = $log;
             app.$timeout = $timeout;
             app.$interval = $interval;
             app.$rootScope = $rootScope;
             app.$state = $state;
+            app.$location = $location;
             app.$window = $window;
             app.$scroll = $ionicScrollDelegate;
 
@@ -61,7 +56,27 @@ app.run(
                     okText:'好的',
                     okType: ''
                 });
-            }
+            };
+
+            Auth.checkUser();
+            //router的权限控制
+            $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
+                $log.log('route change start');
+                // event.preventDefault();
+                // transitionTo() promise will be rejected with
+                // a 'transition prevented' error
+                var isLogin = $rootScope.global.isLogin;
+
+                var isToLoginPage = $state.get('login') === toState||$state.get('complete') === toState;
+
+                //已登录用户想要进入登录页面 当然不可以..
+                if (isToLoginPage && isLogin) {
+                    //admin already login don't need to go to login page
+                    $log.info('already login:TO home');
+                    $location.path('courses');
+                }
+
+            });
         }
     ]
 );
