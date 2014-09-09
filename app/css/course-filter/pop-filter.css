@@ -26,3 +26,16 @@
 .filter-submenu .btn:hover{
     background: #666;
 }
+
+.filter-submenu .icon{
+    display: inline-block;
+    height: 16px;
+    width: 14px;
+    vertical-align: text-bottom;
+}
+.filter-submenu .icon.icon-arrow-up{
+    background:url('../images/icon-arrow-up.png') center no-repeat;
+}
+.filter-submenu .icon.icon-arrow-down{
+    background:url('../images/icon-arrow-down.png') center no-repeat;
+}
