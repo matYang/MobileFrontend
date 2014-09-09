@@ -60,7 +60,7 @@ appServices.factory('Auth',
                     var self = this;
                     //这里使用promise模式 在controller中调用login先进行以下处理流程
                     var defer = $q.defer();
-                    auth.post({ID: 'register'}, user, function (result_user) {
+                    auth.post({ID: 'registration'}, user, function (result_user) {
                         $log.log('register success');
                         //根据返回的用户信息设置内存中保存的用户信息 以及cookie
                         $rootScope.global.user = result_user;
