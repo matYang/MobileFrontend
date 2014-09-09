@@ -24,7 +24,7 @@ app.controller('completeCtrl', ['$scope', 'app', function ($scope, app) {
             return
         }
         console.log(app.$window.location);
-        restAPI.update({ID: 'info', OP: id}, {id: id, schooleId: schoolId}, function () {
+        restAPI.update({ID: id}, {id: id, schooleId: schoolId}, function () {
             var alertPopup = app.alert('绑定成功');
             alertPopup.then(function (res) {
                 app.$window.location.href = 'http://www.ishangke.cn';
