@@ -1,6 +1,20 @@
 #detail ion-content{
     padding: 0 10px;
 }
+#detail .icon{
+    display: inline-block;
+    height: 23px;
+    width: 20px;
+    vertical-align: text-bottom;
+}
+#detail .icon.icon-addr{
+    background: url("../images/icon-addr.png") center no-repeat;
+    background-size: 20px 23px;
+}
+#detail .icon.icon-building{
+    background: url("../images/icon-building.png") center no-repeat;
+    background-size: 20px 20px
+}
 
 .card{
     width: 100%;
@@ -31,8 +45,9 @@
     padding: 8px 2px;
 }
 .card.table td{
+    vertical-align: middle;
     color:#128D56;
-    padding: 8px;
+    padding: 8px 16px;
     border:1px solid #dddddd;}
     .card.table td.has-btn{
         text-align: center;}
