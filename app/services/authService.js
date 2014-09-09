@@ -58,6 +58,10 @@ appServices.factory('Auth',
                 },
                 register: function (user) {//date为登录信息对象
                     var self = this;
+                    //todo 自动确认密码
+                    user = angular.copy(user);
+                    user.confirmPassword = user.password;
+
                     //这里使用promise模式 在controller中调用login先进行以下处理流程
                     var defer = $q.defer();
                     auth.post({ID: 'registration'}, user, function (result_user) {
