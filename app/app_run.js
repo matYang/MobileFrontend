@@ -33,7 +33,6 @@ app.run(
                 $state.go('courseList');
             }
 
-
             app.$log = $log;
             app.$timeout = $timeout;
             app.$interval = $interval;
@@ -41,7 +40,6 @@ app.run(
             app.$state = $state;
             app.$window = $window;
             app.$scroll = $ionicScrollDelegate;
-
 
             app.pageService = pageService;
             app.enums = enums;
