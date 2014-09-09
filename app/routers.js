@@ -33,10 +33,10 @@ appRoutes.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $l
         })
         //课程详情
         .state('courseDetail', {
-            url: '/courses/:id'
+            url: '/courses/:id',
             //todo 暂时移除
-//            templateUrl: 'views/course.detail.html',
-//            controller: 'courseDetailCtrl'
+            templateUrl: 'views/course.detail.html',
+            controller: 'courseDetailCtrl'
         });
 
 
