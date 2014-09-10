@@ -24,18 +24,23 @@
     padding: 10px;
 }
 .filter-submenu .btn:hover{
-    background: #666;
+    background: #333;
 }
 
 .filter-submenu .icon{
     display: inline-block;
     height: 16px;
-    width: 14px;
+    width: 16px;
     vertical-align: text-bottom;
+    background: center no-repeat;
+    background-size: 14px 14px;
 }
 .filter-submenu .icon.icon-arrow-up{
-    background:url('../images/icon-arrow-up.png') center no-repeat;
+    background-image:url('../images/icon-arrow-up.png');
 }
 .filter-submenu .icon.icon-arrow-down{
-    background:url('../images/icon-arrow-down.png') center no-repeat;
+    background-image:url('../images/icon-arrow-down.png');
+}
+.filter-submenu .icon.icon-thumb{
+    background-image:url('../images/icon-thumb.png');
 }
