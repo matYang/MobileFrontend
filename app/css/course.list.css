@@ -3,7 +3,7 @@
     height: 118px;
     margin: 8px;
     /*左缩进*/
-    padding: 10px 115px  10px;
+    padding: 10px 0 10px 115px;
     box-shadow: 0 0 4px 0 #333;}
 /*logo以及机构名title start*/
 .item-thumbnail img,.item-thumbnail .title{
@@ -34,10 +34,6 @@
 /*end list items*/
 
 /*start 头部二级菜单栏*/
-#course-list .bar.bar-subheader{
-    padding: 0;
-    border: none;
-}
 #course-list .btn-tab{
     position: relative;
     float: left;
@@ -54,7 +50,7 @@
     background: #2F3541;
 }
 #course-list .btn-tab.active:after{
-    content: 's ';
+    content: '';
     position: absolute;
     bottom: -10px;
     left: 50%;

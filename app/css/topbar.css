@@ -4,12 +4,21 @@
     background-color: #009F4B;
 }
 .bar.bar-header .button{
+    position: absolute;
+    top:0;
+    bottom: 0;
     color: #ffffff;
     font-size: 16px;
     line-height: 43px;
     border: none;
     border-radius: 0;
     padding: 0 10px;
+}
+.bar.bar-header .button:first-child{
+    left: 0;
+}
+.bar.bar-header .button:last-child{
+    right: 0;
 }
 .bar.bar-header .btn-icon{
     width: 80px;

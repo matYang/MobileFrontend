@@ -5,7 +5,7 @@
         <button ng-if="!global.isLogin" nav-clear class="button button-clear button-positive" ui-sref="login">登录</button>
         <button ng-if="global.isLogin" class="button button-clear button-positive">您好，爱会员</button>
     </div>
-    <div class="bar bar-subheader">
+    <div class="bar bar-subheader bar-tabs">
             <div class="btn-tab" ng-class="{'active':!filter.tab}" ng-click="clickTab()">全 部</div>
             <div class="btn-tab" ng-class="{'active':filter.tab}" ng-click="clickTab('discount')">折 扣</div>
     </div>
@@ -22,13 +22,13 @@
                     &nbsp;<span ng-if="c.cashback" class="badge bg-primary">返</span>
                     &nbsp;<span ng-if="c.commission" class="badge bg-error">立减</span>
                 </p>
-                <p>上课日期:
+                <p>
                     <span ng-if="c.startUponArrival">
                     {{c.startDate| date:'yyyy-M.d'}}<span ng-if="c.finishDate">到{{c.finishDate| date:'yyyy-M.d'}}</span>
                     </span>
                     <span ng-if="!c.startUponArrival">{{c.regPhone}}</span>
                 </p>
-                <p>上课地址:{{c.address}}</p>
+                <p>{{c.address}}</p>
             </a>
             <div ng-if="courses.length == 0" class="padding text-center">>>暂无符合条件的课程<<</div>
             <div ng-if="courses.length != 0" class="page text-center">
