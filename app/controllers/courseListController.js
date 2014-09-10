@@ -24,18 +24,27 @@ appControllers.controller('courseListCtrl',
             app.$scroll.resize();
             app.$scroll.scrollTop(false);
             var filter = angular.copy($scope.filter);
+
+            var value;//临时用的变量
             //格式化filter条件的值 开课日期startDate 上课时间schoolTime
             if(filter.hasOwnProperty('startDate')){
                 //todo 格式化 开课日期startDate 当月 下月 下下月
 
             }
+            //todo 下面两段代码可以进行合并
             if(filter.hasOwnProperty('schoolTime')){
-                var value = filter['schoolTime'].split('_');
+                value = filter['schoolTime'].split('_');
                 filter.schoolTimeWeek = value[0] == '' ? undefined : value[0];
                 filter.schoolTimeDay = value[1] == '' ? undefined : value[1];
-                delete filter['schoolTime']
+                delete filter['schoolTime'];
             }
-
+            //排序的字段 存在排序字段和排序顺序两个信息
+            if(filter.hasOwnProperty('orders')){
+                value = filter['orders'].split('_');
+                filter.columnKey = value[0] == '' ? undefined : value[0];
+                filter.order = value[1] == '' ? undefined : value[1];
+                delete filter['orders'];
+            }
 
             Courses.get(angular.extend({}, filter, $scope.page)).$promise
                 .then(function (data) {
@@ -72,13 +81,18 @@ appControllers.controller('courseListCtrl',
 
         /**
          * 底部栏爱推荐弹出框中点击事件 主要用来排序 columnKey
+         * @param e 事件对象
          * @param columnKey 需要排序的字段
          * @param order 排序的顺序 asc和desc
          */
-        $scope.filterOrder = function(columnKey,order){
-            //todo 简单来做就是不保存
+        $scope.filterOrder = function(e,columnKey,order){
+            //阻止事件冒泡
+            e.stopPropagation();
             //选择完关闭弹出层
             $scope.pop = false;
+            //进行数据的重新加载
+            $scope.filter.orders =[columnKey, order].join('_');
+            doSearch();
         };
 
         //1st 培训类目筛选弹出框
@@ -122,7 +136,11 @@ appControllers.controller('courseListCtrl',
 
         //筛选确认按钮 触发刷新事件 todo 当条件变化时才进行筛选
         $scope.confirm_filter = function () {
-            $scope.filter = angular.copy($scope.filter_tmp);
+            //]直接拷贝会影响引用状态 这里先清空条件 然后重新扩展对象
+            angular.forEach($scope.filter, function (v, k) {
+                $scope.filter[k] = undefined;
+            });
+            angular.extend($scope.filter, $scope.filter_tmp);
             $scope.modal.hide();
             doSearch();
         }

@@ -57,11 +57,11 @@
             <i class="icon nav-isk"></i>
             爱推荐
             <ul id="filter" class="filter-submenu hide" ng-class="{'hide':!pop}">
-                <li class="btn" ng-click="filterOrder()"><i class="icon icon-thumb"></i>&nbsp;爱推荐</li>
-                <li class="btn" ng-click="filterOrder('price','asc')">价格&nbsp;<i class="icon icon-arrow-up"></i></li>
-                <li class="btn" ng-click="filterOrder('price','desc')">价格&nbsp;<i class="icon icon-arrow-down"></i></li>
-                <li class="btn" ng-click="filterOrder('startDate','asc')">时间&nbsp;<i class="icon icon-arrow-up"></i></li>
-                <li class="btn" ng-click="filterOrder('startDate','desc')">时间&nbsp;<i class="icon icon-arrow-down"></i></li>
+                <li class="btn" ng-click="filterOrder($event)"><i class="icon icon-thumb"></i>&nbsp;爱推荐</li>
+                <li class="btn" ng-click="filterOrder($event,'price','asc')">价格&nbsp;<i class="icon icon-arrow-up"></i></li>
+                <li class="btn" ng-click="filterOrder($event,'price','desc')">价格&nbsp;<i class="icon icon-arrow-down"></i></li>
+                <li class="btn" ng-click="filterOrder($event,'startDate','asc')">时间&nbsp;<i class="icon icon-arrow-up"></i></li>
+                <li class="btn" ng-click="filterOrder($event,'startDate','desc')">时间&nbsp;<i class="icon icon-arrow-down"></i></li>
             </ul>
         </a>
     </div>
