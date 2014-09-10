@@ -1,7 +1,7 @@
 'use strict';
 app.value('options', {
         schoolTime: [
-            {label: '不限', value: null},
+            {label: '不限', value: undefined},
             {label: '白天', value: '_3'},
             {label: '晚上', value: '_4'},
             {label: '平时白天', value: '1_3'},
@@ -10,7 +10,7 @@ app.value('options', {
             {label: '周末白天', value: '2_4'}
         ],
         startDate: [
-            {label: '不限', value: null},
+            {label: '不限', value: undefined},
             {label: '当月', value: 0},
             {label: '下月', value: 1},
             {label: '下下月', value: 2}

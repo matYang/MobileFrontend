@@ -15,7 +15,7 @@ appControllers.controller('courseListCtrl',
             $scope.category = data.data;
         });
         app.getLocation().then(function (data) {
-            $scope.location = data.data[0]&&data.data[0].children[0]&&data.data[0].children[0].children;
+            $scope.location = data.data[0] && data.data[0].children[0] && data.data[0].children[0].children;
         });
 
         //刷新
@@ -27,19 +27,74 @@ appControllers.controller('courseListCtrl',
 
             var value;//临时用的变量
             //格式化filter条件的值 开课日期startDate 上课时间schoolTime
-            if(filter.hasOwnProperty('startDate')){
-                //todo 格式化 开课日期startDate 当月 下月 下下月
+            if (filter.hasOwnProperty('startDate')&&filter['startDate']) {
+                //格式化 开课日期startDate 当月 下月 下下月
+                var dataValue = filter['startDate'];
+                var now = new Date();
+                var date1 = new Date(Date.parse([now.getFullYear(), now.getMonth() + 1].join('-')));
+                var date2;
+                var month = date1.getMonth();
+                //设置当月的时间
+                if (dataValue == 0) {
+                    date2 = new Date(date1);
+                    if (month === 11) {
+                        date2.setMonth(0);
+                        date2.setFullYear(date1.getFullYear() + 1);
+                    } else {
+                        date2.setMonth(date1.getMonth() + 1);
+                    }
+                }
+                //设置下个月的时间
+                else if (dataValue == 1) {
+                    if (month === 11) {
+                        date1.setMonth(0);
+                        date1.setFullYear(date1.getFullYear() + 1);
+                        date2 = new Date(date1);
+                        date2.setMonth(date2.getMonth() + 1);
+                    } else {
+                        date1.setMonth(date1.getMonth() + 1);
+                        date2 = new Date(date1);
+                        if (month === 10) {
+                            date2.setMonth(0);
+                            date2.setFullYear(date2.getFullYear() + 1);
+                        } else {
+                            date2.setMonth(date2.getMonth() + 1);
+                        }
+                    }
+                } else if (dataValue == 2) {
+                    if (month >= 10) {
+                        date1.setMonth((date1.getMonth() + 2) % 12);
+                        date1.setFullYear(date1.getFullYear() + 1);
+                        date2 = new Date(date1);
+                        date2.setMonth(date2.getMonth() + 1);
+                    } else {
+                        date1.setMonth(date1.getMonth() + 2);
+                        date2 = new Date(date1);
+                        if (month === 10) {
+                            date2.setMonth(0);
+                            date2.setFullYear(date2.getFullYear() + 1);
+                        } else {
+                            date2.setMonth(date2.getMonth() + 1);
+                        }
+                    }
+                } else {
+                    date1 = undefined;
+                    date2 = undefined;
+                }
+                filter.startDateStart = date1 ? date1.getTime() : date1;
+                filter.startDateEnd = date2 ? date2.getTime() : date2;
+                delete filter['startDate'];
 
             }
             //todo 下面两段代码可以进行合并
-            if(filter.hasOwnProperty('schoolTime')){
+            if (filter.hasOwnProperty('schoolTime')&&filter['schoolTime']) {
                 value = filter['schoolTime'].split('_');
                 filter.schoolTimeWeek = value[0] == '' ? undefined : value[0];
                 filter.schoolTimeDay = value[1] == '' ? undefined : value[1];
                 delete filter['schoolTime'];
             }
             //排序的字段 存在排序字段和排序顺序两个信息
-            if(filter.hasOwnProperty('orders')){
+            if (filter.hasOwnProperty('orders')&&filter['orders']) {
                 value = filter['orders'].split('_');
                 filter.columnKey = value[0] == '' ? undefined : value[0];
                 filter.order = value[1] == '' ? undefined : value[1];
@@ -85,13 +140,13 @@ appControllers.controller('courseListCtrl',
          * @param columnKey 需要排序的字段
          * @param order 排序的顺序 asc和desc
          */
-        $scope.filterOrder = function(e,columnKey,order){
+        $scope.filterOrder = function (e, columnKey, order) {
             //阻止事件冒泡
             e.stopPropagation();
             //选择完关闭弹出层
             $scope.pop = false;
             //进行数据的重新加载
-            $scope.filter.orders =[columnKey, order].join('_');
+            $scope.filter.orders = [columnKey, order].join('_');
             doSearch();
         };
 
