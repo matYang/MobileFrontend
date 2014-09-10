@@ -7,8 +7,8 @@ appControllers.controller('courseListCtrl',
 
         $scope.page = pageView.page;
         $scope.filter = pageView.filter;
-        //save tmp choosed filter options until confirmed
-        $scope.filter_tmp = angular.copy($rootScope.filter);
+        //在用户确认前临时保存用户选择的信息 确认后会拷贝到filter中进行保存
+        $scope.filter_tmp = angular.copy($scope.filter);
 
         //get options for filter modal
         app.getCategory().then(function (data) {
@@ -69,6 +69,17 @@ appControllers.controller('courseListCtrl',
             }
         };
         $scope.doRefresh();
+
+        /**
+         * 底部栏爱推荐弹出框中点击事件 主要用来排序 columnKey
+         * @param columnKey 需要排序的字段
+         * @param order 排序的顺序 asc和desc
+         */
+        $scope.filterOrder = function(columnKey,order){
+            //todo 简单来做就是不保存
+            //选择完关闭弹出层
+            $scope.pop = false;
+        };
 
         //1st 培训类目筛选弹出框
         $ionicModal.fromTemplateUrl('views/course-filter/course-filter-item.html',
