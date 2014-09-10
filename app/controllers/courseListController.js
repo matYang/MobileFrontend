@@ -27,7 +27,7 @@ appControllers.controller('courseListCtrl',
 
             var value;//临时用的变量
             //格式化filter条件的值 开课日期startDate 上课时间schoolTime
-            if (filter.hasOwnProperty('startDate')&&filter['startDate']) {
+            if (filter.hasOwnProperty('startDate') && filter['startDate']) {
                 //格式化 开课日期startDate 当月 下月 下下月
                 var dataValue = filter['startDate'];
                 var now = new Date();
@@ -87,20 +87,19 @@ appControllers.controller('courseListCtrl',
 
             }
             //todo 下面两段代码可以进行合并
-            if (filter.hasOwnProperty('schoolTime')&&filter['schoolTime']) {
+            if (filter.hasOwnProperty('schoolTime') && filter['schoolTime']) {
                 value = filter['schoolTime'].split('_');
                 filter.schoolTimeWeek = value[0] == '' ? undefined : value[0];
                 filter.schoolTimeDay = value[1] == '' ? undefined : value[1];
                 delete filter['schoolTime'];
             }
             //排序的字段 存在排序字段和排序顺序两个信息
-            if (filter.hasOwnProperty('orders')&&filter['orders']) {
+            if (filter.hasOwnProperty('orders') && filter['orders']) {
                 value = filter['orders'].split('_');
                 filter.columnKey = value[0] == '' ? undefined : value[0];
                 filter.order = value[1] == '' ? undefined : value[1];
                 delete filter['orders'];
             }
-
             Courses.get(angular.extend({}, filter, $scope.page)).$promise
                 .then(function (data) {
                     $scope.courses = data.data;
