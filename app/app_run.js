@@ -1,10 +1,8 @@
 'use strict';
 app.run(
     ['app', '$rootScope', 'restAPI', '$log', 'Auth', '$state', 'pageService', 'enums', 'options', '$ionicScrollDelegate',
-        'getLocation', 'getCategory', 'getSchool', '$timeout', '$interval','$ionicPopup','$window','$location',
-        function (app, $rootScope, restAPI, $log, Auth, $state, pageService, enums, options,
-                  $ionicScrollDelegate, getLocation, getCategory, getSchool, $timeout, $interval,
-                  $ionicPopup, $window,$location) {
+        'getLocation', 'getCategory', 'getSchool', '$timeout', '$interval', '$ionicPopup', '$window', '$location',
+        function (app, $rootScope, restAPI, $log, Auth, $state, pageService, enums, options, $ionicScrollDelegate, getLocation, getCategory, getSchool, $timeout, $interval, $ionicPopup, $window, $location) {
             if (app.test_mode) {
                 $log.info('RUN IN TEST MODE');
             }
@@ -45,15 +43,15 @@ app.run(
             app.getCategory = getCategory;
             app.getSchool = getSchool;
 
-            app.alert = function(title,message){
-                if(message == undefined){
+            app.alert = function (title, message) {
+                if (message == undefined) {
                     message = title;
                     title = '';
                 }
                 return $ionicPopup.alert({
                     title: title,
                     template: message,
-                    okText:'好的',
+                    okText: '好的',
                     okType: ''
                 });
             };
@@ -66,16 +64,13 @@ app.run(
                 // transitionTo() promise will be rejected with
                 // a 'transition prevented' error
                 var isLogin = $rootScope.global.isLogin;
-
-                var isToLoginPage = $state.get('login') === toState||$state.get('complete') === toState;
-
+                var isToLoginPage = $state.get('login') === toState || $state.get('complete') === toState || $state.get('register') === toState;
                 //已登录用户想要进入登录页面 当然不可以..
                 if (isToLoginPage && isLogin) {
                     //admin already login don't need to go to login page
                     $log.info('already login:TO home');
                     $location.path('courses');
                 }
-
             });
         }
     ]
