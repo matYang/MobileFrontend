@@ -21,7 +21,7 @@
 }
 
 .filter-submenu .btn {
-    padding: 10px;
+    padding: 10px 0;
 }
 .filter-submenu .btn:hover{
     background: #333;

@@ -1261,29 +1261,29 @@ q:before, q:after, blockquote:before, blockquote:after {
  * Loading
  * --------------------------------------------------
  */
-.loading {
-  -webkit-transition: 0.2s opacity linear;
-  -moz-transition: 0.2s opacity linear;
-  transition: 0.2s opacity linear;
-  visibility: hidden;
-  opacity: 0;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  z-index: 13;
-  padding: 20px;
-  border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: #fff;
-  text-align: center;
-  text-overflow: ellipsis;
-  font-size: 15px; }
-  .loading.visible {
-    visibility: visible; }
-  .loading.active {
-    opacity: 1; }
-  .loading h1, .loading h2, .loading h3, .loading h4, .loading h5, .loading h6 {
-    color: #fff; }
+/*.loading {*/
+  /*-webkit-transition: 0.2s opacity linear;*/
+  /*-moz-transition: 0.2s opacity linear;*/
+  /*transition: 0.2s opacity linear;*/
+  /*visibility: hidden;*/
+  /*opacity: 0;*/
+  /*position: fixed;*/
+  /*top: 50%;*/
+  /*left: 50%;*/
+  /*z-index: 13;*/
+  /*padding: 20px;*/
+  /*border-radius: 5px;*/
+  /*background-color: rgba(0, 0, 0, 0.7);*/
+  /*color: #fff;*/
+  /*text-align: center;*/
+  /*text-overflow: ellipsis;*/
+  /*font-size: 15px; }*/
+  /*.loading.visible {*/
+    /*visibility: visible; }*/
+  /*.loading.active {*/
+    /*opacity: 1; }*/
+  /*.loading h1, .loading h2, .loading h3, .loading h4, .loading h5, .loading h6 {*/
+    /*color: #fff; }*/
 
 /**
  * Items
@@ -2573,21 +2573,21 @@ select[multiple], select[size] {
     line-height: 19px;
     margin-top: 3px; }
 
-.button-icon {
-  -webkit-transition: opacity 0.1s;
-  -moz-transition: opacity 0.1s;
-  transition: opacity 0.1s;
-  padding: 0 6px;
-  min-width: initial;
-  border-color: transparent;
-  background: none; }
-  .button-icon.button.active, .button-icon.button.activated {
-    border-color: transparent;
-    background: none;
-    box-shadow: none;
-    opacity: 0.3; }
-  .button-icon .icon:before, .button-icon.icon:before {
-    font-size: 32px; }
+/*.button-icon {*/
+  /*-webkit-transition: opacity 0.1s;*/
+  /*-moz-transition: opacity 0.1s;*/
+  /*transition: opacity 0.1s;*/
+  /*padding: 0 6px;*/
+  /*min-width: initial;*/
+  /*border-color: transparent;*/
+  /*background: none; }*/
+  /*.button-icon.button.active, .button-icon.button.activated {*/
+    /*border-color: transparent;*/
+    /*background: none;*/
+    /*box-shadow: none;*/
+    /*opacity: 0.3; }*/
+  /*.button-icon .icon:before, .button-icon.icon:before {*/
+    /*font-size: 32px; }*/
 
 .button-clear {
   -webkit-transition: opacity 0.1s;
@@ -2606,8 +2606,8 @@ select[multiple], select[size] {
   .button-clear.button-icon {
     border-color: transparent;
     background: none; }
-  .button-clear.active, .button-clear.activated {
-    opacity: 0.3; }
+  /*.button-clear.active, .button-clear.activated {*/
+    /*opacity: 0.3; }*/
 
 .button-outline {
   -webkit-transition: opacity 0.1s;
