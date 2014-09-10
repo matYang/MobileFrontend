@@ -27,6 +27,7 @@
 .card.main{
     position: relative;
     border-color: #128D56;
+    padding-right: 110px;
     min-height: 110px;}
     .card.main h1{
         font-size: 18px;
