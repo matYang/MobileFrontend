@@ -23,9 +23,13 @@ appServices.factory('restAPI',
                 // Example request api: /api/v2/login /api/v2/login
                 'user': ['/data/user.json?:ID:OP', '/user/:ID/:OP'],
                 'courses': ['/data/courses:ID.json', '/course/:ID'],
+                //预定课程
+                'booking': ['/data/options/school.json', '/booking/:ID'],
+
                 'category': ['/data/options/category.json', '/general/category'],
                 'location': ['/data/options/location.json', '/general/location'],
-                'school': ['/data/options/school.json', '/general/school'],
+                'school': ['/data/options/school.json', '/general/school']
+
             }
         };
         var prefix = api_config.api_name + api_config.version;
@@ -61,6 +65,7 @@ appServices.factory('restAPI',
         return {
             'user': resource_maker('user'),
             'courses': resource_maker('courses'),
+            'booking': resource_maker('booking'),
             'category': resource_maker('category'),
             'location': resource_maker('location'),
             'school': resource_maker('school'),
