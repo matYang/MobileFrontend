@@ -8,7 +8,7 @@ app.controller('courseBookingCtrl', ['app', '$scope', function (app, $scope) {
     $scope.booking = {
         userId: app.$rootScope.global.user && app.$rootScope.global.user.id,
         phone: app.$rootScope.global.user && app.$rootScope.global.user.phone,
-        name: '',
+        name: app.$rootScope.global.user && app.$rootScope.global.user.name,
         type: 1
     };
 
