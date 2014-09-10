@@ -26,10 +26,12 @@ appControllers.controller('courseListCtrl',
             var filter = angular.copy($scope.filter);
 
             var value;//临时用的变量
-            //格式化filter条件的值 开课日期startDate 上课时间schoolTime
-            if (filter.hasOwnProperty('startDate') && filter['startDate']) {
+            //格式化filter条件的值 开课日期startDate 上课时间schoolTime may be 01,2
+            if (filter.hasOwnProperty('startDate') && filter['startDate']!==undefined) {
+
                 //格式化 开课日期startDate 当月 下月 下下月
                 var dataValue = filter['startDate'];
+                console.log(dataValue);
                 var now = new Date();
                 var date1 = new Date(Date.parse([now.getFullYear(), now.getMonth() + 1].join('-')));
                 var date2;
@@ -84,7 +86,6 @@ appControllers.controller('courseListCtrl',
                 filter.startDateStart = date1 ? date1.getTime() : date1;
                 filter.startDateEnd = date2 ? date2.getTime() : date2;
                 delete filter['startDate'];
-
             }
             if (filter.hasOwnProperty('tab')) {
                 filter.cashbackStart = filter['tab'] ? 1 : undefined;
@@ -204,6 +205,7 @@ appControllers.controller('courseListCtrl',
             angular.forEach($scope.filter, function (v, k) {
                 $scope.filter[k] = undefined;
             });
+            console.log($scope.filter_tmp);
             angular.extend($scope.filter, $scope.filter_tmp);
             $scope.modal.hide();
             doSearch();
