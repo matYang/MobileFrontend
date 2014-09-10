@@ -79,6 +79,10 @@
     font-weight: 400;
     font-size: 12px;
 }
+#course-list .nav-item.activated{
+    background-color: #333;
+    cursor: pointer;
+}
 #course-list .nav-item:hover{
     cursor: pointer;
 }

@@ -7,12 +7,28 @@
     /*background-color: #ffffff;}*/
 
 /*control radio-item width*/
-.modal-filter-time .item-cols4{
+.modal-filter-time .item-radios{
     overflow: hidden;}
-    .modal-filter-time .item-cols4 .item-radio{
+    .modal-filter-time .item-radios .item-radio{
+        /*外部radio容器*/
+        margin: 0;
         text-align: center;
-        width: 25%;
         float: left;}
+        .modal-filter-time .item-radio .item-content{
+            /*内部色框*/
+            padding: 8px 0;
+            border: 1px solid #cccccc;
+        }
+.modal-filter-time .item-radios.item-cols4 .item-radio{
+    width: 25%;
+}
+.modal-filter-time .item-radios.item-cols3 .item-radio{
+    width: 33.333%;
+}
+
+.modal-filter-time .item-radio+.item-radio{
+    margin-left: -1px;
+}
 /*描述性介绍文字*/
 .modal-filter-time label{
     display: block;
@@ -31,7 +47,7 @@
     .modal-filter-time .item-content{
         padding: 5px 0;}
 
-.modal-filter-time label.icon{
+.modal-filter-time .title .icon{
     display: inline-block;
     height: 20px;
     width: 20px;

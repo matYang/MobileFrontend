@@ -6,7 +6,7 @@
         </div>
     </div>
     <ion-content class="padding has-header">
-        <label><i class="icon icon-calender"></i>&nbsp;上课日期</label>
+        <label class="title"><i class="icon icon-calender"></i>&nbsp;上课日期</label>
 
         <div class="item-radios item-cols4 item-radio-btn">
             <ion-radio ng-model="filter_tmp.startDate" ng-value="item.value"
@@ -15,11 +15,18 @@
                 {{ item.label}}
             </ion-radio>
         </div>
-        <label><i class="icon icon-clock"></i>&nbsp;上课时间</label>
+        <label class="title"><i class="icon icon-clock"></i>&nbsp;上课时间</label>
 
+        <div class="item-radios item-cols3 item-radio-btn">
+            <ion-radio ng-model="filter_tmp.schoolTime" ng-value="item.value"
+                       ng-repeat="item in options.schoolTime.slice(0,3)"
+                       name="schoolTime">
+                {{ item.label}}
+            </ion-radio>
+        </div>
         <div class="item-radios item-cols4 item-radio-btn">
             <ion-radio ng-model="filter_tmp.schoolTime" ng-value="item.value"
-                       ng-repeat="item in options.schoolTime"
+                       ng-repeat="item in options.schoolTime.slice(3)"
                        name="schoolTime">
                 {{ item.label}}
             </ion-radio>
