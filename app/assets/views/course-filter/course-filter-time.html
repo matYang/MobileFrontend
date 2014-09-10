@@ -6,7 +6,7 @@
         </div>
     </div>
     <ion-content class="padding has-header">
-        <label>上课日期</label>
+        <label><i class="icon icon-calender"></i>&nbsp;上课日期</label>
 
         <div class="item-radios item-cols4 item-radio-btn">
             <ion-radio ng-model="filter_tmp.startDate" ng-value="item.value"
@@ -15,7 +15,7 @@
                 {{ item.label}}
             </ion-radio>
         </div>
-        <label>上课时间</label>
+        <label><i class="icon icon-clock"></i>&nbsp;上课时间</label>
 
         <div class="item-radios item-cols4 item-radio-btn">
             <ion-radio ng-model="filter_tmp.schoolTime" ng-value="item.value"
@@ -24,11 +24,7 @@
                 {{ item.label}}
             </ion-radio>
         </div>
-        <hr/>
-        <div class="buttons text-center">
-            <button class="button button-outline" ng-click="modal.hide()">取&nbsp;&nbsp;消</button>
-            <button class="button" ng-click="confirm_filter()">确&nbsp;&nbsp;定</button>
-        </div>
+        <button class="button button-block btn-search" ng-click="confirm_filter()">现在搜索</button>
     </ion-content>
 
 </div>

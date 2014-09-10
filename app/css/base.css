@@ -135,12 +135,12 @@ input:focus{
     left: -9999px; }
 .item-radio input:checked ~ .item-content {
     /*默认的单选按钮选中状态*/
-    color: #41A478;
+    color: #009F4B;
     background: #ffffff; }
 .item-radio-btn .item-radio input:checked ~ .item-content {
     /*按钮型的不加icon的单选按钮选中状态*/
     color: #ffffff;
-    background: #41A478; }
+    background: #009F4B; }
 .item-radio input:checked ~ .radio-icon {
     /* show the checkmark icon when its checked */
     visibility: visible; }
