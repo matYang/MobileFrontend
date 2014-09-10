@@ -11,11 +11,16 @@
     border-radius: 0;
     padding: 0 10px;
 }
-.bar.bar-header .button-back{
+.bar.bar-header .btn-icon{
     width: 80px;
-    background-image: url("../images/header-back.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 32px 32px;
     text-indent: -9999px;
+}
+.bar.bar-header .btn-back{
+    background-image: url("../images/header-back.png");
+}
+.bar.bar-header .btn-phone{
+    background-image: url("../images/header-phone.png");
 }
