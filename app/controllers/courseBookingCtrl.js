@@ -2,7 +2,7 @@
  * Created by jz on 2014/9/10.
  */
 app.controller('courseBookingCtrl', ['app', '$scope', function (app, $scope) {
-    var restAPI = app.restAPI.courses;
+    var restAPI = app.restAPI.booking;
     $scope.id = app.$state.params.id;
 
     $scope.booking = {
