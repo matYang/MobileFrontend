@@ -4,7 +4,6 @@
 }
 .tabs-left{
     width: 100%;}
-
     .tabs-left .tabs,.tabs-left .pane{
         height: auto;
         min-height: 100%;
@@ -16,7 +15,7 @@
         position: absolute;
         top:0;
         left: 0;
-        background-color: #B7DDCC;
+        /*background-color: #B7DDCC;*/
         display: block;
         width: 100px;}
         .tabs-left .tab-item{
@@ -33,7 +32,6 @@
             border-left: 3px solid #118D56;}
     .tabs-left .pane{
         padding-left: 110px;
-        padding-right: 10px;
         width: 100%}
         /*init all border width to 0*/
         .tabs-left .item-radio{
