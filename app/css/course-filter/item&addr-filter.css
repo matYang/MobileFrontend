@@ -1,6 +1,7 @@
 /*1st & 2cd item and address filter 培训类目和上课地点的过滤*/
 .tabs-left-content{
     /*todo 这里需要使用img背景*/
+    background: url("../images/tabs_bg.jpg") repeat-y;
 }
 .tabs-left{
     width: 100%;}
@@ -15,7 +16,7 @@
         position: absolute;
         top:0;
         left: 0;
-        /*background-color: #B7DDCC;*/
+        background-color: #B7DDCC;
         display: block;
         width: 100px;}
         .tabs-left .tab-item{
