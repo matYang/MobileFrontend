@@ -114,6 +114,9 @@ input:focus{
  * Lists
  * --------------------------------------------------
  */
+.bar{
+    border:none;
+}
 .list {
     position: relative;
     padding-top: 1px;

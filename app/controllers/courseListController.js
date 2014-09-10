@@ -86,6 +86,10 @@ appControllers.controller('courseListCtrl',
                 delete filter['startDate'];
 
             }
+            if (filter.hasOwnProperty('tab')) {
+                filter.cashbackStart = filter['tab'] ? 1 : undefined;
+                delete filter['tab'];
+            }
             //todo 下面两段代码可以进行合并
             if (filter.hasOwnProperty('schoolTime') && filter['schoolTime']) {
                 value = filter['schoolTime'].split('_');
@@ -132,6 +136,12 @@ appControllers.controller('courseListCtrl',
             }
         };
         $scope.doRefresh();
+
+        $scope.clickTab = function (discount) {
+            if (discount == $scope.filter.tab)return;
+            $scope.filter.tab = discount;
+            doSearch();
+        };
 
         /**
          * 底部栏爱推荐弹出框中点击事件 主要用来排序 columnKey

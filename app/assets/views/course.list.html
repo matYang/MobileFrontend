@@ -5,7 +5,11 @@
         <button ng-if="!global.isLogin" nav-clear class="button button-clear button-positive" ui-sref="login">登录</button>
         <button ng-if="global.isLogin" class="button button-clear button-positive">您好，爱会员</button>
     </div>
-    <ion-content class="has-header has-footer" has-bouncing="false" overflow-scroll="false">
+    <div class="bar bar-subheader">
+            <div class="btn-tab" ng-class="{'active':!filter.tab}" ng-click="clickTab()">全 部</div>
+            <div class="btn-tab" ng-class="{'active':filter.tab}" ng-click="clickTab('discount')">折 扣</div>
+    </div>
+    <ion-content class="has-header has-subheader has-footer" has-bouncing="false" overflow-scroll="false">
         <div class="list">
             <div ng-show="loading" class="padding text-center">加载中...</div>
             <a class="item item-thumbnail" ng-repeat="c in courses" ng-href="#/courses/{{ c.id }}">

@@ -33,7 +33,39 @@
 }
 /*end list items*/
 
-/*start filter tabs*/
+/*start 头部二级菜单栏*/
+#course-list .bar.bar-subheader{
+    padding: 0;
+    border: none;
+}
+#course-list .btn-tab{
+    position: relative;
+    float: left;
+    width: 50%;
+    height: 44px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 16px;
+    color: #ffffff;
+    background: #4B5366;
+    cursor: pointer;
+}
+#course-list .btn-tab.active{
+    background: #2F3541;
+}
+#course-list .btn-tab.active:after{
+    content: 's ';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    margin-left: -5px;
+    width: 10px;
+    height: 10px;
+    border: 5px solid transparent;
+    border-top-color: #2F3541;
+}
+/*end 头部二级菜单栏*/
+/*底部菜单栏*/
 #course-list .nav{
     color: #eeeeee;
     background-color: #2F3541;
