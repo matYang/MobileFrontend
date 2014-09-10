@@ -6,15 +6,17 @@
     width: 100%;}
 
     .tabs-left .tabs,.tabs-left .pane{
-        float: left;
         height: auto;
         min-height: 100%;
         position: relative;
     }
     .tabs-left .tabs{
+        position: absolute;
+        top:0;
+        left: 0;
         background-color: #B7DDCC;
         display: block;
-        width: 20%;}
+        width: 100px;}
         .tabs-left .tab-item{
             display: block;
             text-align: left;
@@ -28,9 +30,9 @@
             background-color: #ffffff;
             border-left: 3px solid #118D56;}
     .tabs-left .pane{
-        padding-left: 10px;
+        padding-left: 110px;
         padding-right: 10px;
-        width: 80%;}
+        width: 100%}
         /*init all border width to 0*/
         .tabs-left .item-radio{
             padding: 5px;
