@@ -23,29 +23,30 @@ appFilters
 //            };
 //        }
 //    ])
-//    .filter('schooltimeDay', ['app',
-//        function (app) {
-//            return function (val) {
-//                if(!val) return '无';
-//                var text = val.map(function (v) {
-//                    return app.Enum.schooltimeDay[v];
-//                });
-//                return text.join(',');
-//            };
-//        }
-//    ])
-//    .filter('schooltimeWeek', ['app',
-//        function (app) {
-//            return function (val) {
-//                if(!val) return '无';
-//                var text = val.map(function (v) {
-//                    return app.Enum.schooltimeWeek[v];
-//                });
-//                return text.join(',');
-//
-//            };
-//        }
-//    ])
+    .filter('schooltimeDay', ['app',
+        function (app) {
+            return function (val) {
+                val = app.tools.toSchoolTimeList(val,app.enums.schooltimeDay);
+                if(!val) return '无';
+                var text = val.map(function (v) {
+                    return app.enums.schooltimeDay[v];
+                });
+                return text.join(',');
+            };
+        }
+    ])
+    .filter('schooltimeWeek', ['app',
+        function (app) {
+            return function (val) {
+                val = app.tools.toSchoolTimeList(val,app.enums.schooltimeWeek);
+                if(!val) return '无';
+                var text = val.map(function (v) {
+                    return app.enums.schooltimeWeek[v];
+                });
+                return text.join('+');
+            };
+        }
+    ])
 //    .filter('payTypeText', ['app',
 //        function (app) {
 //            return function (value) {

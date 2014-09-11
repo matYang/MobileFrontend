@@ -1,8 +1,8 @@
 'use strict';
 app.run(
     ['app', '$rootScope', 'restAPI', '$log', 'Auth', '$state', 'pageService', 'enums', 'options', '$ionicScrollDelegate',
-        'getLocation', 'getCategory', 'getSchool', '$timeout', '$interval', '$ionicPopup', '$window', '$location',
-        function (app, $rootScope, restAPI, $log, Auth, $state, pageService, enums, options, $ionicScrollDelegate, getLocation, getCategory, getSchool, $timeout, $interval, $ionicPopup, $window, $location) {
+        'getLocation', 'getCategory', 'getSchool', '$timeout', '$interval', '$ionicPopup', '$window', '$location', 'tools',
+        function (app, $rootScope, restAPI, $log, Auth, $state, pageService, enums, options, $ionicScrollDelegate, getLocation, getCategory, getSchool, $timeout, $interval, $ionicPopup, $window, $location, tools) {
             if (app.test_mode) {
                 $log.info('RUN IN TEST MODE');
             }
@@ -36,6 +36,7 @@ app.run(
 
             app.pageService = pageService;
             app.enums = enums;
+            app.tools = tools;
             app.options = options;
             app.restAPI = restAPI;
 
@@ -81,9 +82,9 @@ app.run(
                 if (isLogin && completed) {
                     //非首次进入页面 想要进入登录等页面
                     if (isToLoginPage) {
-                        if(fromState.name){
+                        if (fromState.name) {
                             event.preventDefault();
-                        }else{
+                        } else {
                             $location.path('courses');
                         }
 

@@ -1,6 +1,6 @@
 /*start list items*/
 .item-thumbnail {
-    height: 118px;
+    height: 126px;
     margin: 8px;
     /*左缩进*/
     padding: 10px 0 10px 115px;
@@ -9,7 +9,7 @@
 .item-thumbnail img,.item-thumbnail .title{
     position: absolute;
     /*左缩进对应*/
-    bottom: 15px;left: 15px;
+    bottom: 16px;left: 15px;
     width: 90px;
     text-align: center;}
 .item-thumbnail img{
@@ -23,8 +23,8 @@
     background: rgba(0,0,0,.5);;
 }
 /*end*/
-.item-thumbnail h2{margin-bottom: 10px}
-.item-thumbnail p{margin-bottom: 5px;font-size: 14px;color: #333;}
+.item-thumbnail h2{margin-bottom: 5px}
+.item-thumbnail p{margin-bottom: 2px;font-size: 14px;color: #333;}
 /*文字超出隐藏*/
 .item-thumbnail p,.item-thumbnail h2,.item-thumbnail .title {
     overflow: hidden;
