@@ -6,7 +6,7 @@ app.controller('courseBookingCtrl', ['app', '$scope', function (app, $scope) {
     $scope.id = app.$state.params.id;
 
     $scope.booking = {
-        userId: app.$rootScope.global.user && app.$rootScope.global.user.id,
+        courseId: $scope.id,
         phone: app.$rootScope.global.user && app.$rootScope.global.user.phone,
         name: app.$rootScope.global.user && app.$rootScope.global.user.name,
         type: 1
@@ -30,9 +30,9 @@ app.controller('courseBookingCtrl', ['app', '$scope', function (app, $scope) {
         restAPI.save(booking, function (data) {
             var alertPopup = app.alert('预定成功');
             alertPopup.then(function (res) {
-                app.$state.go('courseDetail',{id:$scope.id})
+                app.$state.go('courseDetail', {id: $scope.id})
             });
-        },function(response){
+        }, function (response) {
             console.log('register error');
             app.alert(response.data.message || '预定失败');
         });
