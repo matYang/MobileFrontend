@@ -24,6 +24,8 @@ app.controller('completeCtrl', ['$scope', 'app', function ($scope, app) {
         }
         console.log(app.$window.location);
         restAPI.update({ID: id}, {id: id, schoolId: schoolId}, function () {
+            //更新本地的用户信息schoolId
+            app.$rootScope.global.user.schoolId = schoolId;
             var alertPopup = app.alert('绑定成功');
             alertPopup.then(function (res) {
 //                app.$window.location.href = 'http://www.ishangke.cn';

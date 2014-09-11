@@ -64,12 +64,27 @@ app.run(
                 // transitionTo() promise will be rejected with
                 // a 'transition prevented' error
                 var isLogin = $rootScope.global.isLogin;
+                var completed = $rootScope.global.isLogin && !!$rootScope.global.user.schoolId;
                 var isToLoginPage = $state.get('login') === toState || $state.get('complete') === toState || $state.get('register') === toState;
+                //未输入学校的用户强制只能进入complete页面
+                if (isLogin && !completed) {
+                    if ($state.get('complete') === fromState) {
+                        //已经在complete页面的就别想出去了..
+                        event.preventDefault();
+                    } else {
+                        //还没在complete页面的就直接去这个页面的 其中包括本来就想去compete页面的情况
+                        $location.path('complete');
+                    }
+                }
+
                 //已登录用户想要进入登录页面 当然不可以..
-                if (isToLoginPage && isLogin) {
-                    //admin already login don't need to go to login page
-                    $log.info('already login:TO home');
-                    $location.path('courses');
+                if (isLogin && completed) {
+                    //非首次进入页面 想要进入登录等页面
+                    if (fromState.name&&isToLoginPage) {
+                        event.preventDefault();
+                    } else {
+                        $location.path('courses');
+                    }
                 }
             });
         }
