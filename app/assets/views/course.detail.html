@@ -1,167 +1,174 @@
-<ion-view title="{{ pageName }}" id="detail">
-    {{ title }}
-    <div class="bar bar-header">
-        <!--nav-clear to clear animation-->
-        <a nav-clear ui-sref="courseList" class="button btn-icon btn-back"></a>
-        <div class="h1 title">课程详情</div>
-        <a class="button btn-icon btn-phone" href="tel:4000250084"></a>
-    </div>
-    <ion-content class="has-header" has-bouncing="true" overflow-scroll="false">
-        <div class="card main">
-            <h1>{{course.courseName}}</h1>
-            <p ng-switch="course.startUponArrival">
-                <span ng-switch-when="0">{{course.regPhone}}</span>
-                {{course.startDate|date:'yyyy年MM月dd日'}}
+<ion-view id="detail">
+    <!--should add ui-view to create child view-->
+    <div ui-view>
+        <div class="bar bar-header">
+            <!--nav-clear to clear animation-->
+            <a nav-clear ui-sref="courseList" class="button btn-icon btn-back"></a>
+
+            <div class="h1 title">课程详情</div>
+            <a class="button btn-icon btn-phone" href="tel:4000250084"></a>
+        </div>
+        <ion-content class="has-header" has-bouncing="true" overflow-scroll="false">
+            <div class="card main">
+                <h1>{{course.courseName}}</h1>
+
+                <p ng-switch="course.startUponArrival">
+                    <span ng-switch-when="0">{{course.regPhone}}</span>
+                    {{course.startDate|date:'yyyy年MM月dd日'}}
                 <span ng-switch-default>
                     <span ng-if="course.finishDate">-{{course.finishDate|date:'yyyy年MM月dd日'}}</span>
                 </span>
-            </p>
-            <p>
-                <span>{{course.startTime1|toHHmm}}-{{course.finishTime1|toHHmm}}</span>
-                <span ng-if="course.startTime2">，{{course.startTime2|toHHmm}}-{{course.finishTime2|toHHmm}}</span>
-            </p>
-            <p class="text-light" ng-if="course.qualityAssurance">{{course.qualityAssurance}}</p>
-            <p class="text-light" ng-if="course.classSize">{{course.classSize}}</p>
-            <!--logo-->
-            <img ng-src="{{course.logoUrl}}"/>
-        </div>
-        <table class="card table">
-            <tbody>
-            <tr>
-                <td>【爱】会员价</td>
-                <td>
-                    <span ng-if="!course.price">￥定制</span>
-                    <span ng-if="course.price">￥{{course.price}}元</span>
-                    <span ng-if="course.originalPrice">&nbsp;&nbsp;原价:<s>￥{{course.originalPrice}}元</s></span>
-                </td>
-            </tr>
-            <tr ng-if="course.cashback">
-                <td>线下返现</td>
-                <td>返{{course.cashback}}元</td>
-            </tr>
-            <tr ng-if="course.commission">
-                <td>在线立减</td>
-                <td>立减{{course.commission}}元</td>
-            </tr>
-            <tr>
-                <td>免费试听</td>
-                <td class="has-btn">
-                    <a class="button" ui-sref="courseBooking({id:course.id})">立即咨询</a>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+                </p>
 
-        <table class="card table">
-            <tbody>
-            <tr>
-                <td><i class="icon icon-building"></i>&nbsp;机构</td>
-                <td>{{course.instName}}</td>
-            </tr>
-            <tr>
-                <td><i class="icon icon-addr"></i>&nbsp;地址</td>
-                <td>{{course.address}}</td>
-            </tr>
-            </tbody>
-        </table>
+                <p>
+                    <span>{{course.startTime1|toHHmm}}-{{course.finishTime1|toHHmm}}</span>
+                    <span ng-if="course.startTime2">，{{course.startTime2|toHHmm}}-{{course.finishTime2|toHHmm}}</span>
+                </p>
 
-        <table class="card table">
-            <tbody>
-            <tr ng-if="course.suitableStudent">
-                <td>适合学员</td>
-                <td ng-bind-html="course.suitableStudent"></td>
-            </tr>
-            <tr ng-if="course.courseIntro">
-                <td>课程介绍</td>
-                <td ng-bind-html="course.courseIntro"></td>
-            </tr>
-            <tr ng-if="course.goal">
-                <td>教学目标</td>
-                <td ng-bind-html="course.goal"></td>
-            </tr>
-            <tr ng-if="course.teachingMaterialFee">
-                <td>教材费用</td>
-                <td ng-bind-html="course.teachingMaterialFee"></td>
-            </tr>
-            <tr ng-if="course.teachingMaterialIntro">
-                <td>教材介绍</td>
-                <td ng-bind-html="course.teachingMaterialIntro"></td>
-            </tr>
-            </tbody>
-        </table>
+                <p class="text-light" ng-if="course.qualityAssurance">{{course.qualityAssurance}}</p>
 
-        <table class="card table">
-            <tbody>
-            <tr ng-if="course.passAgreement">
-                <td>签约保过</td>
-                <td ng-bind-html="course.passAgreement"></td>
-            </tr>
-            <tr ng-if="course.classTeacher">
-                <td>推荐就业</td>
-                <td ng-bind-html="course.classTeacher"></td>
-            </tr>
-            <tr ng-if="course.certification">
-                <td>结业证书</td>
-                <td ng-bind-html="course.certification"></td>
-            </tr>
-            <tr ng-if="course.extracurricular">
-                <td>课后互动</td>
-                <td ng-bind-html="course.extracurricular"></td>
-            </tr>
-            <tr ng-if="course.bonusService">
-                <td>赠送服务</td>
-                <td ng-bind-html="course.bonusService"></td>
-            </tr>
-            <tr ng-if="course.quiz">
-                <td>阶段测评</td>
-                <td ng-bind-html="course.quiz"></td>
-            </tr>
-            <tr ng-if="course.teachingAndExercise">
-                <td>讲练结合</td>
-                <td ng-bind-html="course.teachingAndExercise"></td>
-            </tr>
-            <tr ng-if="course.questionBank">
-                <td>题库支持</td>
-                <td ng-bind-html="course.questionBank"></td>
-            </tr>
-            <tr ng-if="course.downloadMaterials">
-                <td>课件下载</td>
-                <td ng-bind-html="course.downloadMaterials"></td>
-            </tr>
-            </tbody>
-        </table>
-        <!--<ion-slide-box on-slide-changed="slideChanged(index)">-->
+                <p class="text-light" ng-if="course.classSize">{{course.classSize}}</p>
+                <!--logo-->
+                <img ng-src="{{course.logoUrl}}"/>
+            </div>
+            <table class="card table">
+                <tbody>
+                <tr>
+                    <td>【爱】会员价</td>
+                    <td>
+                        <span ng-if="!course.price">￥定制</span>
+                        <span ng-if="course.price">￥{{course.price}}元</span>
+                        <span ng-if="course.originalPrice">&nbsp;&nbsp;原价:<s>￥{{course.originalPrice}}元</s></span>
+                    </td>
+                </tr>
+                <tr ng-if="course.cashback">
+                    <td>线下返现</td>
+                    <td>返{{course.cashback}}元</td>
+                </tr>
+                <tr ng-if="course.commission">
+                    <td>在线立减</td>
+                    <td>立减{{course.commission}}元</td>
+                </tr>
+                <tr>
+                    <td>免费试听</td>
+                    <td class="has-btn">
+                        <a class="button" ui-sref="courseDetail.booking({id:course.id})">立即咨询</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="card table">
+                <tbody>
+                <tr>
+                    <td><i class="icon icon-building"></i>&nbsp;机构</td>
+                    <td>{{course.instName}}</td>
+                </tr>
+                <tr>
+                    <td><i class="icon icon-addr"></i>&nbsp;地址</td>
+                    <td>{{course.address}}</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="card table">
+                <tbody>
+                <tr ng-if="course.suitableStudent">
+                    <td>适合学员</td>
+                    <td ng-bind-html="course.suitableStudent"></td>
+                </tr>
+                <tr ng-if="course.courseIntro">
+                    <td>课程介绍</td>
+                    <td ng-bind-html="course.courseIntro"></td>
+                </tr>
+                <tr ng-if="course.goal">
+                    <td>教学目标</td>
+                    <td ng-bind-html="course.goal"></td>
+                </tr>
+                <tr ng-if="course.teachingMaterialFee">
+                    <td>教材费用</td>
+                    <td ng-bind-html="course.teachingMaterialFee"></td>
+                </tr>
+                <tr ng-if="course.teachingMaterialIntro">
+                    <td>教材介绍</td>
+                    <td ng-bind-html="course.teachingMaterialIntro"></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="card table">
+                <tbody>
+                <tr ng-if="course.passAgreement">
+                    <td>签约保过</td>
+                    <td ng-bind-html="course.passAgreement"></td>
+                </tr>
+                <tr ng-if="course.classTeacher">
+                    <td>推荐就业</td>
+                    <td ng-bind-html="course.classTeacher"></td>
+                </tr>
+                <tr ng-if="course.certification">
+                    <td>结业证书</td>
+                    <td ng-bind-html="course.certification"></td>
+                </tr>
+                <tr ng-if="course.extracurricular">
+                    <td>课后互动</td>
+                    <td ng-bind-html="course.extracurricular"></td>
+                </tr>
+                <tr ng-if="course.bonusService">
+                    <td>赠送服务</td>
+                    <td ng-bind-html="course.bonusService"></td>
+                </tr>
+                <tr ng-if="course.quiz">
+                    <td>阶段测评</td>
+                    <td ng-bind-html="course.quiz"></td>
+                </tr>
+                <tr ng-if="course.teachingAndExercise">
+                    <td>讲练结合</td>
+                    <td ng-bind-html="course.teachingAndExercise"></td>
+                </tr>
+                <tr ng-if="course.questionBank">
+                    <td>题库支持</td>
+                    <td ng-bind-html="course.questionBank"></td>
+                </tr>
+                <tr ng-if="course.downloadMaterials">
+                    <td>课件下载</td>
+                    <td ng-bind-html="course.downloadMaterials"></td>
+                </tr>
+                </tbody>
+            </table>
+            <!--<ion-slide-box on-slide-changed="slideChanged(index)">-->
             <!--<ion-slide>-->
-                <!--<h3>Thank you for choosing the Awesome App!</h3>-->
-                <!--<div id="logo">-->
-                    <!--<img src="http://code.ionicframework.com/assets/img/app_icon.png">-->
-                <!--</div>-->
-                <!--<p>-->
-                    <!--We've worked super hard to make you happy.-->
-                <!--</p>-->
-                <!--<p>-->
-                    <!--But if you are angry, too bad.-->
-                <!--</p>-->
+            <!--<h3>Thank you for choosing the Awesome App!</h3>-->
+            <!--<div id="logo">-->
+            <!--<img src="http://code.ionicframework.com/assets/img/app_icon.png">-->
+            <!--</div>-->
+            <!--<p>-->
+            <!--We've worked super hard to make you happy.-->
+            <!--</p>-->
+            <!--<p>-->
+            <!--But if you are angry, too bad.-->
+            <!--</p>-->
             <!--</ion-slide>-->
             <!--<ion-slide>-->
-                <!--<h3>Using Awesome</h3>-->
+            <!--<h3>Using Awesome</h3>-->
 
-                <!--<div id="list">-->
-                    <!--<h5>Just three steps:</h5>-->
-                    <!--<ol>-->
-                        <!--<li>Be awesome</li>-->
-                        <!--<li>Stay awesome</li>-->
-                        <!--<li>There is no step 3</li>-->
-                    <!--</ol>-->
-                <!--</div>-->
+            <!--<div id="list">-->
+            <!--<h5>Just three steps:</h5>-->
+            <!--<ol>-->
+            <!--<li>Be awesome</li>-->
+            <!--<li>Stay awesome</li>-->
+            <!--<li>There is no step 3</li>-->
+            <!--</ol>-->
+            <!--</div>-->
             <!--</ion-slide>-->
             <!--<ion-slide>-->
-                <!--<h3>Any questions?</h3>-->
-                <!--<p>-->
-                    <!--Too bad!-->
-                <!--</p>-->
+            <!--<h3>Any questions?</h3>-->
+            <!--<p>-->
+            <!--Too bad!-->
+            <!--</p>-->
             <!--</ion-slide>-->
-        <!--</ion-slide-box>-->
-        <div class="blank"></div>
-    </ion-content>
+            <!--</ion-slide-box>-->
+            <div class="blank"></div>
+        </ion-content>
+    </div>
 </ion-view>

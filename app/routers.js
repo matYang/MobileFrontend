@@ -33,13 +33,13 @@ appRoutes.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $l
         })
         //课程详情
         .state('courseDetail', {
-            url: '/courses/:id',
+            url: '/courses/{id}',
             templateUrl: 'views/course.detail.html',
             controller: 'courseDetailCtrl'
         })
         //课程订单
-        .state('courseBooking', {
-            url: '/courses/:id/booking',
+        .state('courseDetail.booking', {
+            url: '/booking',
             templateUrl: 'views/course.booking.html',
             controller: 'courseBookingCtrl'
         });
