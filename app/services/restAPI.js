@@ -23,7 +23,7 @@ appServices.factory('restAPI',
                 // Example request api: /api/v2/login /api/v2/login
                 'user': ['/data/user.json?:ID:OP', '/user/:ID/:OP'],
                 'courses': ['/data/courses:ID.json', '/course/:ID'],
-                //预定课程
+                //预订课程
                 'booking': ['/data/options/school.json', '/booking/:ID'],
 
                 'category': ['/data/options/category.json', '/general/category'],

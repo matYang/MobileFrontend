@@ -34,13 +34,13 @@ app.controller('courseBookingCtrl', ['app', '$scope', function (app, $scope) {
         //TODO 这里添加booking的其它信息
         booking.price = $scope.course.price;
         restAPI.save(booking, function (data) {
-            var alertPopup = app.alert('预定成功');
+            var alertPopup = app.alert('预订成功');
             alertPopup.then(function (res) {
                 app.$state.go('courseDetail', {id: $scope.id})
             });
         }, function (response) {
             console.log('register error');
-            app.alert(response.data.message || '预定失败');
+            app.alert(response.data.message || '预订失败');
         });
     }
 
