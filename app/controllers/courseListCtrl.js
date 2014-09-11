@@ -88,7 +88,7 @@ appControllers.controller('courseListCtrl',
                 delete filter['startDate'];
             }
             if (filter.hasOwnProperty('tab')) {
-                filter.cashbackStart = filter['tab'] ? 1 : undefined;
+                filter.originalPriceStart = filter['tab'] ? 1 : undefined;
                 delete filter['tab'];
             }
             //todo 下面两段代码可以进行合并
