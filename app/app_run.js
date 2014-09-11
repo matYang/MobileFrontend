@@ -80,10 +80,13 @@ app.run(
                 //已登录用户想要进入登录页面 当然不可以..
                 if (isLogin && completed) {
                     //非首次进入页面 想要进入登录等页面
-                    if (fromState.name&&isToLoginPage) {
-                        event.preventDefault();
-                    } else {
-                        $location.path('courses');
+                    if (isToLoginPage) {
+                        if(fromState.name){
+                            event.preventDefault();
+                        }else{
+                            $location.path('courses');
+                        }
+
                     }
                 }
             });
