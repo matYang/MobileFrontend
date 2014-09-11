@@ -434,9 +434,9 @@ body.grade-b, body.grade-c {
   bottom: 93px; }
 
 .pane {
-  /*-webkit-transform: translate3d(0, 0, 0);*/
-  /*-moz-transform: translate3d(0, 0, 0);*/
-  /*transform: translate3d(0, 0, 0);*/
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   z-index: 1; }
 
 .view {
@@ -682,9 +682,9 @@ q:before, q:after, blockquote:before, blockquote:after {
   display: -moz-flex;
   display: -ms-flexbox;
   display: flex;
-  /*-webkit-transform: translate3d(0, 0, 0);*/
-  /*-moz-transform: translate3d(0, 0, 0);*/
-  /*transform: translate3d(0, 0, 0);*/
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2079,33 +2079,33 @@ textarea {
 textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {
   border: 0; }
 
-input[type="radio"], input[type="checkbox"] {
-  margin: 0;
-  line-height: normal; }
+/*input[type="radio"], input[type="checkbox"] {*/
+  /*margin: 0;*/
+  /*line-height: normal; }*/
 
-input[type="file"], input[type="image"], input[type="submit"], input[type="reset"], input[type="button"], input[type="radio"], input[type="checkbox"] {
-  width: auto; }
+/*input[type="file"], input[type="image"], input[type="submit"], input[type="reset"], input[type="button"], input[type="radio"], input[type="checkbox"] {*/
+  /*width: auto; }*/
 
 /*input[type="file"] {*/
   /*line-height: 34px; }*/
 
-/*.previous-input-focus, .cloned-text-input + input, .cloned-text-input + textarea {*/
-  /*position: absolute;*/
-  /*left: -9999px;*/
-  /*width: 200px; }*/
+/*TODO styles below are amazing..makes radio choose more fluently*/
+.previous-input-focus, .cloned-text-input + input, .cloned-text-input + textarea {
+  position: absolute;
+  left: -9999px;
+  width: 200px; }
 
-/*input::-moz-placeholder, textarea::-moz-placeholder {*/
+input::-moz-placeholder, textarea::-moz-placeholder {
   /* Firefox 19+ */
-  /*color: #aaaaaa; }*/
-/*input:-ms-input-placeholder, textarea:-ms-input-placeholder {*/
-  /*color: #aaaaaa; }*/
-/*input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {*/
-  /*color: #aaaaaa; }*/
+  color: #aaaaaa; }
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  color: #aaaaaa; }
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: #aaaaaa; }
 
-/*input[disabled], select[disabled], textarea[disabled], input[readonly]:not(.cloned-text-input), textarea[readonly]:not(.cloned-text-input), select[readonly] {*/
-  /*background-color: #f8f8f8;*/
-  /*cursor: not-allowed; */
-/*}*/
+input[disabled], select[disabled], textarea[disabled], input[readonly]:not(.cloned-text-input), textarea[readonly]:not(.cloned-text-input), select[readonly] {
+  background-color: #f8f8f8;
+  cursor: not-allowed; }
 
 input[type="radio"][disabled], input[type="checkbox"][disabled], input[type="radio"][readonly], input[type="checkbox"][readonly] {
   background-color: transparent; }
