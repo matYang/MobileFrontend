@@ -2,7 +2,9 @@
  * Created by jz on 2014/9/10.
  */
 app.controller('courseBookingCtrl', ['app', '$scope', function (app, $scope) {
-    console.log($scope);
+    //该controller为子controller 父controller为courseDetail 如果直接输入地址进入booking
+    //会执行父controller中的方法来获取课程详情(为异步加载) 因此如果在这里立刻输出 course为undefined(因为回调还没成功)
+    //如果需要保证controller在调用时就已经加载好数据 需要在router中使用resolve
     var restAPI = app.restAPI.booking;
     $scope.id = app.$state.params.id;
 
@@ -14,6 +16,7 @@ app.controller('courseBookingCtrl', ['app', '$scope', function (app, $scope) {
     };
 
     $scope.submitBooking = function () {
+
         if (!$scope.booking.name) {
             app.alert('请输入姓名');
             return
@@ -28,6 +31,8 @@ app.controller('courseBookingCtrl', ['app', '$scope', function (app, $scope) {
             return
         }
         var booking = angular.copy($scope.booking);
+        //TODO 这里添加booking的其它信息
+        booking.price = $scope.course.price;
         restAPI.save(booking, function (data) {
             var alertPopup = app.alert('预定成功');
             alertPopup.then(function (res) {
