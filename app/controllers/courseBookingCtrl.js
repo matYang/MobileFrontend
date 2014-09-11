@@ -32,9 +32,9 @@ app.controller('courseBookingCtrl', ['app', '$scope', function (app, $scope) {
             alertPopup.then(function (res) {
                 app.$state.go('courseDetail',{id:$scope.id})
             });
-        },function(data){
+        },function(response){
             console.log('register error');
-            app.alert(data.message || '预定失败');
+            app.alert(response.data.message || '预定失败');
         });
     }
 

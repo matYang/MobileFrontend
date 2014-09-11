@@ -111,7 +111,7 @@ appControllers.controller('courseListCtrl',
                     $scope.page.start = data.start;
                     $scope.page.count = data.count;
                     $scope.page.total = data.total;
-                }, function () {
+                }, function (response) {
                     //todo error 数据获取失败
                 }).finally(function () {
                     $scope.loading = false;

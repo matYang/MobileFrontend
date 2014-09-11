@@ -29,8 +29,8 @@ app.controller('completeCtrl', ['$scope', 'app', function ($scope, app) {
 //                app.$window.location.href = 'http://www.ishangke.cn';
                 app.$state.go('courseList')
             });
-        }, function (data) {
-            app.alert(data.message && '绑定失败，请稍后再试');
+        }, function (reponse) {
+            app.alert(reponse.data.message && '绑定失败，请稍后再试');
         })
     }
 }]);

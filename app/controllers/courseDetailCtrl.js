@@ -5,8 +5,8 @@ appControllers.controller('courseDetailCtrl', ['$scope','app', function($scope,a
     $scope.doRefresh = function(){
         Courses.get({ID:course_id},function(data){
             $scope.course = data;
-        },function(){
-            //error
+        },function(resposne){
+            //todo error
         })
     };
     $scope.doRefresh();
