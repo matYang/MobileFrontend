@@ -20,7 +20,7 @@
                 </span>
                 </p>
 
-                <p>
+                <p ng-if="course.startTime1">
                     <span>{{course.startTime1|toHHmm}}-{{course.finishTime1|toHHmm}}</span>
                     <span ng-if="course.startTime2">，{{course.startTime2|toHHmm}}-{{course.finishTime2|toHHmm}}</span>
                 </p>
