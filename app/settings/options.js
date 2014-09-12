@@ -1,6 +1,6 @@
 'use strict';
 app.value('options', {
-        schoolTime: [
+        schooltime: [
             {label: '不限', value: undefined},
             {label: '白天', value: '_3'},
             {label: '晚上', value: '_4'},
