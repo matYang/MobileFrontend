@@ -105,7 +105,7 @@ appControllers.controller('courseListCtrl',
                 filter.order = value[1] == '' ? undefined : value[1];
                 delete filter['orders'];
             }
-            Courses.get(angular.extend({}, filter, $scope.page)).$promise
+            Courses.get(angular.extend({enabled:1}, filter, $scope.page)).$promise
                 .then(function (data) {
                     $scope.courses = data.data;
                     $scope.page.start = data.start;
