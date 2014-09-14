@@ -33,6 +33,7 @@ app.controller('courseBookingCtrl', ['app', '$scope', function (app, $scope) {
         var booking = angular.copy($scope.booking);
         //TODO 这里添加booking的其它信息
         booking.price = $scope.course.price;
+        booking.cashbackAmount = $scope.course.cashback;
         restAPI.save(booking, function (data) {
             var alertPopup = app.alert('预订成功');
             alertPopup.then(function (res) {
