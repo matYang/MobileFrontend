@@ -44,6 +44,12 @@ app.run(
             app.getCategory = getCategory;
             app.getSchool = getSchool;
 
+            /**
+             * 全局的提示框 不传入message 会将title作为message使用
+             * @param title 标题
+             * @param message 内容文字
+             * @returns {*}
+             */
             app.alert = function (title, message) {
                 if (message == undefined) {
                     message = title;

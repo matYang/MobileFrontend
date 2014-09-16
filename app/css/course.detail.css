@@ -50,6 +50,7 @@
     color:#128D56;
     padding: 8px 16px;
     border:1px solid #dddddd;}
+    /*含有button居中*/
     .card.table td.has-btn{
         text-align: center;}
         .card.table .button{

@@ -25,6 +25,12 @@ appRoutes.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $l
             templateUrl: 'views/complete.html',
             controller: 'completeCtrl'
         })
+        //课程搜索页面(确定搜索条件后再进入课程列表页面)
+        .state('search', {
+            url: '/search',
+            templateUrl: 'views/course.search.html',
+            controller: 'courseSearchCtrl'
+        })
         //课程列表
         .state('courseList', {
             url: '/courses',
@@ -37,7 +43,7 @@ appRoutes.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $l
             templateUrl: 'views/course.detail.html',
             controller: 'courseDetailCtrl'
         })
-        //课程订单
+        //课程预定(咨询)
         .state('courseDetail.booking', {
             url: '/booking',
             templateUrl: 'views/course.booking.html',

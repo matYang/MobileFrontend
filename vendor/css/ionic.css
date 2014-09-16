@@ -2638,9 +2638,10 @@ select[multiple], select[size] {
   display: block;
   margin-right: 0;
   margin-left: 0;
-  border-right-width: 0;
-  border-left-width: 0;
-  border-radius: 0; }
+  /*border-right-width: 0;*/
+  /*border-left-width: 0;*/
+  /*border-radius: 0; */
+}
 
 button.button-block, button.button-full, .button-full > button.button, input.button.button-block {
   width: 100%; }

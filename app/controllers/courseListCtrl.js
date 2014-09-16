@@ -138,6 +138,11 @@ appControllers.controller('courseListCtrl',
         };
         $scope.doRefresh();
 
+
+        /**
+         * subHeader中的全部和折扣两个tab的点击事件
+         * @param discount !!discount为true则会折扣 false则为false
+         */
         $scope.clickTab = function (discount) {
             if (discount == $scope.filter.tab)return;
             $scope.filter.tab = discount;

@@ -22,7 +22,6 @@ app.controller('completeCtrl', ['$scope', 'app', function ($scope, app) {
             });
             return
         }
-        console.log(app.$window.location);
         restAPI.update({ID: id}, {id: id, schoolId: schoolId}, function () {
             //更新本地的用户信息schoolId
             app.$rootScope.global.user.schoolId = schoolId;

@@ -1,0 +1,32 @@
+/*
+ * Buttons
+ * ----------------
+ * primary
+ */
+.button.button-primary {
+    border-color: #ddd;
+    background-color: #fff;
+    color: #009F4B; }
+    .button.button-primary:hover {
+        color: #009F4B;
+        text-decoration: none; }
+        .button.button-primary.active, .button.button-primary.activated {
+            border-color: #118D56;
+            background-color: #fafafa;
+            box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15); }
+    .button.button-primary.button-clear {
+        border-color: transparent;
+        background: none;
+        box-shadow: none;
+        color: #009F4B; }
+    .button.button-primary.button-icon {
+        border-color: transparent;
+        background: none; }
+    .button.button-primary.button-outline {
+        border-color: #009F4B;
+        background: transparent;
+        color: #009F4B; }
+    .button.button-primary.button-outline.active, .button.button-primary.button-outline.activated {
+        background-color: #ddd;
+        box-shadow: none;
+        color: #fff; }
