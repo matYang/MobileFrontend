@@ -25,6 +25,18 @@ appRoutes.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $l
             templateUrl: 'views/complete.html',
             controller: 'completeCtrl'
         })
+        //todo 申请--人工选课
+        .state('applyCourse', {
+            url: '/apply/course',
+            templateUrl: 'views/apply.course.html',
+            controller: 'applyCourseCtrl'
+        })
+        //todo 申请--助学贷款
+        .state('applyLoan', {
+            url: '/apply/loan',
+            templateUrl: 'views/apply.loan.html',
+            controller: 'applyLoanCtrl'
+        })
         //课程搜索页面(确定搜索条件后再进入课程列表页面)
         .state('search', {
             url: '/search',
