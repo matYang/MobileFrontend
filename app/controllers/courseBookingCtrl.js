@@ -35,9 +35,9 @@ app.controller('courseBookingCtrl', ['app', '$scope', function (app, $scope) {
         booking.price = $scope.course.price;
         booking.cashbackAmount = $scope.course.cashback;
         restAPI.save(booking, function (data) {
-            var alertPopup = app.alert('预订成功');
+            var alertPopup = app.alert('<p>预订成功:-) 稍后您将接到</p><p>025-58991945 的来电∠※~</p>');
             alertPopup.then(function (res) {
-                app.$state.go('courseDetail', {id: $scope.id})
+                app.$state.go('^')
             });
         }, function (response) {
             console.log('register error');

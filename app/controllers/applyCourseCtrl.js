@@ -1,6 +1,9 @@
 appControllers.controller('applyCourseCtrl', ['$scope', '$ionicModal', 'app',
     function ($scope, $ionicModal, app) {
-        $scope.apply = {};
+        $scope.apply = {
+            phone: app.$rootScope.global.user && app.$rootScope.global.user.phone,
+            userName: app.$rootScope.global.user && app.$rootScope.global.user.name
+        };
 
         //获取分类目录
         app.getCategory().then(function (data) {

@@ -4,8 +4,12 @@
     </div>
 
     <ion-content class="has-header padding" has-bouncing="false" overflow-scroll="false">
-
-        <button ui-sref="courseList" class="button button-full">浏览课程</button>
+        <div class="padding">
+            <p class="margin-vertical text-warning">亲，30分钟内您将接到 025-58991945 的来电。</p>
+            <p>爱上课名师将与您一起分析学习需求,帮您挑选最合适的教学机构！</p>
+        </div>
+        <div class="blank"></div>
+        <button ui-sref="courseList" ui-sref-opts="{location:'replace'}" class="button button-full">浏览其它课程</button>
         <div class="blank"></div>
     </ion-content>
 </ion-view>

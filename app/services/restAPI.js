@@ -24,8 +24,8 @@ appServices.factory('restAPI',
                 'user': ['/data/user.json?:ID:OP', '/user/:ID/:OP'],
                 'courses': ['/data/courses:ID.json', '/course/:ID'],
                 //预订课程
-                'booking': ['/data/options/school.json', '/booking/:ID'],
-                'Apply': ['/data/options/school.json', '/apply'],
+                'booking': ['/data/options/school.json', '/booking'],
+                'Apply': ['/data/options/school.json', '/purpose'],
 
                 'category': ['/data/options/category.json', '/general/category'],
                 'location': ['/data/options/location.json', '/general/location'],

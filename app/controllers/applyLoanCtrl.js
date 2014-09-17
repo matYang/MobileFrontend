@@ -1,6 +1,9 @@
 appControllers.controller('applyLoanCtrl', ['$scope', '$ionicModal', 'app',
     function ($scope, $ionicModal, app) {
-        $scope.apply = {};
+        $scope.apply = {
+            phone: app.$rootScope.global.user && app.$rootScope.global.user.phone,
+            userName: app.$rootScope.global.user && app.$rootScope.global.user.name
+        };
 
         //获取分类目录
         app.getCategory().then(function (data) {
@@ -25,6 +28,7 @@ appControllers.controller('applyLoanCtrl', ['$scope', '$ionicModal', 'app',
             apply.remark = (apply.remark||'') + '[申请助学贷款]';
             app.restAPI.Apply.save(apply, function () {
                 //todo success
+                app.$state.go('applySuccess');
             }, function () {
                 //todo error
             })
