@@ -24,6 +24,11 @@ appControllers.controller('courseListCtrl',
             app.$scroll.resize();
             app.$scroll.scrollTop(false);
             var filter = angular.copy($scope.filter);
+            //将category和location对象转为value
+            filter.categoryValue = filter.category&&filter.category.value;
+            filter.locationValue = filter.location&&filter.location.value;
+            delete filter.category;
+            delete filter.location;
 
             var value;//临时用的变量
             //格式化filter条件的值 开课日期startDate 上课时间 schooltime may be 01,2
@@ -172,7 +177,6 @@ appControllers.controller('courseListCtrl',
                 $scope.filterItemModal = modal;
                 $scope.openItemFilter = function () {
                     $scope.modal = $scope.filterItemModal; //current modal
-                    $scope.filter_tmp = angular.copy($scope.filter);
                     $scope.pop = false;
                     $scope.filterItemModal.show();
                 };
@@ -184,7 +188,6 @@ appControllers.controller('courseListCtrl',
                 $scope.filterAddrModal = modal;
                 $scope.openAddrFilter = function () {
                     $scope.modal = $scope.filterAddrModal;
-                    $scope.filter_tmp = angular.copy($scope.filter);
                     $scope.pop = false;
                     $scope.filterAddrModal.show();
                 };
@@ -206,12 +209,10 @@ appControllers.controller('courseListCtrl',
 
         //筛选确认按钮 触发刷新事件 todo 当条件变化时才进行筛选
         $scope.confirm_filter = function () {
-            //]直接拷贝会影响引用状态 这里先清空条件 然后重新扩展对象
-            angular.forEach($scope.filter, function (v, k) {
-                $scope.filter[k] = undefined;
-            });
-            console.log($scope.filter_tmp);
-            angular.extend($scope.filter, $scope.filter_tmp);
+            console.log($scope.filter_tmp.schooltimeDay)
+            //这里仅对filter中的开课时间schooltime和schoolday进行赋值
+            $scope.filter.startDate = $scope.filter_tmp.startDate;
+            $scope.filter.schooltime = $scope.filter_tmp.schooltime;
             $scope.modal.hide();
             doSearch();
         }

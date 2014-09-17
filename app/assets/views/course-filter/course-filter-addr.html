@@ -11,7 +11,7 @@
                 <ion-radio ng-model="filter_tmp.locationValue" ng-value="undefined" name="locationValue" ng-click="confirm_filter()">
                    不限
                 </ion-radio>
-                <ion-radio ng-model="filter_tmp.locationValue" ng-value="a.value"
+                <ion-radio ng-model="filter.location" ng-value="a"
                            ng-repeat="a in location" name="locationValue" ng-click="confirm_filter()">
                     {{ a.name}}
                 </ion-radio>

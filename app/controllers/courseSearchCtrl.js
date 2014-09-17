@@ -11,7 +11,7 @@ appControllers.controller('courseSearchCtrl',
 
         $scope.filter = pageView.filter;
         //在用户确认前临时保存用户选择的信息 确认后会拷贝到filter中进行保存
-        $scope.filter_tmp = angular.copy($scope.filter);
+//        $scope.filter_tmp = angular.copy($scope.filter);
 
         //获取课程分类目录以及地址目录
         app.getCategory().then(function (data) {
@@ -31,7 +31,6 @@ appControllers.controller('courseSearchCtrl',
                 $scope.openItemFilter = function () {
                     //$scope.modal用于保存当前的modal 可用于判断当期是否有其它modal打开
                     $scope.modal = $scope.filterItemModal;
-                    $scope.filter_tmp = angular.copy($scope.filter);
                     $scope.filterItemModal.show();
                 };
             });
@@ -42,31 +41,25 @@ appControllers.controller('courseSearchCtrl',
                 $scope.filterAddrModal = modal;
                 $scope.openAddrFilter = function () {
                     $scope.modal = $scope.filterAddrModal;
-                    $scope.filter_tmp = angular.copy($scope.filter);
                     $scope.filterAddrModal.show();
                 };
             });
 
 
         //3rd 时间筛选弹出框
-        $ionicModal.fromTemplateUrl('views/course-filter/course-filter-time.html',
-            {scope: $scope}
-        ).then(function (modal) {
-                $scope.filterTimeModal = modal;
-                $scope.openTimeFilter = function () {
-                    $scope.modal = $scope.filterTimeModal;
-                    $scope.filter_tmp = angular.copy($scope.filter);//should init when open
-                    $scope.filterTimeModal.show();
-                };
-            });
+//        $ionicModal.fromTemplateUrl('views/course-filter/course-filter-time.html',
+//            {scope: $scope}
+//        ).then(function (modal) {
+//                $scope.filterTimeModal = modal;
+//                $scope.openTimeFilter = function () {
+//                    $scope.modal = $scope.filterTimeModal;
+//                    $scope.filter_tmp = angular.copy($scope.filter);//should init when open
+//                    $scope.filterTimeModal.show();
+//                };
+//            });
 
-        //modal中进行调用 筛选确认按钮 触发刷新事件
+        //modal中进行调用 筛选确认按钮
         $scope.confirm_filter = function () {
-            //]直接拷贝会影响引用状态 这里先清空条件 然后重新扩展对象
-            angular.forEach($scope.filter, function (v, k) {
-                $scope.filter[k] = undefined;
-            });
-            angular.extend($scope.filter, $scope.filter_tmp);
             $scope.modal.hide();
         };
     }]
