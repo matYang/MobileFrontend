@@ -9,8 +9,8 @@
         <ion-tabs class="filter tabs-left">
             <span ng-repeat="a in category">
                 <ion-tab title="{{b.name}}" ng-repeat="b in a.children">
-                    <ion-radio ng-repeat="c in b.children" ng-value="c.value"
-                               ng-model="apply.categoryId" name="category" ng-click="confirmChoose()">
+                    <ion-radio ng-repeat="c in b.children" ng-value="c"
+                               ng-model="chosen.cat" name="category" ng-click="confirmChoose()">
                         {{ c.name}}
                     </ion-radio>
                 </ion-tab>

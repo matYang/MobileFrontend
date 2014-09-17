@@ -173,44 +173,7 @@ input:focus{
     /* show the checkmark icon when its checked */
     visibility: visible; }
 
-
-
-
-/**
- * 自定义模块
- * Forms
- * ---------------
- */
-.form .item{
-    border-radius: 4px;
-    margin: 10px 0;
-    position: relative;
-    padding: 5px 5px 5px 90px;
-}
-
-.form .item>span,.form .item>i{
-    position: absolute;
-    top: 12px;
-}
-.form .item>span{
-    font-size: 16px;
-    color: #666666;
-    position: absolute;
-    left: 10px;
-}
-.form .item>input{
-    font-size: 16px;
-}
-.form .item>textarea{
-    font-size: 16px;
-    line-height: 22px;
-    padding: 5px 0;
-}
-.form .item>i{
-    right: 10px;
-    color: #aaaaaa;
-}
-
+/*部分页面背景需要设为白色*/
 .panel-white ion-content{
     background-color: #ffffff;
 }

@@ -30,13 +30,13 @@ appRoutes.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $l
         .state('applyCourse', {
             url: '/apply/course',
             templateUrl: 'views/apply.course.html',
-            controller: 'applyCourseCtrl'
+            controller: 'applyCtrl'
         })
         //申请--助学贷款
         .state('applyLoan', {
             url: '/apply/loan',
             templateUrl: 'views/apply.loan.html',
-            controller: 'applyLoanCtrl'
+            controller: 'applyCtrl'
         })
         .state('applySuccess', {
             url: '/apply/success',
