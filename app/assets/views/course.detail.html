@@ -34,20 +34,14 @@
             <table class="card table">
                 <tbody>
                 <tr>
-                    <td>【爱】会员价</td>
+                    <td>门店折扣</td>
                     <td>
-                        <span ng-if="!course.price">￥定制</span>
-                        <span ng-if="course.price">￥{{course.price}}元</span>
-                        <span ng-if="course.originalPrice">&nbsp;&nbsp;原价:<s>￥{{course.originalPrice}}元</s></span>
+                        会员专享<span ng-if="course.price">{{course.commission}} 折</span>
                     </td>
                 </tr>
                 <tr ng-if="course.cashback">
                     <td>线下返现</td>
                     <td>返{{course.cashback}}元</td>
-                </tr>
-                <tr ng-if="course.commission">
-                    <td>在线立减</td>
-                    <td>立减{{course.commission}}元</td>
                 </tr>
                 <tr>
                     <td>免费试听</td>

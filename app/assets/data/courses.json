@@ -17,7 +17,7 @@
 
             "originalPrice": "788",
             "cashback": "40",
-            "commission": "80",
+            "commission": "98",
             "marking": "这是优惠信息",
 
             "startUponArrival":0,
@@ -52,7 +52,7 @@
 
             "originalPrice": "",
             "cashback": "450",
-            "commission": "750",
+            "commission": "97",
             "marking": "这是优惠信息在线订单立减750元",
 
             "startUponArrival":1,
@@ -86,7 +86,7 @@
             "price": "",
             "originalPrice": "",
             "cashback": "",
-            "commission": "",
+            "commission": "95",
             "marking": "这是优惠信息在线订单立减550元",
 
             "startUponArrival":1,

@@ -31,7 +31,6 @@ appControllers.controller('courseListCtrl',
 
                 //格式化 开课日期startDate 当月 下月 下下月
                 var dataValue = filter['startDate'];
-                console.log(dataValue);
                 var now = new Date();
                 var date1 = new Date(Date.parse([now.getFullYear(), now.getMonth() + 1].join('-')));
                 var date2;
@@ -105,6 +104,7 @@ appControllers.controller('courseListCtrl',
                 filter.order = value[1] == '' ? undefined : value[1];
                 delete filter['orders'];
             }
+            //enabled=1 后台使用group by templateId
             Courses.get(angular.extend({enabled:1}, filter, $scope.page)).$promise
                 .then(function (data) {
                     $scope.courses = data.data;

@@ -23,6 +23,9 @@ appFilters
 //            };
 //        }
 //    ])
+    /**
+    * 将number 转成number list 再map成string list
+    */
     .filter('schooltimeDay', ['app',
         function (app) {
             return function (val) {

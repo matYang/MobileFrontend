@@ -17,10 +17,8 @@
                 <span class="title">{{c.instName}}</span>
                 <h2 class="text-primary">{{c.courseName}}</h2>
                 <p>
-                    ￥<strong class="text-error text-larger">{{c.price|| '定制' }}</strong>
-                    <span ng-if="c.originalPrice">&nbsp;<s>￥{{c.originalPrice}}</s></span>
+                    <strong class="text-error text-larger">{{c.commission}}折</strong>
                     &nbsp;<span ng-if="c.cashback" class="badge bg-primary">返</span>
-                    &nbsp;<span ng-if="c.commission" class="badge bg-error">立减</span>
                 </p>
                 <p>
                     <span ng-if="c.startUponArrival">
