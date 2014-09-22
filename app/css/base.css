@@ -83,7 +83,7 @@ input:focus{
 /*通用工具类*/
 /*这是一个空白快*/
 .blank{
-    height: 20px;
+    height: 18px;
     display: block;
 }
 .text-center { text-align: center; }
