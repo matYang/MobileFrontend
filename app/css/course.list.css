@@ -22,7 +22,7 @@
     color: white;
     background: rgba(0,0,0,.5);;
 }
-/*end*/
+
 .item-thumbnail h2{margin-bottom: 5px}
 .item-thumbnail p{margin-bottom: 2px;font-size: 14px;color: #333;}
 /*文字超出隐藏*/
@@ -32,6 +32,11 @@
     white-space: nowrap;
 }
 /*end list items*/
+
+/*广告图*/
+#course-list .banner-img{
+    width: 100%;
+}
 
 /*start 头部二级菜单栏*/
 #course-list .btn-tab{
