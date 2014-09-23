@@ -1,43 +1,54 @@
 <ion-view id="course-list" title="">
     <div class="bar bar-header">
-        <button click-refresh  class="button button-clear">刷新</button>
+        <button click-refresh class="button button-clear">刷新</button>
         <div class="h1 title">爱上课</div>
-        <button ng-if="!global.isLogin" nav-clear class="button button-clear button-positive" ui-sref="login">登录</button>
+        <button ng-if="!global.isLogin" nav-clear class="button button-clear button-positive" ui-sref="login">登录
+        </button>
         <button ng-if="global.isLogin" class="button button-clear button-positive">您好，爱会员</button>
     </div>
     <div class="bar bar-subheader bar-tabs">
-            <div class="btn-tab" ng-class="{'active':!filter.tab}" ng-click="clickTab()">全 部</div>
-            <div class="btn-tab" ng-class="{'active':filter.tab}" ng-click="clickTab('discount')">折 扣</div>
+        <div class="btn-tab" ng-class="{'active':!filter.tab}" ng-click="clickTab()">全 部</div>
+        <div class="btn-tab" ng-class="{'active':filter.tab}" ng-click="clickTab('discount')">折 扣</div>
     </div>
     <ion-content class="has-header has-subheader has-footer" has-bouncing="false" overflow-scroll="false">
         <div class="list">
             <div ng-show="loading" class="padding text-center">加载中...</div>
-            <a class="item item-thumbnail" ng-repeat="c in courses" ng-href="#/courses/{{ c.id }}">
+            <a ng-repeat-start="c in courses" class="item item-thumbnail" ng-href="#/courses/{{ c.id }}">
                 <img ng-src="{{ c.logoUrl }}" alt="pic"/>
                 <span class="title">{{c.instName}}</span>
+
                 <h2 class="text-primary">{{c.courseName}}</h2>
+
                 <p>
                     <strong class="text-error text-larger">{{c.commission}}折</strong>
                     &nbsp;<span ng-if="c.cashback" class="badge bg-primary">返</span>
                 </p>
+
                 <p>
                     <span ng-if="c.startUponArrival">
                     {{c.startDate| date:'yyyy-M-d'}}<span ng-if="c.finishDate">到{{c.finishDate| date:'yyyy-M-d'}}</span>
                     </span>
                     <span ng-if="!c.startUponArrival">{{c.regPhone}}</span>
                 </p>
+
                 <p>{{c.schooltimeWeek | schooltimeWeek}}（{{c.schooltimeDay|schooltimeDay}}）</p>
+
                 <p>{{c.address}}</p>
             </a>
+            <span ng-repeat-end>
+                <span ng-if="$index==1"><img ui-sref="applyCourse" class="banner-img" src="./images/list_banner1.jpg" alt=""/></span>
+                <span ng-if="$index==4"><img ui-sref="applyCourse" class="banner-img" src="./images/list_banner2.jpg" alt=""/></span>
+            </span>
+
             <div ng-if="courses.length == 0" class="padding text-center">>>暂无符合条件的课程<<</div>
-            <div ng-if="courses.length != 0" class="page text-center">
-            <div ng-click="prePage()" ng-if="page.start >= page.count"
-            class="button button-outline button-dark">上一页
-            </div>
+            <div ng-if="courses.length != 0" class="page text-center margin-top">
+                <div ng-click="prePage()" ng-if="page.start >= page.count"
+                     class="button button-outline button-dark">上一页
+                </div>
                 &nbsp;&nbsp;&nbsp;
-            <div ng-click="nextPage()" ng-if="page.start + page.count < page.total"
-            class="button button-outline button-dark">下一页
-            </div>
+                <div ng-click="nextPage()" ng-if="page.start + page.count < page.total"
+                     class="button button-outline button-dark">下一页
+                </div>
             </div>
         </div>
         <div class="blank"></div>
@@ -56,15 +67,19 @@
             <i class="icon nav-time"></i>
             开课时间
         </a>
-        <a class="nav-item"  ng-click="pop=!pop" style="overflow: visible">
+        <a class="nav-item" ng-click="pop=!pop" style="overflow: visible">
             <i class="icon nav-isk"></i>
             爱推荐
             <ul id="filter" class="filter-submenu hide" ng-class="{'hide':!pop}">
                 <li class="btn" ng-click="filterOrder($event)"><i class="icon icon-thumb"></i>&nbsp;爱推荐</li>
-                <li class="btn" ng-click="filterOrder($event,'price','asc')">价格&nbsp;<i class="icon icon-arrow-up"></i></li>
-                <li class="btn" ng-click="filterOrder($event,'price','desc')">价格&nbsp;<i class="icon icon-arrow-down"></i></li>
-                <li class="btn" ng-click="filterOrder($event,'startDate','asc')">时间&nbsp;<i class="icon icon-arrow-up"></i></li>
-                <li class="btn" ng-click="filterOrder($event,'startDate','desc')">时间&nbsp;<i class="icon icon-arrow-down"></i></li>
+                <li class="btn" ng-click="filterOrder($event,'price','asc')">价格&nbsp;<i class="icon icon-arrow-up"></i>
+                </li>
+                <li class="btn" ng-click="filterOrder($event,'price','desc')">价格&nbsp;<i
+                        class="icon icon-arrow-down"></i></li>
+                <li class="btn" ng-click="filterOrder($event,'startDate','asc')">时间&nbsp;<i
+                        class="icon icon-arrow-up"></i></li>
+                <li class="btn" ng-click="filterOrder($event,'startDate','desc')">时间&nbsp;<i
+                        class="icon icon-arrow-down"></i></li>
             </ul>
         </a>
     </div>
