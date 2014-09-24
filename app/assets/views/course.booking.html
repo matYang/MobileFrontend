@@ -1,26 +1,22 @@
-<ion-view title="{{ pageName }}" id="detail">
-    {{ title }}
+<ion-view title="" id="detail">
     <div class="bar bar-header">
         <!--nav-clear to clear animation-->
         <a nav-clear ui-sref="courseDetail({id:id})" class="button btn-icon btn-back"></a>
 
-        <div class="h1 title">预订课程-{{id}}</div>
+        <div class="h1 title">申请课程咨询</div>
         <a class="button btn-icon btn-phone" href="tel:4000250084"></a>
     </div>
     <ion-content class="has-header" has-bouncing="false" overflow-scroll="true">
-        <div class="list">
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">手机号</span>
-                <input type="text" ng-model="booking.phone" placeholder="">
-            </label>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">姓名</span>
-                <input type="text" ng-model="booking.name">
-            </label>
-
-            <div class="padding">
-                <button class="button button-block button-positive" ng-click="submitBooking()">提交订单</button>
+        <div class="form">
+            <div class="item">
+                <span>手机号:</span>
+                <input type="text" ng-model="booking.phone"/>
+            </div>
+            <div class="item">
+                <span>您的姓名:</span>
+                <input type="text" ng-model="booking.name" />
             </div>
         </div>
+        <button ng-click="submitBooking()" class="button button-full margin-top">立即咨询</button>
     </ion-content>
 </ion-view>

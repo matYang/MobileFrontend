@@ -34,9 +34,16 @@
             <table class="card table">
                 <tbody>
                 <tr>
-                    <td>门店折扣</td>
+                    <td>会员折扣</td>
                     <td>
-                        会员专享<span ng-if="course.price">{{course.commission}} 折</span>
+                        会员专享<span ng-if="course.price">{{course.commission}} 折，承诺全城最低</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>指导价</td>
+                    <td>
+                        <span ng-if="course.price">￥{{(course.price*course.commission/100)|number:0}}</span>
+                        <span ng-if="!course.price">立即咨询&darr;&darr;</span>
                     </td>
                 </tr>
                 <tr ng-if="course.cashback">
