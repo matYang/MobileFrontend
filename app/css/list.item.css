@@ -1,36 +1,31 @@
 /*start list items*/
-.item-tuan {
+.item-thumbnail {
     height: 136px;
     margin: 8px;
     /*左缩进*/
-    padding: 6px 6px 8px 115px;}
+    padding: 10px 5px 10px 115px;}
 /*logo以及机构名title start*/
-.item-tuan img,
-.item-tuan .title{
+.item-thumbnail img,.item-thumbnail .title{
     position: absolute;
     /*左缩进对应*/
-    bottom: 20px;left: 8px;
+    bottom: 17px;left: 8px;
     width: 100px;
     text-align: center;}
-.item-tuan img{
+.item-thumbnail img{
     height: 100px;
 }
-.item-tuan .title{
+.item-thumbnail .title{
     height: 22px;
     line-height: 22px;
     font-size: 14px;
     color: white;
-    background: rgba(0,0,0,.5);
+    background: rgba(0,0,0,.5);;
 }
 
-.item-tuan h2{
-    margin-bottom: 8px;
-}
-.item-tuan p{margin-bottom: 2px;font-size: 14px;color: #333;}
+.item-thumbnail h2{margin-bottom: 5px}
+.item-thumbnail p{margin-bottom: 2px;font-size: 14px;color: #333;}
 /*文字超出隐藏*/
-.item-tuan p,
-.item-tuan h2,
-.item-tuan .title {
+.item-thumbnail p,.item-thumbnail h2,.item-thumbnail .title {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
