@@ -33,6 +33,14 @@
         font-size: 18px;
         margin-bottom: 10px;
         color:#128D56;}
+    .card.main .price-info{
+        position: relative;padding-left: 75px;}
+        .card.main .price{
+            position: absolute;
+            left: 0;
+            width:68px;line-height: 46px;
+            font-size: 24px;text-align: center;
+            border-right: 1px solid #cccccc;}
     .card.main p{
         margin-bottom: 3px;}
     .card.main img{

@@ -25,7 +25,7 @@ appRoutes.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $l
             templateUrl: 'views/complete.html',
             controller: 'completeCtrl'
         })
-        /*------申请(单独提供给微信接口)----*/
+        /*------申请----*/
         //申请--人工选课
         .state('applyCourse', {
             url: '/apply/course',
@@ -50,17 +50,36 @@ appRoutes.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $l
             templateUrl: 'views/course.search.html',
             controller: 'courseSearchCtrl'
         })
+        //todo 列表（包括课程列表和团购列表）
+        .state('list', {
+            abstract: true,
+            url: '/list',
+            templateUrl: 'views/list.html'
+        })
         //课程列表
-        .state('courseList', {
+        .state('list.course', {
             url: '/courses',
-            templateUrl: 'views/course.list.html',
+            templateUrl: 'views/list.course.html',
             controller: 'courseListCtrl'
         })
+        //todo 团购列表
+        .state('list.tuan', {
+            url: '/tuan',
+            templateUrl: 'views/list.tuan.html',
+            controller: 'tuanListCtrl'
+        })
+
         //课程详情
         .state('courseDetail', {
             url: '/courses/{id}',
             templateUrl: 'views/course.detail.html',
             controller: 'courseDetailCtrl'
+        })
+        //团购详情
+        .state('tuanDetail', {
+            url: '/tuan/{id}',
+            templateUrl: 'views/tuan.detail.html',
+            controller: 'tuanDetailCtrl'
         })
         //课程预定(咨询)
         .state('courseDetail.booking', {

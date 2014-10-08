@@ -1,0 +1,14 @@
+<ion-view id="course-list" title="">
+    <div class="bar bar-header">
+        <button click-refresh class="button button-clear">刷新</button>
+        <div class="h1 title">爱上课</div>
+        <button ng-if="!global.isLogin" nav-clear class="button button-clear button-positive" ui-sref="login">登录
+        </button>
+        <button ng-if="global.isLogin" class="button button-clear button-positive">您好，爱会员</button>
+    </div>
+    <div class="bar bar-subheader bar-tabs">
+        <div class="btn-tab" ng-class="{active: $state.includes('list.course')}" ui-sref="list.course">全 部</div>
+        <div class="btn-tab" ng-class="{active: $state.includes('list.tuan')}" ui-sref="list.tuan">团购</div>
+    </div>
+    <ui-view></ui-view>
+</ion-view>

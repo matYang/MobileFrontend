@@ -91,7 +91,7 @@ app.run(
                         if (fromState.name) {
                             event.preventDefault();
                         } else {
-                            $location.path('courses');
+                            $location.path('list/tuan');
                         }
 
                     }

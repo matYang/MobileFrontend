@@ -1,0 +1,38 @@
+<ion-content class="has-header has-subheader" has-bouncing="false" overflow-scroll="false">
+    <div class="list">
+        <div ng-show="loading" class="padding text-center">加载中...</div>
+        <a ng-repeat="t in tuans" class="item item-thumbnail" ng-href="#/tuan/{{ t.id }}">
+            <img ng-src="{{ t.course.logoUrl }}" alt="pic"/>
+            <h2 class="text-primary">{{t.title}}</h2>
+
+            <p>
+                <span class="text-error"><strong class="text-larger">{{t.groupBuyPrice}}</strong>&nbsp;元</span>
+                <s>{{t.course.originalPrice}}元</s>
+                <span>{{10*t.groupBuyPrice/t.course.originalPrice|number:'1'}}折</span>
+            </p>
+
+            <p>
+                    <span ng-if="t.course.startUponArrival">
+                    {{t.course.startDate| date:'yyyy-M-d'}}<span ng-if="t.course.finishDate"> 到 {{t.course.finishDate| date:'yyyy-M-d'}}</span>
+                    </span>
+                <span ng-if="!t.course.startUponArrival">{{t.course.regPhone}}</span>
+            </p>
+
+            <p>{{t.course.schooltimeWeek | schooltimeWeek}}（{{t.course.schooltimeDay|schooltimeDay}}）</p>
+
+            <p>{{t.course.address}}</p>
+        </a>
+
+        <div ng-if="courses.length == 0" class="padding text-center">>>暂无可进行团购的课程<<</div>
+        <div ng-if="courses.length != 0" class="page text-center margin-top">
+            <div ng-click="prePage()" ng-if="page.start >= page.count"
+                 class="button button-outline button-dark">上一页
+            </div>
+            &nbsp;&nbsp;&nbsp;
+            <div ng-click="nextPage()" ng-if="page.start + page.count < page.total"
+                 class="button button-outline button-dark">下一页
+            </div>
+        </div>
+    </div>
+    <div class="blank"></div>
+</ion-content>

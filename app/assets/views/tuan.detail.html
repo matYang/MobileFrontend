@@ -1,0 +1,126 @@
+<ion-view id="detail">
+    <!--should add ui-view to create child view-->
+    <div ui-view>
+        <div class="bar bar-header">
+            <!--nav-clear to clear animation-->
+            <a nav-clear ui-sref="list.tuan" class="button btn-icon btn-back"></a>
+
+            <div class="h1 title">团购详情</div>
+            <a class="button btn-icon btn-phone" href="tel:4000250884"></a>
+        </div>
+        <ion-content class="has-header" has-bouncing="true" overflow-scroll="false">
+            <div class="card main">
+                <h1>【团购】{{tuan.title}}</h1>
+
+                <div class=" price-info">
+                    <div class="text-error price">
+                        {{10*tuan.groupBuyPrice/tuan.course.originalPrice|number:'1'}}折
+                    </div>
+                    <p>团购价 <span class="text-error text-larger">￥{{tuan.groupBuyPrice}}</span> </p>
+                    <p>原价 <s>￥{{tuan.course.originalPrice}} </s></p>
+                </div>
+
+
+                <p class="text-light" ng-if="tuan.course.qualityAssurance">{{tuan.course.qualityAssurance}}</p>
+
+                <p class="text-light" ng-if="tuan.course.classSize">{{tuan.course.classSize}}</p>
+                <!--logo-->
+                <img ng-src="{{tuan.course.logoUrl}}"/>
+            </div>
+            <table class="card table">
+                <tbody>
+                <tr>
+                    <td>上课时间</td>
+                    <td ng-bind-html="tuan.course.contact"></td>
+                </tr>
+                <tr>
+                    <td>免费试听</td>
+                    <td class="has-btn">
+                        <a class="button" ui-sref="tuan.courseDetail.booking({id:tuan.course.id})">立即咨询</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="card table">
+                <tbody>
+                <tr>
+                    <td><i class="icon icon-building"></i>&nbsp;机构</td>
+                    <td>{{tuan.course.instName}}</td>
+                </tr>
+                <tr>
+                    <td><i class="icon icon-addr"></i>&nbsp;地址</td>
+                    <td>{{tuan.course.address}}</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="card table">
+                <tbody>
+                <tr ng-if="tuan.course.suitableStudent">
+                    <td>适合学员</td>
+                    <td ng-bind-html="tuan.course.suitableStudent"></td>
+                </tr>
+                <tr ng-if="tuan.course.tuan.courseIntro">
+                    <td>课程介绍</td>
+                    <td ng-bind-html="tuan.course.tuan.courseIntro"></td>
+                </tr>
+                <tr ng-if="tuan.course.goal">
+                    <td>教学目标</td>
+                    <td ng-bind-html="tuan.course.goal"></td>
+                </tr>
+                <tr ng-if="tuan.course.teachingMaterialFee">
+                    <td>教材费用</td>
+                    <td ng-bind-html="tuan.course.teachingMaterialFee"></td>
+                </tr>
+                <tr ng-if="tuan.course.teachingMaterialIntro">
+                    <td>教材介绍</td>
+                    <td ng-bind-html="tuan.course.teachingMaterialIntro"></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="card table">
+                <tbody>
+                <tr ng-if="tuan.course.passAgreement">
+                    <td>签约保过</td>
+                    <td ng-bind-html="tuan.course.passAgreement"></td>
+                </tr>
+                <tr ng-if="tuan.course.classTeacher">
+                    <td>推荐就业</td>
+                    <td ng-bind-html="tuan.course.classTeacher"></td>
+                </tr>
+                <tr ng-if="tuan.course.certification">
+                    <td>结业证书</td>
+                    <td ng-bind-html="tuan.course.certification"></td>
+                </tr>
+                <tr ng-if="tuan.course.extracurricular">
+                    <td>课后互动</td>
+                    <td ng-bind-html="tuan.course.extracurricular"></td>
+                </tr>
+                <tr ng-if="tuan.course.bonusService">
+                    <td>赠送服务</td>
+                    <td ng-bind-html="tuan.course.bonusService"></td>
+                </tr>
+                <tr ng-if="tuan.course.quiz">
+                    <td>阶段测评</td>
+                    <td ng-bind-html="tuan.course.quiz"></td>
+                </tr>
+                <tr ng-if="tuan.course.teachingAndExercise">
+                    <td>讲练结合</td>
+                    <td ng-bind-html="tuan.course.teachingAndExercise"></td>
+                </tr>
+                <tr ng-if="tuan.course.questionBank">
+                    <td>题库支持</td>
+                    <td ng-bind-html="tuan.course.questionBank"></td>
+                </tr>
+                <tr ng-if="tuan.course.downloadMaterials">
+                    <td>课件下载</td>
+                    <td ng-bind-html="tuan.course.downloadMaterials"></td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="blank"></div>
+        </ion-content>
+    </div>
+</ion-view>

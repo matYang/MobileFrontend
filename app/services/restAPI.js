@@ -23,9 +23,11 @@ appServices.factory('restAPI',
                 // Example request api: /api/v2/login /api/v2/login
                 'user': ['/data/user.json?:ID:OP', '/user/:ID/:OP'],
                 'courses': ['/data/courses:ID.json', '/course/:ID'],
+                'groupBuy': ['/data/groupBuy:ID.json', '/groupBuy/:ID'],
                 //预订课程
                 'booking': ['/data/options/school.json', '/booking'],
                 'Apply': ['/data/options/school.json', '/purpose'],
+
 
                 'category': ['/data/options/category.json', '/general/category'],
                 'location': ['/data/options/location.json', '/general/location'],
@@ -66,6 +68,7 @@ appServices.factory('restAPI',
         return {
             'user': resource_maker('user'),
             'courses': resource_maker('courses'),
+            'groupBuy': resource_maker('groupBuy'),
             'booking': resource_maker('booking'),
             'Apply': resource_maker('Apply'),
             'category': resource_maker('category'),
