@@ -3,7 +3,6 @@
         <div ng-show="loading" class="padding text-center">加载中...</div>
         <a ng-repeat-start="c in courses" class="item item-thumbnail" ng-href="#/courses/{{ c.id }}">
             <img ng-src="{{ c.logoUrl }}" alt="pic"/>
-            <span class="title">{{c.instName}}</span>
 
             <h2 class="text-primary">{{c.courseName}}</h2>
 
