@@ -16,14 +16,13 @@
                     <div class="text-error price">
                         {{10*tuan.groupBuyPrice/tuan.course.originalPrice|number:'1'}}折
                     </div>
-                    <p>团购价 <span class="text-error text-larger">￥{{tuan.groupBuyPrice}}</span> </p>
+                    <p>团购价 <span class="text-error text-larger">￥{{tuan.groupBuyPrice}}</span></p>
+
                     <p>原价 <s>￥{{tuan.course.originalPrice}} </s></p>
                 </div>
 
-
-                <p class="text-light" ng-if="tuan.course.qualityAssurance">{{tuan.course.qualityAssurance}}</p>
-
-                <p class="text-light" ng-if="tuan.course.classSize">{{tuan.course.classSize}}</p>
+                <p class="text-light">&nbsp;&nbsp;{{tuan.course.schooltimeWeek|schooltimeWeek}}
+                    （{{tuan.course.schooltimeDay|schooltimeDay}}）</p>
                 <!--logo-->
                 <img ng-src="{{tuan.course.logoUrl}}"/>
             </div>
@@ -33,10 +32,19 @@
                     <td>上课时间</td>
                     <td ng-bind-html="tuan.course.contact"></td>
                 </tr>
+                <tr ng-if="tuan.course.qualityAssurance">
+                    <td>课时信息</td>
+                    <td>{{tuan.course.qualityAssurance}}</td>
+                </tr>
+                <tr ng-if="tuan.course.classSize">
+                    <td>班级大小</td>
+                    <td>{{tuan.course.classSize}}</td>
+                </tr>
                 <tr>
                     <td>免费试听</td>
                     <td class="has-btn">
-                        <a class="button" ui-sref="tuan.courseDetail.booking({id:tuan.course.id})">立即咨询</a>
+                        <!--todo 立即抢购-->
+                        <a class="button">立即抢购</a>
                     </td>
                 </tr>
                 </tbody>
