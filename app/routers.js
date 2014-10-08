@@ -38,10 +38,6 @@ appRoutes.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $l
             templateUrl: 'views/apply.loan.html'+version,
             controller: 'applyCtrl'
         })
-        .state('applySuccess', {
-            url: '/apply/success',
-            templateUrl: 'views/apply200.html'+version
-        })
 
 
         //课程搜索页面(确定搜索条件后再进入课程列表页面)
@@ -69,17 +65,25 @@ appRoutes.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $l
             controller: 'tuanListCtrl'
         })
 
-        //课程详情
-        .state('courseDetail', {
-            url: '/courses/{id}',
-            templateUrl: 'views/course.detail.html'+version,
-            controller: 'courseDetailCtrl'
+
+        //申请成功
+        .state('applySuccess', {
+            url: '/apply/success',
+            templateUrl: 'views/apply200.html'+version
         })
         //团购成功
         .state('tuanSuccess', {
             url: '/tuan/success',
             templateUrl: 'views/tbooking200.html'+version
         })
+
+        //课程详情
+        .state('courseDetail', {
+            url: '/courses/{id}',
+            templateUrl: 'views/course.detail.html'+version,
+            controller: 'courseDetailCtrl'
+        })
+
         //团购详情
         .state('tuanDetail', {
             url: '/tuan/{id}',
