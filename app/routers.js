@@ -50,7 +50,7 @@ appRoutes.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $l
             templateUrl: 'views/course.search.html',
             controller: 'courseSearchCtrl'
         })
-        //todo 列表（包括课程列表和团购列表）
+        //列表（包括课程列表和团购列表）
         .state('list', {
             abstract: true,
             url: '/list',
@@ -62,7 +62,7 @@ appRoutes.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $l
             templateUrl: 'views/list.course.html',
             controller: 'courseListCtrl'
         })
-        //todo 团购列表
+        //团购列表
         .state('list.tuan', {
             url: '/tuan',
             templateUrl: 'views/list.tuan.html',
@@ -75,12 +75,18 @@ appRoutes.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $l
             templateUrl: 'views/course.detail.html',
             controller: 'courseDetailCtrl'
         })
+        //团购成功
+        .state('tuanSuccess', {
+            url: '/tuan/success',
+            templateUrl: 'views/tbooking200.html'
+        })
         //团购详情
         .state('tuanDetail', {
             url: '/tuan/{id}',
             templateUrl: 'views/tuan.detail.html',
             controller: 'tuanDetailCtrl'
         })
+
         //课程预定(咨询)
         .state('courseDetail.booking', {
             url: '/booking',

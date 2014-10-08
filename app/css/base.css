@@ -86,6 +86,12 @@ input:focus{
     height: 18px;
     display: block;
 }
+.line{
+    display: block;
+    height: 0;
+    margin: 4px 0;
+    border-bottom: 1px solid #E5E5E5;
+}
 .text-center { text-align: center; }
 .text-right { text-align: right; }
 .pull-left { float: left; }

@@ -1,0 +1,38 @@
+/*start list items*/
+.item-tuan {
+    height: 136px;
+    margin: 8px;
+    /*左缩进*/
+    padding: 6px 6px 8px 115px;}
+/*logo以及机构名title start*/
+.item-tuan img,
+.item-tuan .title{
+    position: absolute;
+    /*左缩进对应*/
+    bottom: 24px;left: 15px;
+    width: 90px;
+    text-align: center;}
+.item-tuan img{
+    height: 90px;
+}
+.item-tuan .title{
+    height: 22px;
+    line-height: 22px;
+    font-size: 14px;
+    color: white;
+    background: rgba(0,0,0,.5);
+}
+
+.item-tuan h2{
+    margin-bottom: 8px;
+}
+.item-tuan p{margin-bottom: 2px;font-size: 14px;color: #333;}
+/*文字超出隐藏*/
+.item-tuan p,
+.item-tuan h2,
+.item-tuan .title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/*end list items*/
