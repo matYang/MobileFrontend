@@ -15,7 +15,13 @@ appControllers.controller('tuanDetailCtrl', ['$scope', 'app', function ($scope, 
     $scope.submitTBooking = function () {
         //判断是否登录 未登录则进入登录页面 登录后返回
         if (!app.$rootScope.global.isLogin) {
-            //进入login页面
+            //进入login页面 设置refer
+            app.$rootScope.global.refer = {
+                name:'tuanDetail',
+                param:{
+                    id:tuanId
+                }
+            };
             app.$state.go('login');
             return
         }
