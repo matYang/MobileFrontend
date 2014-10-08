@@ -109,6 +109,7 @@ input:focus{
 .text-error{color: #FF5500; }
 .text-light{color: #aaaaaa; }
 
+.text-large{font-size: 1.2em}
 .text-larger{font-size: 1.5em}
 
 /**

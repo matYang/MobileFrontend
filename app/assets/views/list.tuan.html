@@ -7,8 +7,8 @@
 
             <p class="margin-top">
                 <span class="text-error"><strong class="text-larger">{{t.groupBuyPrice}}</strong>&nbsp;元</span>
-                <s>{{t.course.originalPrice}}元</s>
-                <span>{{10*t.groupBuyPrice/t.course.originalPrice|number:'1'}}折</span>
+                <s>{{t.course.originalPrice||t.course.price}}元</s>
+                <span class="text-large">{{10*t.groupBuyPrice/(t.course.originalPrice||t.course.price)|number:'1'}}</span>折
             </p>
             <span class="line"></span>
 

@@ -14,11 +14,11 @@
 
                 <div class=" price-info">
                     <div class="text-error price">
-                        {{10*tuan.groupBuyPrice/tuan.course.originalPrice|number:'1'}}折
+                        {{10*tuan.groupBuyPrice/(tuan.course.originalPrice||tuan.course.price)|number:'1'}}折
                     </div>
                     <p>团购价 <span class="text-error text-larger">￥{{tuan.groupBuyPrice}}</span></p>
 
-                    <p>原价 <s>￥{{tuan.course.originalPrice}} </s></p>
+                    <p>原价 <s>￥{{tuan.course.originalPrice||tuan.course.price}} </s></p>
                 </div>
 
                 <p class="text-light">&nbsp;&nbsp;{{tuan.course.schooltimeWeek|schooltimeWeek}}
@@ -41,14 +41,26 @@
                     <td>{{tuan.course.classSize}}</td>
                 </tr>
                 <tr>
-                    <td>免费试听</td>
+                    <td>抢购</td>
                     <td class="has-btn">
                         <a ng-click="submitTBooking()" class="button">立即抢购</a>
                     </td>
                 </tr>
                 </tbody>
             </table>
-
+            <table class="card table">
+                <tbody>
+                <tr>
+                    <td>参团校区</td>
+                    <td>
+                        <div ng-repeat="a in tuan.addressList">
+                            <p><strong>{{a.realAddress}}</strong></p>
+                            <p> &lfloor; {{a.detail}}</p>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
             <table class="card table">
                 <tbody>
                 <tr>
