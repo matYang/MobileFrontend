@@ -54,7 +54,7 @@
                     <td>参团校区</td>
                     <td>
                         <div ng-repeat="a in tuan.addressList">
-                            <p><strong>{{a.realAddress}}</strong></p>
+                            <p><strong>{{a.realAddress||tuan.course.instName}}</strong></p>
                             <p> &lfloor; {{a.detail}}</p>
                         </div>
                     </td>
