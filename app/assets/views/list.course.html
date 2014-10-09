@@ -7,8 +7,9 @@
             <h2 class="text-primary">{{c.courseName}}</h2>
 
             <p>
-                <strong class="text-error text-larger">{{c.commission}}折</strong>
-                <small ng-if="c.price">￥{{(c.price*c.commission/100)|number:0}}</small>
+                <strong class="text-error text-larger">{{c.commission/10|number:1}}折</strong>
+                <small ng-if="c.originalPrice||c.price">￥{{((c.originalPrice||c.price)*c.commission/100)|number:0}}
+                </small>
                 &nbsp;<span ng-if="c.cashback" class="badge bg-primary">返</span>
             </p>
             <span class="line"></span>
@@ -25,8 +26,10 @@
             <p>{{c.address}}</p>
         </a>
             <span ng-repeat-end>
-                <span ng-if="$index==1"><img ui-sref="applyCourse" class="banner-img" src="./images/list_banner1.png" alt=""/></span>
-                <span ng-if="$index==4"><img ui-sref="applyCourse" class="banner-img" src="./images/list_banner2.png" alt=""/></span>
+                <span ng-if="$index==1"><img ui-sref="applyCourse" class="banner-img" src="./images/list_banner1.png"
+                                             alt=""/></span>
+                <span ng-if="$index==4"><img ui-sref="applyCourse" class="banner-img" src="./images/list_banner2.png"
+                                             alt=""/></span>
             </span>
 
         <div ng-if="courses.length == 0" class="padding text-center">>>暂无符合条件的课程<<</div>

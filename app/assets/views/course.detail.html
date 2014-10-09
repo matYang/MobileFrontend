@@ -42,8 +42,8 @@
                 <tr>
                     <td>指导价</td>
                     <td>
-                        <span ng-if="course.price">￥{{(course.price*course.commission/100)|number:0}}</span>
-                        <span ng-if="!course.price">立即咨询&darr;&darr;</span>
+                        <span ng-if="course.originalPrice||course.price">￥{{((course.originalPrice||course.price)*course.commission/100)|number:0}}</span>
+                        <span ng-if="!(course.originalPrice||course.price)">立即咨询&darr;&darr;</span>
                     </td>
                 </tr>
                 <tr ng-if="course.cashback">
