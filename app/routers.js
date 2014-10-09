@@ -99,6 +99,6 @@ appRoutes.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $l
         });
 
 
-    $urlRouterProvider.otherwise("/register");
+    $urlRouterProvider.otherwise("/list/tuan");
 //        $locationProvider.html5Mode(true).hashPrefix('!');//remove '#' but all href should be adjusted
 });
