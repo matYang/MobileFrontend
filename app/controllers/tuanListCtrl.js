@@ -32,18 +32,18 @@ appControllers.controller('tuanListCtrl', ['$scope', '$rootScope', '$ionicModal'
             $scope.page.total = app.default_page.total;
             doRefresh();
         };
-        $scope.prePage = function () {
-            if ($scope.page.start >= $scope.page.count) {
-                $scope.page.start -= $scope.page.count;
-                doRefresh();
-            }
-        };
-        $scope.nextPage = function () {
-            if ($scope.page.start + $scope.page.count < $scope.page.total) {
-                $scope.page.start += $scope.page.count;
-                doRefresh();
-            }
-        };
+//        $scope.prePage = function () {
+//            if ($scope.page.start >= $scope.page.count) {
+//                $scope.page.start -= $scope.page.count;
+//                doRefresh();
+//            }
+//        };
+//        $scope.nextPage = function () {
+//            if ($scope.page.start + $scope.page.count < $scope.page.total) {
+//                $scope.page.start += $scope.page.count;
+//                doRefresh();
+//            }
+//        };
         $scope.doRefresh();
     }
 ]);

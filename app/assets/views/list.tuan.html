@@ -17,16 +17,8 @@
             <p>{{t.course.address}}</p>
         </a>
 
-        <div ng-if="courses.length == 0" class="padding text-center">>>暂无可进行团购的课程<<</div>
-        <div ng-if="courses.length != 0" class="page text-center margin-top">
-            <div ng-click="prePage()" ng-if="page.start >= page.count"
-                 class="button button-outline button-dark">上一页
-            </div>
-            &nbsp;&nbsp;&nbsp;
-            <div ng-click="nextPage()" ng-if="page.start + page.count < page.total"
-                 class="button button-outline button-dark">下一页
-            </div>
-        </div>
+        <div ng-if="tuans.length == 0" class="padding text-center">>>暂无可进行团购的课程<<</div>
+
     </div>
     <div class="blank"></div>
 </ion-content>
