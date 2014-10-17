@@ -48,9 +48,9 @@ appControllers.controller('applyCtrl', ['$scope', '$ionicModal', 'app',
             }
             //如果处于助学贷款页面 添加备注
             if (app.$state.is('applyLoan')) {
-                apply.remark = '【申请助学贷款-手机】' + (apply.remark || '');
+                apply.remark = '【Mobile-申请助学贷款】' + (apply.remark || '');
             } else {
-                apply.remark = '【申请人工选课-手机】' + (apply.remark || '');
+                apply.remark = '【Mobile-申请人工选课】' + (apply.remark || '');
             }
             app.restAPI.Apply.save(apply, function () {
                 app.$state.go('applySuccess');

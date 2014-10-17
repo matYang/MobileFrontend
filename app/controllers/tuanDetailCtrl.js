@@ -27,6 +27,7 @@ appControllers.controller('tuanDetailCtrl', ['$scope', 'app', function ($scope, 
         }
         var booking = {
             groupBuyActivityId: $scope.tuan.id,
+            type: 1,//1来源于手机端 0来源于PC端
             groupBuyPrice: $scope.tuan.groupBuyPrice
         };
         Tuan.save({ID: 'booking'}, booking, function () {
