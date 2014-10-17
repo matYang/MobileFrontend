@@ -5,7 +5,7 @@ var appRoutes = angular.module('appRoutes', []);
 appRoutes.config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) {
 //    $interpolateProvider.startSymbol('{%');
 //    $interpolateProvider.endSymbol('%}');
-    var version = '?build001';
+    var version = '?build002';
     $stateProvider
         //用户登录
         .state('login', {
