@@ -29,11 +29,8 @@ appControllers.controller('applyCtrl', ['$scope', '$ionicModal', 'app',
         $scope.submitApply = function () {
             var apply = angular.copy($scope.apply);
             apply.categoryId = $scope.chosen.cat && $scope.chosen.cat.id;
+            var categoryName = $scope.chosen.cat && $scope.chosen.cat.name;
             //验证用户输入
-            if (!apply.categoryId) {
-                app.alert('请选择您的课程意向');
-                return;
-            }
             if (!apply.phone) {
                 app.alert('请输入联系电话');
                 return;
@@ -51,6 +48,9 @@ appControllers.controller('applyCtrl', ['$scope', '$ionicModal', 'app',
                 apply.remark = '【Mobile-申请助学贷款】' + (apply.remark || '');
             } else {
                 apply.remark = '【Mobile-申请人工选课】' + (apply.remark || '');
+            }
+            if (categoryName) {
+                apply.remark = apply.remark + '【意向课程>' + categoryName + '】'
             }
             app.restAPI.Apply.save(apply, function () {
                 app.$state.go('applySuccess');
