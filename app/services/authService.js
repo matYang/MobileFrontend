@@ -89,9 +89,9 @@ appServices.factory('Auth',
 
                 },
                 //发送验证码
-                sendSms: function (phone) {
+                sendSms: function (phone, vcode) {
                     var defer = $q.defer();
-                    auth.get({ID: 'smsVerification', phone: phone}, function (data) {
+                    auth.get({ID: 'smsVerification', phone: phone, vcode: vcode}, function (data) {
                         $log.log('get sms success');
                         defer.resolve(data);
                     }, function (response) {

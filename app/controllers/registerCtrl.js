@@ -35,7 +35,7 @@ app.controller('registerCtrl', ['$scope', 'app', 'Auth', function ($scope, app, 
 
         //仅1状态下不可点击
         if ($scope.status == 1)return;
-        Auth.sendSms(phone).then(function () {
+        Auth.sendSms(phone, vcode).then(function () {
             //success
             $scope.status = 1;
             $scope.count = 120;
