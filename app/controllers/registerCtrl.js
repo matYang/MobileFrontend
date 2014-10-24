@@ -4,6 +4,7 @@
 app.controller('registerCtrl', ['$scope', 'app', 'Auth', function ($scope, app, Auth) {
     //初始化user
     $scope.u = {};
+    $scope.vcodeImg = '/api/v2/user/vcodeimg';
     //发送短信按钮的状态
     //todo 发送验证码
     //发送状态
@@ -16,6 +17,11 @@ app.controller('registerCtrl', ['$scope', 'app', 'Auth', function ($scope, app, 
     // 正在发送 发送成功(倒计时)  发送失败
     // 重新发送
     $scope.status = 0;
+    $scope.changeImg = function(){
+        var url = $scope.vcodeImg;
+        url = url.split('?')[0] +'?_='+(new Date()).getTime();
+        $scope.vcodeImg = url;
+    };
     $scope.sendSms = function (phone, vcode) {
         //todo 验证手机号
         if (!phone) {

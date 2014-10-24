@@ -5,6 +5,7 @@
     position: absolute;
     right: 10px;
     bottom: 12px;
+    cursor: pointer;
 }
 /*注册页面的表单设计*/
 #registerPage .item-input{
