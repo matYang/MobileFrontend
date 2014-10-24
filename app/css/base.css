@@ -6,7 +6,7 @@ html,body{
 /*Global*/
 /*全局的input*/
 input:focus{
-    box-shadow: 0 0 4px #f7a501;
+    /*box-shadow: 0 0 4px #f7a501;*/
 }
 
 
@@ -103,6 +103,7 @@ input:focus{
 .bg-primary{ background-color: #128d56; }
 .bg-warning{ background-color: #f7a501; }
 .bg-error{ background-color: #FF5500; }
+.bg-white{background-color: #ffffff}
 
 .text-primary{color: #128d56; }
 .text-warning{color: #f7a501; }

@@ -1,7 +1,25 @@
 /*点击发送短信*/
-.button-sms{
-    margin-top: -5px;
-    margin-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
+/*图形验证码*/
+#registerPage .button-sms,
+#registerPage .img-vcode{
+    position: absolute;
+    right: 10px;
+    bottom: 12px;
 }
+/*注册页面的表单设计*/
+#registerPage .item-input{
+    position: relative;
+    border: none}
+#registerPage .item-input.item-input-left{
+    padding-right: 120px}
+    #registerPage .item-input>.input-label{
+        display: none;
+        color: grey;
+        left: 10px;
+        top: 12px;
+        position: absolute; }
+    #registerPage .item-input>input{
+        position: relative;
+        border-bottom: 1px solid #cccccc; }
+    #registerPage .item-input>input:focus{
+        border-bottom: 1px solid #128d56;}

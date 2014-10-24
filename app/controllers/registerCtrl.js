@@ -16,7 +16,7 @@ app.controller('registerCtrl', ['$scope', 'app', 'Auth', function ($scope, app, 
     // 正在发送 发送成功(倒计时)  发送失败
     // 重新发送
     $scope.status = 0;
-    $scope.sendSms = function (phone) {
+    $scope.sendSms = function (phone, vcode) {
         //todo 验证手机号
         if (!phone) {
             // An alert dialog
@@ -27,10 +27,14 @@ app.controller('registerCtrl', ['$scope', 'app', 'Auth', function ($scope, app, 
             app.alert('手机号格式不正确');
             return
         }
+        if (!vcode) {
+            // An alert dialog
+            app.alert('请输入图形验证码');
+            return
+        }
 
         //仅1状态下不可点击
         if ($scope.status == 1)return;
-        console.log('start send sms');
         Auth.sendSms(phone).then(function () {
             //success
             $scope.status = 1;
@@ -70,11 +74,6 @@ app.controller('registerCtrl', ['$scope', 'app', 'Auth', function ($scope, app, 
             app.alert('密码长度不正确');
             return
         }
-        //todo 提示输入邀请码 或者在页面加入说明
-//        if (!u.appliedInvitationCode) {
-//            app.alert('请输入邀请码');
-//            return
-//        }
         if (!u.authCode) {
             app.alert('请输入验证码');
             return
